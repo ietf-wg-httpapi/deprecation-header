@@ -4,6 +4,9 @@ This is the working area for the HTTPAPI Internet-Draft, "The Deprecation HTTP H
 
 * [Editor's Copy](https://github.com/ietf-wg-httpapi/deprecation-header)
 * [Individual Draft](https://tools.ietf.org/html/draft-ietf-httpapi-deprecation-header)
+* [Previous Copies](https://github.com/sdatspun2/deprecation-header)
+* [Previous Drafts](https://tools.ietf.org/html/draft-dalal-deprecation-header)
+
 
 ## Building the Draft
 
@@ -20,4 +23,4 @@ This requires that you have the necessary software installed.  See
 ## Contributing
 
 See the
-[guidelines for contributions](https://github.com/ietf-wg-httpapi/draft-ietf-httpapi-httpapi-deprecation-header/blob/master/CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/ietf-wg-httpapi/draft-ietf-httpapi-deprecation-header/blob/master/CONTRIBUTING.md).

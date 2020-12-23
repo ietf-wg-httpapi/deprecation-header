@@ -26,15 +26,10 @@ author:
     uri: http://dret.net/netdret
 
 normative:
-  UNIX:
-    title: The Single UNIX Specification, Version 2 - 6 Vol Set for UNIX 98
-    author:
-      name: The Open Group
-      ins: The Open Group
-    date: 1997-02
+
 
 informative:
-  RFC6585:
+
 
 --- abstract
 
