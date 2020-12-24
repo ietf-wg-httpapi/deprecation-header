@@ -1,8 +1,8 @@
 ---
 coding: utf-8
 abbrev:
-title: The Deprecation HTTP Header Field
-docname: draft-ietf-httpapi-deprecation-header
+title: The Deprecation HTTP Header
+docname: draft-ietf-httpapi-deprecation-header-00
 category: std
 
 ipr: trust200902
@@ -33,7 +33,7 @@ informative:
 
 --- abstract
 
-The HTTP Deprecation response header field can be used to signal to consumers of a URI-identified resource that the resource has been deprecated. Additionally, the deprecation link relation can be used to link to a resource that provides additional context for the deprecation, and possibly ways in which clients can find a replacement for the deprecated resource.
+The HTTP Deprecation Response Header can be used to signal to consumers of a URI-identified resource that the resource has been deprecated. Additionally, the deprecation link relation can be used to link to a resource that provides additional context for the deprecation, and possibly ways in which clients can find a replacement for the deprecated resource.
 
 
 --- middle
@@ -57,7 +57,7 @@ This specification uses the Augmented Backus-Naur Form (ABNF) notation of {{!RFC
 
 The term "resource" is to be interpreted as defined in Section 2 of {{!RFC7231}}, that is identified by an URI.
 
-# The Deprecation HTTP Response Header Field
+# The Deprecation HTTP Response Header
 
 The `Deprecation` HTTP response header field allows a server to communicate to a client that the resource in context of the message is or will be deprecated.
 
@@ -157,7 +157,7 @@ The act of deprecation does not change any behavior of the resource. Deprecated 
 
 # IANA Considerations
 
-## The Deprecation HTTP Response Header Field
+## The Deprecation HTTP Response Header
 
 The `Deprecation` response header should be added to the permanent registry of message header fields (see {{!RFC3864}}), taking into account the guidelines given by HTTP/1.1 {{!RFC7231}}.
 
@@ -173,7 +173,7 @@ The `Deprecation` response header should be added to the permanent registry of m
     Change controller: IETF
 
     Specification document: this specification,
-                Section 2 "The Deprecation HTTP Response Header Field"
+                Section 2 "The Deprecation HTTP Response Header"
 
 
 
@@ -206,7 +206,7 @@ other implementations may exist.
 
 According to RFC 7942, "this will allow reviewers and working groups to assign due consideration to documents that have the benefit of running code, which may serve as evidence of valuable experimentation and feedback that have made the implemented protocols more mature. It is up to the individual working groups to use this information as they see fit".
 
-## Implementing the Deprecation Header Field
+## Implementing the Deprecation Header
 
 This is a list of implementations that implement the deprecation header field:
 

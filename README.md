@@ -3,7 +3,7 @@
 This is the working area for the HTTPAPI Internet-Draft, "The Deprecation HTTP Header Field".
 
 * [Editor's Copy](https://github.com/ietf-wg-httpapi/deprecation-header)
-* [Individual Draft](https://tools.ietf.org/html/draft-ietf-httpapi-deprecation-header)
+* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-deprecation-header)
 * [Previous Copies](https://github.com/sdatspun2/deprecation-header)
 * [Previous Drafts](https://tools.ietf.org/html/draft-dalal-deprecation-header)
 
