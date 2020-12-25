@@ -3,9 +3,9 @@
 This is the working area for the HTTPAPI Internet-Draft, "The Deprecation HTTP Header Field".
 
 * [Editor's Copy](https://github.com/ietf-wg-httpapi/deprecation-header)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-deprecation-header)
-* [Previous Copies](https://github.com/sdatspun2/deprecation-header)
-* [Previous Drafts](https://tools.ietf.org/html/draft-dalal-deprecation-header)
+* [Latest Published Draft](https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-deprecation-header)
+* [Published earlier draft versions (`draft-dalal-deprecation-header`)](https://tools.ietf.org/html/draft-dalal-deprecation-header) (no longer updated)
+* [Repo for earlier draft versions (`draft-dalal-deprecation-header`)](https://github.com/sdatspun2/deprecation-header) (no longer used)
 
 
 ## Building the Draft
