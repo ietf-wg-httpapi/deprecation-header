@@ -2,7 +2,7 @@
 coding: utf-8
 abbrev:
 title: The Deprecation HTTP Header Field
-docname: draft-ietf-httpapi-deprecation-header-01
+docname: draft-ietf-httpapi-deprecation-header-02
 category: std
 
 ipr: trust200902
