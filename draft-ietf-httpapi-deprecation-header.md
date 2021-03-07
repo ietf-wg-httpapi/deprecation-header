@@ -71,7 +71,7 @@ Servers MUST NOT include more than one `Deprecation` header field in the same re
 
 The date, if present, is the date when the resource context was or will be deprecated. It is in the form of an IMF-fixdate timestamp.
 
-The following example shows that the resource context has been deprecated on Friday, November 11, 2018 at 23:59:59 GMT:
+The following example shows that the resource context has been deprecated on Sunday, November 11, 2018 at 23:59:59 GMT:
 
     Deprecation: Sun, 11 Nov 2018 23:59:59 GMT
 
