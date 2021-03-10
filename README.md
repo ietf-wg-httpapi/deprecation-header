@@ -1,4 +1,4 @@
-# Deprecation Header for HTTP
+# The Deprecation HTTP Header Field
 
 This is the working area for the HTTPAPI Internet-Draft, "The Deprecation HTTP Header Field".
 
