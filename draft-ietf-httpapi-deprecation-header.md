@@ -80,7 +80,7 @@ The deprecation date can be in the future. If the value of `date` is in the futu
 If the deprecation date is not known, the header field can carry the simple string "true", indicating that the resource context is deprecated, without indicating when that happened:
 
 
-	Deprecation: true
+    Deprecation: true
 
 
 
