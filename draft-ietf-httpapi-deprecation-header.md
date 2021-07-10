@@ -133,7 +133,7 @@ The `Link` {{!RFC8288}} header field can be used in addition to the `Deprecation
 
 * `successor-version`: Points to a resource containing the successor version. {{?RFC5829}}
 * `latest-version`: Points to a resource containing the latest (e.g., current) version. {{?RFC5829}}
-* `alternate`: Designates a substitute. [W3C.REC-html401-19991224]
+* `alternate`: Designates a substitute. {{?W3C.REC-html401-19991224}}
 
 The following example provides link to the successor version of the requested resource that is deprecated.
 
