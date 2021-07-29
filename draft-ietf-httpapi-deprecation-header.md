@@ -26,6 +26,8 @@ author:
     uri: http://dret.net/netdret
 
 normative:
+  HTTP: RFC7231
+  LINK: RFC8288
 
 
 informative:
@@ -33,7 +35,7 @@ informative:
 
 --- abstract
 
-The HTTP Deprecation Response Header Field can be used to signal to consumers of a URI-identified resource that the resource has been deprecated. Additionally, the deprecation link relation can be used to link to a resource that provides additional context for the deprecation, and possibly ways in which clients can find a replacement for the deprecated resource.
+The Deprecation HTTP response header field can be used to signal to consumers of a URI-identified resource that the resource has been deprecated. Additionally, the deprecation link relation can be used to link to a resource that provides additional context for the deprecation, and possibly ways in which clients can find a replacement for the deprecated resource.
 
 
 --- middle
@@ -42,20 +44,20 @@ The HTTP Deprecation Response Header Field can be used to signal to consumers of
 
 # Introduction
 
-Deprecation of an HTTP resource as defined in Section 2 of {{!RFC7231}} is a technique to communicate information about the lifecycle of a resource. It encourages applications to migrate away from the resource, discourages applications from forming new dependencies on the resource, and informs applications about the risk of continuing dependence upon the resource.
+Deprecation of an HTTP resource ({{Section 2 of HTTP}}) communicates information about the lifecycle of a resource. It encourages applications to migrate away from the resource, discourages applications from forming new dependencies on the resource, and informs applications about the risk of continuing dependence upon the resource.
 
-The act of deprecation does not change any behavior of the resource. It just informs client of the fact that a resource is deprecated. The Deprecation HTTP response header field MAY be used to convey this fact at runtime to clients. The header field can carry information indicating since when the deprecation is in effect.
+The act of deprecation does not change any behavior of the resource. It informs clients of the fact that a resource is deprecated. The Deprecation HTTP response header field can be used to convey this at runtime to clients, and can carry information indicating since when the deprecation is in effect.
 
-In addition to the Deprecation header field the resource provider can use other header fields to convey additional information related to deprecation. For example, information such as where to find documentation related to the deprecation or what should be used as an alternate and when the deprecated resource would be unreachable, etc. Alternates of a resource can be similar resource(s) or a newer version of the same resource.
+In addition to the Deprecation header field, the resource provider can use other header fields to convey additional information related to deprecation. For example: information such as where to find documentation related to the deprecation, what should be used as an alternate, and when the deprecated resource would be unreachable. Alternates can be similar resource(s) or a newer version of the same resource.
 
 
 ##  Notational Conventions
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14 {{!RFC2119}} {{!RFC8174}} when, and only when, they appear in all capitals, as shown here.
 
-This specification uses the Augmented Backus-Naur Form (ABNF) notation of {{!RFC5234}} and includes, by reference, the IMF-fixdate rule as defined in Section 7.1.1.1 of {{!RFC7231}}.
+This specification uses the Augmented Backus-Naur Form (ABNF) notation of {{!RFC5234}} and includes, by reference, the IMF-fixdate rule as defined in {{Section 7.1.1.1 of HTTP}}.
 
-The term "resource" is to be interpreted as defined in Section 2 of {{!RFC7231}}, that is identified by an URI.
+The term "resource" is to be interpreted as defined in {{Section 2 of HTTP}}.
 
 # The Deprecation HTTP Response Header
 
@@ -63,19 +65,21 @@ The `Deprecation` HTTP response header field allows a server to communicate to a
 
 ## Syntax
 
-The `Deprecation` response header field describes the deprecation. It either shows the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date), or it simply flags the resource context as being deprecated:
+The `Deprecation` response header field describes the deprecation of the resource identified with the response it occured within (see {{Section 3.1.4.1 of HTTP}}). It conveys either the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date), or it simply flags the resource context as being deprecated.
 
-    Deprecation = IMF-fixdate / "true"
+~~~ abnf
+Deprecation = IMF-fixdate / "true"
+~~~
 
 Servers MUST NOT include more than one `Deprecation` header field in the same response.
 
-The date, if present, is the date when the resource context was or will be deprecated. It is in the form of an IMF-fixdate timestamp.
+The date, if present, is the date when the resource was or will be deprecated. It is in the form of an IMF-fixdate timestamp.
 
 The following example shows that the resource context has been deprecated on Sunday, November 11, 2018 at 23:59:59 GMT:
 
     Deprecation: Sun, 11 Nov 2018 23:59:59 GMT
 
-The deprecation date can be in the future. If the value of `date` is in the future, it means that the resource will be deprecated at the given date in future.
+The deprecation date can be in the future. This means that the resource will be deprecated at the given date in future.
 
 If the deprecation date is not known, the header field can carry the simple string "true", indicating that the resource context is deprecated, without indicating when that happened:
 
@@ -85,11 +89,11 @@ If the deprecation date is not known, the header field can carry the simple stri
 
 ## Scope
 
-The Deprecation header field applies to the resource that returns it, meaning that it announces the upcoming deprecation of that specific resource. However, there may be scenarios where the scope of the announced deprecation is larger than just the single resource where it appears.
+The Deprecation header field applies to the resource identified with the response it occured within (see {{Section 3.1.4.1 of HTTP}}), meaning that it announces the upcoming deprecation of that specific resource. However, there may be scenarios where the scope of the announced deprecation is larger than just the single resource where it appears.
 
-Resources are free to define such an increased scope, and usually this scope will be documented by the resource so that consumers of the resource know about the increased scope and can behave accordingly. However, it is important to take into account that such increased scoping is invisible for consumers who are unaware of the increased scoping rules. This means that these consumers will not be aware of the increased scope, and they will not interpret Deprecation information different from its standard meaning (i.e., it applies to the resource only).
+Resources are free to define such an increased scope, and usually this scope will be documented by the resource so that consumers of the resource know about the increased scope and can behave accordingly. When doing so, it is important to take into account that such increased scoping is invisible for consumers who are unaware of the increased scoping rules. This means that these consumers will not be aware of the increased scope, and they will not interpret deprecation information different from its standard meaning (i.e., it applies to the resource only).
 
-Using such an increased scope still may make sense, as Deprecation information is only a hint anyway; thus, it is optional information that cannot be depended on, and clients should always be implemented in ways that allow them to function without Deprecation information. Increased scope information may help clients to glean additional hints from resources and, thus, might allow them to implement behavior that allows them to make educated guesses about resources becoming deprecated.
+Using such an increased scope still may make sense, as deprecation information is only a hint anyway; thus, it is optional information that cannot be depended on, and clients should always be implemented in ways that allow them to function without Deprecation information. Increased scope information may help clients to glean additional hints from resources and, thus, might allow them to implement behavior that allows them to make educated guesses about resources becoming deprecated.
 
 
 
@@ -97,14 +101,14 @@ Using such an increased scope still may make sense, as Deprecation information i
 
 In addition to the Deprecation HTTP header field, the server can use links with the "deprecation" link relation type to communicate to the client where to find more information about deprecation of the context. This can happen before the actual deprecation, to make a deprecation policy discoverable, or after deprecation, when there may be documentation about the deprecation, and possibly documentation of how to manage it.
 
-This specification places no restrictions on the representation of the interlinked deprecation policy. In particular, the deprecation policy may be available as human-readable documentation or as machine-readable description.
+This specification places no restrictions on the representation of the linked deprecation policy. In particular, the deprecation policy may be available as human-readable documentation or as machine-readable description.
 
 
 ## Documentation
 
-For a resource, deprecation could involve one or more parts of request, response or both. These parts could be one or more of the following.
+Deprecation of a resource could involve portions of requests to it, responses from it, or both. These could be comprised from one or more of the following:
 
-* URI - deprecation of one ore more query parameter(s) or path element(s)
+* URI - deprecation of one or more query parameter(s) or path element(s)
 * method - HTTP method for the resource is deprecated
 * request header - one or more HTTP request header(s) is deprecated
 * response header - HTTP response header(s) is deprecated
@@ -116,7 +120,7 @@ The purpose of the `Deprecation` header is to provide just enough "hints" about 
     Link: <https://developer.example.com/deprecation>;
           rel="deprecation"; type="text/html"
 
-In this example the interlinked content provides additional information about the deprecation of the resource context. There is no Deprecation header field in the response, and thus the resource is not deprecated. However, the resource already exposes a link where information is available how deprecation is managed for the context. This may be documentation explaining the use of the Deprecation header field, and also explaining under which circumstances and with which policies (announcement before deprecation; continued operation after deprecation) deprecation might be happening.
+In this example the linked content provides additional information about the deprecation of the resource context. There is no Deprecation header field in the response, and thus the resource is not deprecated. However, the resource already exposes a link where information is available how deprecation is managed for the context. This may be documentation explaining the use of the Deprecation header field, and also explaining under which circumstances and with which policies (announcement before deprecation; continued operation after deprecation) deprecation might be happening.
 
 The following example uses the same link header, but also announces a deprecation date using a Deprecation header field.
 
@@ -129,7 +133,7 @@ Given that the deprecation date is in the past, the linked resource may have bee
 
 # Recommend Replacement
 
-The `Link` {{!RFC8288}} header field can be used in addition to the `Deprecation` header field to inform the client about available alternatives to the deprecated resource. The following relation types as defined in {{!RFC8288}} are RECOMMENDED to use for this purpose:
+The `Link`  header field {{LINK}} can be used in addition to the `Deprecation` header field to inform the client about available alternatives to the deprecated resource. The following relation types are RECOMMENDED to use for this purpose:
 
 * `successor-version`: Points to a resource containing the successor version. {{?RFC5829}}
 * `latest-version`: Points to a resource containing the latest (e.g., current) version. {{?RFC5829}}
@@ -148,10 +152,9 @@ This example provides link to an alternate resource to the requested resource th
 
 # Sunset
 
-
 In addition to the deprecation related information, if the resource provider wants to convey to the client application that the deprecated resource is expected to become unresponsive at a specific point in time, the Sunset HTTP header field {{?RFC8594}} can be used in addition to the `Deprecation` header.
 
-The timestamp given in the `Sunset` header field MUST be the later or the same as the one given in the `Deprecation` header field.
+The timestamp given in the `Sunset` header field MUST NOT be earlier than the one given in the `Deprecation` header field.
 
 The following example shows that the resource in context has been deprecated since Sunday, November 11, 2018 at 23:59:59 GMT and its sunset date is Wednesday, November 11, 2020 at 23:59:59 GMT.
 
@@ -166,7 +169,7 @@ The act of deprecation does not change any behavior of the resource. Deprecated 
 
 ## The Deprecation HTTP Response Header
 
-The `Deprecation` response header should be added to the permanent registry of message header fields (see {{!RFC3864}}), taking into account the guidelines given by HTTP/1.1 {{!RFC7231}}.
+The `Deprecation` response header should be added to the permanent registry of message header fields (see {{!RFC3864}}).
 
     Header Field Name: Deprecation
 
@@ -186,7 +189,7 @@ The `Deprecation` response header should be added to the permanent registry of m
 
 ## The Deprecation Link Relation Type
 
-The `deprecation` link relation type should be added to the permanent registry of link relation types according to Section 4.2 of {{!RFC8288}}:
+The `deprecation` link relation type should be added to the permanent registry of link relation types ({{Section 4.2 of LINK}}).
 
     Relation Type: deprecation
 
@@ -292,7 +295,7 @@ In cases, where the Deprecation header field value is a date in future, it can l
 
 In cases where `Link` header is used to provide more documentation and/or recommendation for replacement, one should assume that the content of the  `Link` header field may not be secure, private or integrity-guaranteed, and due caution should be exercised when using it. Applications consuming the resource SHOULD check the referred resource documentation to verify authenticity and accuracy.
 
-The suggested `Link` header fields make extensive use of IRIs and URIs. See {{!RFC3987}} for security considerations relating to IRIs. See {{!RFC3986}} for security considerations relating to URIs. See {{!RFC7230}} for security considerations relating to HTTP headers.
+The suggested `Link` header fields make extensive use of IRIs and URIs. See {{!RFC3987}} for security considerations relating to IRIs. See {{!RFC3986}} for security considerations relating to URIs. See {{HTTP}} for security considerations relating to HTTP headers.
 
 Applications that take advantage of typed links should consider the attack vectors opened by automatically following, trusting, or otherwise using links gathered from the HTTP headers. In particular, Link headers that use the `successor-version`, `latest-version` or `alternate` relation types should be treated with due caution. See {{?RFC5829}} for security considerations relating to these link relation types.
 
