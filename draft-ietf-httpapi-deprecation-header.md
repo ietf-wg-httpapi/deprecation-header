@@ -65,7 +65,7 @@ The `Deprecation` HTTP response header field allows a server to communicate to a
 
 ## Syntax
 
-The `Deprecation` response header field describes the deprecation of the resource identified with the response it occured within (see {{Section 3.1.4.1 of HTTP}}). It conveys either the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date), or it simply flags the resource context as being deprecated.
+The `Deprecation` response header field describes the deprecation of the resource identified with the response it occurred within (see {{Section 3.1.4.1 of HTTP}}). It conveys either the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date), or it simply flags the resource context as being deprecated.
 
 ~~~ abnf
 Deprecation = IMF-fixdate / "true"
@@ -89,7 +89,7 @@ If the deprecation date is not known, the header field can carry the simple stri
 
 ## Scope
 
-The Deprecation header field applies to the resource identified with the response it occured within (see {{Section 3.1.4.1 of HTTP}}), meaning that it announces the upcoming deprecation of that specific resource. However, there may be scenarios where the scope of the announced deprecation is larger than just the single resource where it appears.
+The Deprecation header field applies to the resource identified with the response it occurred within (see {{Section 3.1.4.1 of HTTP}}), meaning that it announces the upcoming deprecation of that specific resource. However, there may be scenarios where the scope of the announced deprecation is larger than just the single resource where it appears.
 
 Resources are free to define such an increased scope, and usually this scope will be documented by the resource so that consumers of the resource know about the increased scope and can behave accordingly. When doing so, it is important to take into account that such increased scoping is invisible for consumers who are unaware of the increased scoping rules. This means that these consumers will not be aware of the increased scope, and they will not interpret deprecation information different from its standard meaning (i.e., it applies to the resource only).
 
