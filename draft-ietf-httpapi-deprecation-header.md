@@ -65,26 +65,21 @@ The `Deprecation` HTTP response header field allows a server to communicate to a
 
 ## Syntax
 
-The `Deprecation` response header field describes the deprecation of the resource identified with the response it occurred within (see {{Section 3.1.4.1 of HTTP}}). It conveys either the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date), or it simply flags the resource context as being deprecated.
+The `Deprecation` response header field describes the deprecation of the resource identified with the response it occurred within (see {{Section 3.1.4.1 of HTTP}}). It conveys the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date).
 
 ~~~ abnf
-Deprecation = IMF-fixdate / "true"
+Deprecation = IMF-fixdate
 ~~~
 
 Servers MUST NOT include more than one `Deprecation` header field in the same response.
 
-The date, if present, is the date when the resource was or will be deprecated. It is in the form of an IMF-fixdate timestamp.
+The date is the date when the resource was or will be deprecated. It is in the form of an IMF-fixdate timestamp.
 
 The following example shows that the resource context has been deprecated on Sunday, November 11, 2018 at 23:59:59 GMT:
 
     Deprecation: Sun, 11 Nov 2018 23:59:59 GMT
 
-The deprecation date can be in the future. This means that the resource will be deprecated at the given date in future.
-
-If the deprecation date is not known, the header field can carry the simple string "true", indicating that the resource context is deprecated, without indicating when that happened:
-
-
-    Deprecation: true
+The deprecation date can be in the future. This means that the resource will be deprecated at the indicated date in the future.
 
 
 ## Scope
@@ -303,16 +298,12 @@ Applications that take advantage of typed links should consider the attack vecto
 
 # Examples
 
-The first example shows a deprecation header field without date information:
-
-    Deprecation: true
-
-The second example shows a deprecation header with date information and a link to the successor version:
+The first example shows a deprecation header with date information and a link to the successor version:
 
     Deprecation: Sun, 11 Nov 2018 23:59:59 GMT
     Link: <https://api.example.com/v2/customers>; rel="successor-version"
 
-The third example shows a deprecation header field with links for the successor version and for the API's deprecation policy. In addition, it shows the sunset date for the deprecated resource:
+The second example shows a deprecation header field with links for the successor version and for the API's deprecation policy. In addition, it shows the sunset date for the deprecated resource:
 
     Deprecation: Sun, 11 Nov 2018 23:59:59 GMT
     Sunset: Wed, 11 Nov 2020 23:59:59 GMT
