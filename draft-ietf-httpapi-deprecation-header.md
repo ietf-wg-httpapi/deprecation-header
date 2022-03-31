@@ -13,6 +13,13 @@ keyword: Internet-Draft
 stand_alone: yes
 pi: [toc, tocindent, sortrefs, symrefs, strict, compact, comments, inline]
 
+venue:
+  group: HTTPAPI
+  type: Working Group
+  home: https://ietf-wg-httpapi.github.io/
+  mail: httpapi@ietf.org
+  repo: https://github.com/ietf-wg-httpapi/deprecation-header
+
 author:
   -
     ins: S. Dalal
