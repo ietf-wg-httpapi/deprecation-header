@@ -2,7 +2,7 @@
 coding: utf-8
 abbrev:
 title: The Deprecation HTTP Header Field
-docname: draft-ietf-httpapi-deprecation-header-02
+docname: draft-ietf-httpapi-deprecation-header-latest
 category: std
 
 ipr: trust200902
@@ -13,13 +13,20 @@ keyword: Internet-Draft
 stand_alone: yes
 pi: [toc, tocindent, sortrefs, symrefs, strict, compact, comments, inline]
 
+venue:
+  group: HTTPAPI
+  type: Working Group
+  home: https://ietf-wg-httpapi.github.io/
+  mail: httpapi@ietf.org
+  repo: https://github.com/ietf-wg-httpapi/deprecation-header
+
 author:
   -
     ins: S. Dalal
     name: Sanjay Dalal
     email: sanjay.dalal@cal.berkeley.edu
     uri: https://github.com/sdatspun2
-  -    
+  -
     ins: E. Wilde
     name: Erik Wilde
     email: erik.wilde@dret.net
@@ -53,7 +60,7 @@ In addition to the Deprecation header field, the resource provider can use other
 
 ##  Notational Conventions
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14 {{!RFC2119}} {{!RFC8174}} when, and only when, they appear in all capitals, as shown here.
+{::boilerplate bcp14-tagged}
 
 This specification uses the Augmented Backus-Naur Form (ABNF) notation of {{!RFC5234}} and includes, by reference, the IMF-fixdate rule as defined in {{Section 7.1.1.1 of HTTP}}.
 
