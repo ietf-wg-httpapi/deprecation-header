@@ -33,7 +33,7 @@ author:
     uri: http://dret.net/netdret
 
 normative:
-  HTTP: RFC7231
+  HTTP: RFC9110
   LINK: RFC8288
 
 
