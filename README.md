@@ -2,16 +2,16 @@
 
 This is the working area for the IETF [HTTPAPI Working Group](https://datatracker.ietf.org/wg/httpapi/documents/) Internet-Draft, "The Deprecation HTTP Header Field".
 
-* [Editor's Copy](https://mnot.github.io/deprecation-header/#go.draft-ietf-httpapi-deprecation-header.html)
+* [Editor's Copy](https://ietf-wg-httpapi.github.io/deprecation-header/#go.draft-ietf-httpapi-deprecation-header.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-httpapi-deprecation-header)
 * [Working Group Draft](https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-deprecation-header)
-* [Compare Editor's Copy to Working Group Draft](https://mnot.github.io/deprecation-header/#go.draft-ietf-httpapi-deprecation-header.diff)
+* [Compare Editor's Copy to Working Group Draft](https://ietf-wg-httpapi.github.io/deprecation-header/#go.draft-ietf-httpapi-deprecation-header.diff)
 
 
 ## Contributing
 
 See the
-[guidelines for contributions](https://github.com/mnot/deprecation-header/blob/main/CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/ietf-wg-httpapi/deprecation-header/blob/main/CONTRIBUTING.md).
 
 Contributions can be made by creating pull requests.
 The GitHub interface supports creating pull requests using the Edit (✏) button.
