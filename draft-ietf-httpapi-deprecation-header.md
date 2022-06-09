@@ -137,11 +137,11 @@ Given that the deprecation date is in the past, the linked resource may have bee
 
 The `Link`  header field {{LINK}} can be used in addition to the `Deprecation` header field to inform the client about available alternatives to the deprecated resource. The following relation types are RECOMMENDED to use for this purpose:
 
-* `successor-version`: Points to a resource containing the successor version. {{?RFC5829}}
-* `latest-version`: Points to a resource containing the latest (e.g., current) version. {{?RFC5829}}
+* `successor-version`: Refers to a resource providing the successor version. {{?RFC5829}}
+* `latest-version`: Refers to a resource providing the latest (e.g., current) version. {{?RFC5829}}
 * `alternate`: Designates a substitute. {{?W3C.REC-html401-19991224}}
 
-The following example provides link to the successor version of the requested resource that is deprecated.
+The following example provides a link to the successor version of the requested resource that is deprecated.
 
     Deprecation: Sun, 11 Nov 2018 23:59:59 GMT
     Link: <https://api.example.com/v2/customers>; rel="successor-version"
