@@ -125,25 +125,6 @@ The following example uses the same link header, but also announces a deprecatio
 Given that the deprecation date is in the past, the linked information resource may have been updated to include information about the deprecation, allowing consumers to discover information about the deprecation and how to best manage it.
 
 
-# Recommend Replacement
-
-The `Link`  header field {{LINK}} can be used in addition to the `Deprecation` header field to inform the client about available alternatives to the deprecated resource. The following relation types are RECOMMENDED to use for this purpose:
-
-* `successor-version`: Refers to a resource providing the successor version. {{?RFC5829}}
-* `latest-version`: Refers to a resource providing the latest (e.g., current) version. {{?RFC5829}}
-* `alternate`: Designates a substitute. {{?W3C.REC-html401-19991224}}
-
-The following example provides a link to the successor version of the requested resource that is deprecated.
-
-    Deprecation: Sun, 11 Nov 2018 23:59:59 GMT
-    Link: <https://api.example.com/v2/customers>; rel="successor-version"
-
-This example provides link to an alternate resource to the requested resource that is deprecated.
-
-    Deprecation: Sun, 11 Nov 2018 23:59:59 GMT
-    Link: <https://api.example.com/v1/clients>; rel="alternate"
-
-
 # Sunset
 
 In addition to the deprecation related information, if the resource provider wants to convey to the client application that the deprecated resource is expected to become unresponsive at a specific point in time, the Sunset HTTP header field {{?RFC8594}} can be used in addition to the `Deprecation` header.
@@ -287,27 +268,22 @@ The Deprecation header field SHOULD be treated as a hint, meaning that the resou
 
 In cases where the Deprecation header field value is a date in the future, it can lead to information that otherwise might not be available. Therefore, applications consuming the resource SHOULD verify the resource documentation and if possible, consult the resource developer to discuss potential impact due to deprecation and plan for possible transition to recommended resource.
 
-In cases where a `Link` header is used to provide more documentation and/or recommendation for replacement, one should assume that the content of the  `Link` header field may not be secure, private or integrity-guaranteed, and due caution should be exercised when using it. Applications consuming the resource SHOULD check the referred resource documentation to verify authenticity and accuracy.
-
-The suggested `Link` header fields make extensive use of IRIs and URIs. See {{!RFC3987}} for security considerations relating to IRIs. See {{!RFC3986}} for security considerations relating to URIs. See {{HTTP}} for security considerations relating to HTTP headers.
-
-Applications that take advantage of typed links should consider the attack vectors opened by automatically following, trusting, or otherwise using links gathered from HTTP headers. In particular, Link headers that use the `successor-version`, `latest-version` or `alternate` relation types should be treated with due caution. See {{?RFC5829}} for security considerations relating to these link relation types.
-
+In cases where a `Link` header is used to provide documentation, one should assume that the content of the  `Link` header field may not be secure, private or integrity-guaranteed, and due caution should be exercised when using it. Applications consuming the resource SHOULD check the referred resource documentation to verify authenticity and accuracy.
 
 
 # Examples
 
-The first example shows a deprecation header with date information and a link to the successor version:
+The following examples do not show complete HTTP interactions. They only show those HTTP header fields in a response that are relevant for resource deprecation.
+
+The first example shows a deprecation header with date information:
 
     Deprecation: Sun, 11 Nov 2018 23:59:59 GMT
-    Link: <https://api.example.com/v2/customers>; rel="successor-version"
 
-The second example shows a deprecation header field with links for the successor version and for the API's deprecation policy. In addition, it shows the sunset date for the deprecated resource:
+The second example shows a deprecation header field with a link for the resource's deprecation policy. In addition, it shows the sunset date for the deprecated resource:
 
     Deprecation: Sun, 11 Nov 2018 23:59:59 GMT
     Sunset: Wed, 11 Nov 2020 23:59:59 GMT
-    Link: <https://api.example.com/v2/customers>; rel="successor-version",
-          <https://developer.example.com/deprecation>; rel="deprecation"
+    Link: <https://developer.example.com/deprecation>; rel="deprecation"
 
 
 
