@@ -109,29 +109,20 @@ This specification places no restrictions on the representation of the linked de
 
 ## Documentation
 
-Deprecation of a resource could involve portions of requests to it, responses from it, or both. These could be comprised from one or more of the following:
-
-* URI - deprecation of one or more query parameter(s) or path element(s)
-* method - HTTP method for the resource is deprecated
-* request header - one or more HTTP request header(s) is deprecated
-* response header - HTTP response header(s) is deprecated
-* request body - request body contains one or more deprecated element(s)
-* response body - response body contains one or more deprecated element(s)
-
-The purpose of the `Deprecation` header is to provide just enough "hints" about the deprecation to the client application developer. It is safe to assume that on reception of the `Deprecation` header, the client developer would look up the resource's documentation in order to find deprecation related semantics. The resource developer could provide a link to the resource documentation using a `Link` header with relation type `deprecation` as shown below.
+The purpose of the `Deprecation` header is to provide a hint about deprecation to the resource consumer. Upon reception of the `Deprecation` header, the client developer can look up the resource's documentation in order to find deprecation related information. The resource provider can provide a link to the resource documentation using a `Link` header with relation type `deprecation` as shown below:
 
     Link: <https://developer.example.com/deprecation>;
           rel="deprecation"; type="text/html"
 
-In this example the linked content provides additional information about the deprecation of the resource context. There is no Deprecation header field in the response, and thus the resource is not deprecated. However, the resource already exposes a link where information is available how deprecation is managed for the context. This may be documentation explaining the use of the Deprecation header field, and also explaining under which circumstances and with which policies (announcement before deprecation; continued operation after deprecation) deprecation might be happening.
+In this example the linked content provides additional information about deprecation of the resource context. There is no Deprecation header field in the response, and thus the resource is not (yet) deprecated. However, the resource already exposes a link where information is available how deprecation is managed for the resource context. This may be documentation explaining the use of the Deprecation header field, and also explaining under which circumstances and with which policies (announcement before deprecation; continued operation after deprecation) deprecation might be happening.
 
-The following example uses the same link header, but also announces a deprecation date using a Deprecation header field.
+The following example uses the same link header, but also announces a deprecation date using a Deprecation header field:
 
     Deprecation: Sun, 11 Nov 2018 23:59:59 GMT
     Link: <https://developer.example.com/deprecation>;
           rel="deprecation"; type="text/html"
 
-Given that the deprecation date is in the past, the linked resource may have been updated to include information about the deprecation, allowing clients to discover information about the deprecation that happened.
+Given that the deprecation date is in the past, the linked information resource may have been updated to include information about the deprecation, allowing consumers to discover information about the deprecation and how to best manage it.
 
 
 # Recommend Replacement
