@@ -42,7 +42,7 @@ informative:
 
 --- abstract
 
-The Deprecation HTTP response header field can be used to signal to consumers of a URI-identified resource that the resource has been deprecated. Additionally, the deprecation link relation can be used to link to a resource that provides additional context for the deprecation, and possibly ways in which clients can find a replacement for the deprecated resource.
+The Deprecation HTTP response header field is used to signal to consumers of a URI-identified resource that the resource will be or has been deprecated. Additionally, the deprecation link relation can be used to link to a resource that provides additional information about planned or existing deprecation, and possibly ways in which clients can best manage deprecation.
 
 
 --- middle
@@ -51,11 +51,11 @@ The Deprecation HTTP response header field can be used to signal to consumers of
 
 # Introduction
 
-Deprecation of an HTTP resource ({{Section 2 of HTTP}}) communicates information about the lifecycle of a resource. It encourages applications to migrate away from the resource, discourages applications from forming new dependencies on the resource, and informs applications about the risk of continuing dependence upon the resource.
+Deprecation of an HTTP resource ({{Section 2 of HTTP}}) communicates information about the lifecycle of a resource. It encourages applications to migrate away from the resource, discourages applications from forming new dependencies on the resource, and informs applications about the risk of continued dependence upon the resource.
 
-The act of deprecation does not change any behavior of the resource. It informs clients of the fact that a resource is deprecated. The Deprecation HTTP response header field can be used to convey this at runtime to clients, and can carry information indicating since when the deprecation is in effect.
+The act of deprecation does not change any behavior of the resource. It informs clients of the fact that a resource will be or is deprecated. The Deprecation HTTP response header field can be used to convey this at runtime to clients and carries information indicating when the deprecation will be in effect.
 
-In addition to the Deprecation header field, the resource provider can use other header fields to convey additional information related to deprecation. For example: information such as where to find documentation related to the deprecation, what should be used as an alternate, and when the deprecated resource would be unreachable. Alternates can be similar resource(s) or a newer version of the same resource.
+In addition to the Deprecation header field, the resource provider can use other header fields to convey additional information related to deprecation. This can be information such as where to find documentation related to the deprecation, what can be used as a replacement, and when a deprecated resource becomes non-operational.
 
 
 ##  Notational Conventions
