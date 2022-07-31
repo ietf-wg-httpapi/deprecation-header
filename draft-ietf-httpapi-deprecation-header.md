@@ -66,7 +66,7 @@ This specification uses the Augmented Backus-Naur Form (ABNF) notation of {{!RFC
 
 The term "resource" is to be interpreted as defined in {{Section 2 of HTTP}}.
 
-# The Deprecation HTTP Response Header
+# The Deprecation HTTP Response Header Field
 
 The `Deprecation` HTTP response header field allows a server to communicate to a client that the resource in context of the message is or will be deprecated.
 
@@ -97,7 +97,7 @@ Resources are free to define such an increased scope, and usually this scope wil
 
 Using such an increased scope still may make sense, as deprecation information is only a hint anyway. It is optional information that cannot be depended on, and clients should always be implemented in ways that allow them to function without Deprecation information. Increased scope information may help clients to glean additional hints from related resources and, thus, might allow them to implement behavior that allows them to make educated guesses about resources becoming deprecated.
 
-For example, an API might not use Deprecation headers on all of its resources, but only on designated resources such as the API's home document. This means that deprecation information is available, but in order to get it, clients have to periodically inspect the home document. In this example, the extended context of the Deprecation header would be all resources provided by the API, while the visibility of the information would only be on the home document.
+For example, an API might not use Deprecation header fields on all of its resources, but only on designated resources such as the API's home document. This means that deprecation information is available, but in order to get it, clients have to periodically inspect the home document. In this example, the extended context of the Deprecation header field would be all resources provided by the API, while the visibility of the information would only be on the home document.
 
 
 # The Deprecation Link Relation Type
@@ -109,14 +109,14 @@ This specification places no restrictions on the representation of the linked de
 
 ## Documentation
 
-The purpose of the `Deprecation` header is to provide a hint about deprecation to the resource consumer. Upon reception of the `Deprecation` header, the client developer can look up the resource's documentation in order to find deprecation related information. The resource provider can provide a link to the resource documentation using a `Link` header with relation type `deprecation` as shown below:
+The purpose of the `Deprecation` header field is to provide a hint about deprecation to the resource consumer. Upon reception of the `Deprecation` header field, the client developer can look up the resource's documentation in order to find deprecation related information. The resource provider can provide a link to the resource documentation using a `Link` header field with relation type `deprecation` as shown below:
 
     Link: <https://developer.example.com/deprecation>;
           rel="deprecation"; type="text/html"
 
 In this example the linked content provides additional information about deprecation of the resource context. There is no Deprecation header field in the response, and thus the resource is not (yet) deprecated. However, the resource already exposes a link where information is available how deprecation is managed for the resource context. This may be documentation explaining the use of the Deprecation header field, and also explaining under which circumstances and with which policies (announcement before deprecation; continued operation after deprecation) deprecation might be happening.
 
-The following example uses the same link header, but also announces a deprecation date using a Deprecation header field:
+The following example uses the same link header field, but also announces a deprecation date using a Deprecation header field:
 
     Deprecation: Sun, 11 Nov 2018 23:59:59 GMT
     Link: <https://developer.example.com/deprecation>;
@@ -127,7 +127,7 @@ Given that the deprecation date is in the past, the linked information resource 
 
 # Sunset
 
-In addition to the deprecation related information, if the resource provider wants to convey to the client application that the deprecated resource is expected to become unresponsive at a specific point in time, the Sunset HTTP header field {{?RFC8594}} can be used in addition to the `Deprecation` header.
+In addition to the deprecation related information, if the resource provider wants to convey to the client application that the deprecated resource is expected to become unresponsive at a specific point in time, the Sunset HTTP header field {{?RFC8594}} can be used in addition to the `Deprecation` header field.
 
 The timestamp given in the `Sunset` header field MUST NOT be earlier than the one given in the `Deprecation` header field.
 
@@ -142,9 +142,9 @@ The act of deprecation does not change any behavior of the resource. Deprecated 
 
 # IANA Considerations
 
-## The Deprecation HTTP Response Header
+## The Deprecation HTTP Response Header Field
 
-The `Deprecation` response header should be added to the permanent registry of message header fields (see {{!RFC3864}}).
+The `Deprecation` response header field should be added to the permanent registry of message header fields (see {{!RFC3864}}).
 
     Header Field Name: Deprecation
 
@@ -158,7 +158,7 @@ The `Deprecation` response header should be added to the permanent registry of m
     Change controller: IETF
 
     Specification document: this specification,
-                Section 2 "The Deprecation HTTP Response Header"
+                Section 2 "The Deprecation HTTP Response Header Field"
 
 
 
@@ -191,23 +191,23 @@ other implementations may exist.
 
 According to RFC 7942, "this will allow reviewers and working groups to assign due consideration to documents that have the benefit of running code, which may serve as evidence of valuable experimentation and feedback that have made the implemented protocols more mature. It is up to the individual working groups to use this information as they see fit".
 
-## Implementing the Deprecation Header
+## Implementing the Deprecation Header Field
 
 This is a list of implementations that implement the deprecation header field:
 
 Organization: Apollo
 
-- Description: Deprecation header is returned when deprecated functionality (as declared in the GraphQL schema) is accessed
+- Description: Deprecation header field is returned when deprecated functionality (as declared in the GraphQL schema) is accessed
 - Reference: https://www.npmjs.com/package/apollo-server-tools
 
 Organization: Zalando
 
-- Description: Deprecation header is recommended as the preferred way to communicate API deprecation in Zalando API designs.
+- Description: Deprecation header field is recommended as the preferred way to communicate API deprecation in Zalando API designs.
 - Reference: https://opensource.zalando.com/restful-api-guidelines/#deprecation
 
 Organization: Palantir Technologies
 
-- Description: Deprecation header is incorporated in code generated by conjure-java, a CLI to generate Java POJOs and interfaces from Conjure API definitions
+- Description: Deprecation header field is incorporated in code generated by conjure-java, a CLI to generate Java POJOs and interfaces from Conjure API definitions
 - Reference: https://github.com/palantir/conjure-java
 
 Organization: IETF Internet Draft, Registration Protocols Extensions
@@ -217,17 +217,17 @@ Organization: IETF Internet Draft, Registration Protocols Extensions
 
 Organization:  E-Voyageurs Technologies
 
-* Description: Deprecation header is incorporated in Hesperides, a configuration management tool providing universal text file templating and properties editing through a REST API or a webapp.
+* Description: Deprecation header field is incorporated in Hesperides, a configuration management tool providing universal text file templating and properties editing through a REST API or a webapp.
 * Reference: https://github.com/voyages-sncf-technologies/hesperides/blob/master/documentation/lightweight-architecture-decision-records/deprecated_endpoints.md
 
 Organization: Open-Xchange
 
-* Description: Deprecation header is used in Open-Xchange appsuite-middleware
+* Description: Deprecation header field is used in Open-Xchange appsuite-middleware
 * Reference: https://github.com/open-xchange/appsuite-middleware
 
 Organization: MediaWiki
 
-* Description: Core REST API of MediaWiki would use Deprecation header for endpoints that have been deprecated because a new endpoint provides the same or better functionality.
+* Description: Core REST API of MediaWiki would use Deprecation header field for endpoints that have been deprecated because a new endpoint provides the same or better functionality.
 * Reference: https://phabricator.wikimedia.org/T232485
 
 
@@ -238,27 +238,27 @@ This is a list of implementations that implement the general concept, but do so 
 
 Organization: Zapier
 
-- Description: Zapier uses two custom HTTP headers named `X-API-Deprecation-Date` and `X-API-Deprecation-Info`
+- Description: Zapier uses two custom HTTP header fields named `X-API-Deprecation-Date` and `X-API-Deprecation-Info`
 - Reference:  https://zapier.com/engineering/api-geriatrics/
 
 Organization: IBM
 
-- Description: IBM uses a custom HTTP header named `Deprecated`
+- Description: IBM uses a custom HTTP header field named `Deprecated`
 - Reference: https://www.ibm.com/support/knowledgecenter/en/SS42VS_7.3.1/com.ibm.qradar.doc/c_rest_api_getting_started.html
 
 Organization: Ultipro
 
-- Description: Ultipro uses the HTTP `Warning` header as described in Section 5.5 of {{!RFC7234}} with code `299`
+- Description: Ultipro uses the HTTP `Warning` header field as described in Section 5.5 of {{!RFC7234}} with code `299`
 - Reference:  https://connect.ultipro.com/api-deprecation
 
 Organization: Clearbit
 
-- Description: Clearbit uses a custom HTTP header named `X-API-Warn`
+- Description: Clearbit uses a custom HTTP header field named `X-API-Warn`
 - Reference: https://blog.clearbit.com/dealing-with-deprecation/
 
 Organization: PayPal
 
-- Description: PayPal uses a custom HTTP header named `PayPal-Deprecated`
+- Description: PayPal uses a custom HTTP header field named `PayPal-Deprecated`
 - Reference: https://github.com/paypal/api-standards/blob/master/api-style-guide.md#runtime
 
 
@@ -268,14 +268,14 @@ The Deprecation header field SHOULD be treated as a hint, meaning that the resou
 
 In cases where the Deprecation header field value is a date in the future, it can lead to information that otherwise might not be available. Therefore, applications consuming the resource SHOULD verify the resource documentation and if possible, consult the resource developer to discuss potential impact due to deprecation and plan for possible transition to recommended resource.
 
-In cases where a `Link` header is used to provide documentation, one should assume that the content of the  `Link` header field may not be secure, private or integrity-guaranteed, and due caution should be exercised when using it. Applications consuming the resource SHOULD check the referred resource documentation to verify authenticity and accuracy.
+In cases where a `Link` header field is used to provide documentation, one should assume that the content of the  `Link` header field may not be secure, private or integrity-guaranteed, and due caution should be exercised when using it. Applications consuming the resource SHOULD check the referred resource documentation to verify authenticity and accuracy.
 
 
 # Examples
 
 The following examples do not show complete HTTP interactions. They only show those HTTP header fields in a response that are relevant for resource deprecation.
 
-The first example shows a deprecation header with date information:
+The first example shows a deprecation header field with date information:
 
     Deprecation: Sun, 11 Nov 2018 23:59:59 GMT
 
