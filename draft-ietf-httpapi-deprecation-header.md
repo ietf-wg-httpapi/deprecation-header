@@ -51,7 +51,7 @@ The Deprecation HTTP response header field is used to signal to consumers of a U
 
 # Introduction
 
-Deprecation of an HTTP resource ({{Section 2 of HTTP}}) communicates information about the lifecycle of a resource. It encourages applications to migrate away from the resource, discourages applications from forming new dependencies on the resource, and informs applications about the risk of continued dependence upon the resource.
+Deprecation of an HTTP resource ({{Section 3.1 of HTTP}}) communicates information about the lifecycle of a resource. It encourages applications to migrate away from the resource, discourages applications from forming new dependencies on the resource, and informs applications about the risk of continued dependence upon the resource.
 
 The act of deprecation does not change any behavior of the resource. It informs clients of the fact that a resource will be or is deprecated. The Deprecation HTTP response header field can be used to convey this at runtime to clients and carries information indicating when the deprecation will be in effect.
 
@@ -62,9 +62,9 @@ In addition to the Deprecation header field, the resource provider can use other
 
 {::boilerplate bcp14-tagged}
 
-This specification uses the Augmented Backus-Naur Form (ABNF) notation of {{!RFC5234}} and includes, by reference, the IMF-fixdate rule as defined in {{Section 7.1.1.1 of HTTP}}.
+This specification uses the Augmented Backus-Naur Form (ABNF) notation of {{!RFC5234}} and includes, by reference, the IMF-fixdate rule as defined in {{Section 5.6.7 of HTTP}}.
 
-The term "resource" is to be interpreted as defined in {{Section 2 of HTTP}}.
+The term "resource" is to be interpreted as defined in {{Section 3.1 of HTTP}}.
 
 # The Deprecation HTTP Response Header Field
 
@@ -72,7 +72,7 @@ The `Deprecation` HTTP response header field allows a server to communicate to a
 
 ## Syntax
 
-The `Deprecation` response header field describes the deprecation of the resource identified with the response it occurred within (see {{Section 3.1.4.1 of HTTP}}). It conveys the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date).
+The `Deprecation` response header field describes the deprecation of the resource identified with the response it occurred within (see {{Section 6.4.2 of HTTP}}). It conveys the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date).
 
 ~~~ abnf
 Deprecation = IMF-fixdate
@@ -91,7 +91,7 @@ The deprecation date can be in the future. This means that the resource will be 
 
 ## Scope
 
-The Deprecation header field applies to the resource identified with the response it occurred within (see {{Section 3.1.4.1 of HTTP}}), meaning that it announces the upcoming deprecation of that specific resource. However, there may be scenarios where the scope of the announced deprecation is larger than just the single resource where it appears.
+The Deprecation header field applies to the resource identified with the response it occurred within (see {{Section 6.4.2 of HTTP}}), meaning that it announces the upcoming deprecation of that specific resource. However, there may be scenarios where the scope of the announced deprecation is larger than just the single resource where it appears.
 
 Resources are free to define such an increased scope, and usually this scope will be documented by the resource so that consumers of the resource know about the increased scope and can behave accordingly. When doing so, it is important to take into account that such increased scoping is invisible for consumers who are unaware of the increased scoping rules. This means that these consumers will not be aware of the increased scope, and they will not interpret deprecation information different from its standard meaning (i.e., it applies to the resource only).
 
