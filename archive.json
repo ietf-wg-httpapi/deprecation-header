@@ -1,0 +1,1700 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2022-08-11T00:58:46.865871+00:00",
+  "repo": "ietf-wg-httpapi/deprecation-header",
+  "labels": [
+    {
+      "name": "parked",
+      "description": "",
+      "color": "f9d0c4"
+    },
+    {
+      "name": "design",
+      "description": "",
+      "color": "1d76db"
+    },
+    {
+      "name": "editorial",
+      "description": "",
+      "color": "41d366"
+    }
+  ],
+  "issues": [
+    {
+      "number": 2,
+      "id": "MDU6SXNzdWU3NzQ1NDc4OTc=",
+      "title": "proposal to revert updated draft title",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/issues/2",
+      "state": "CLOSED",
+      "author": "dret",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "sdatspun2"
+      ],
+      "labels": [],
+      "body": "the draft used to be called \"The Deprecation HTTP Header Field\" and now is called \"The Deprecation HTTP Header\". i am not sure this change is intentional? technically speaking it is a header field, so i propose reverting to the original title.",
+      "createdAt": "2020-12-24T19:53:50Z",
+      "updatedAt": "2021-03-10T12:08:56Z",
+      "closedAt": "2021-03-10T12:08:56Z",
+      "comments": [
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@dret datatracker submission was raising some issue with the name and revision. i do not quite recall if that prompted me to try dropping \"Field\". ",
+          "createdAt": "2020-12-24T21:51:41Z",
+          "updatedAt": "2020-12-24T21:51:41Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2020-12-24 13:51, Sanjay Dalal wrote:\n> @dret <https://github.com/dret> datatracker submission was raising some \n> issue with the name and revision. i do not quite recall if that prompted \n> me to try dropping \"Field\".\n\nis it ok then to try to revert to the original title?\n",
+          "createdAt": "2020-12-24T23:38:23Z",
+          "updatedAt": "2020-12-24T23:38:23Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Hello @richsalz what is your suggestion re how to make this change? is it possible for you to reject https://datatracker.ietf.org/submit/status/116473/ so I can submit a new one for rev 00?",
+          "createdAt": "2020-12-25T13:56:34Z",
+          "updatedAt": "2020-12-25T13:56:34Z"
+        },
+        {
+          "author": "richsalz",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Submit a new draft with draft-ietf-httpapi-xxxxx with the new title.  You should be able to mark that it replaces the draft with the old title.  (if not, we can get it done).\r\n",
+          "createdAt": "2020-12-26T03:05:40Z",
+          "updatedAt": "2020-12-26T03:05:40Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "this was fixed by submitting -01 with the reverted title.",
+          "createdAt": "2021-03-10T12:08:56Z",
+          "updatedAt": "2021-03-10T12:08:56Z"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "id": "MDU6SXNzdWU3NzQ1NTk0ODI=",
+      "title": "github issue management: permissions",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/issues/3",
+      "state": "CLOSED",
+      "author": "dret",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "darrelmiller",
+        "richsalz"
+      ],
+      "labels": [],
+      "body": "@richsalz/@darrelmiller: it seems that we (the editors: @dret and @sdatgit/@sdatspun2) cannot freely assign issues in this repo? it looks like we can only do assignments to a list of predefined accounts (i was able to assign this issue here to @richsalz/@darrelmiller, but was unable to assign  #2 to @sdatgit/@sdatspun2).\r\nmaybe that's a side-effect of us being listed as contributors for the repo? is there a way to allow us to assign issues? it has been a very valuable function of @github to use (and that applies to the repos for linkset and warning header as well, managed in collaboration with @hvdsomp and @andrecedik, respectively).",
+      "createdAt": "2020-12-24T21:06:58Z",
+      "updatedAt": "2020-12-24T23:41:18Z",
+      "closedAt": "2020-12-24T21:31:41Z",
+      "comments": [
+        {
+          "author": "richsalz",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@dret made you a maintainer.  see if you can now assign issue #2.\r\n(accidental choice, BTW, not deliberate.)\r\n",
+          "createdAt": "2020-12-24T21:31:41Z",
+          "updatedAt": "2020-12-24T21:31:41Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2020-12-24 13:31, Rich Salz wrote:\n> @dret <https://github.com/dret> made you a maintainer. see if you can \n> now assign issue #2 \n> <https://github.com/ietf-wg-httpapi/deprecation-header/issues/2>.\n> (accidental choice, BTW, not deliberate.)\n\nthanks. i was able to assign the issue now. but this time @sdatspun2 \nappeared in the list of choices (he wasn't there before). definitely \nworks good enough for now! thanks!\n",
+          "createdAt": "2020-12-24T23:41:18Z",
+          "updatedAt": "2020-12-24T23:41:18Z"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "id": "MDU6SXNzdWU4MjM5NzM1NTY=",
+      "title": "Inconsistency between text and the example",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/issues/4",
+      "state": "CLOSED",
+      "author": "malevy",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "There is a small inconsistency between the text and one of the example usages of the Deprecation header in draft-ietf-httpapi-deprecation-header.md. \r\n\r\n> The following example shows that the resource context has been deprecated on _Friday_, November 11, 2018 at 23:59:59 GMT:\r\n> \r\n>     Deprecation: Sun, 11 Nov 2018 23:59:59 GMT\r\n\r\nThe correct day of the week for  November 11, 2018 was Sunday, according to Google.",
+      "createdAt": "2021-03-07T17:37:30Z",
+      "updatedAt": "2021-03-07T17:49:04Z",
+      "closedAt": "2021-03-07T17:49:04Z",
+      "comments": [
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "good catch, thanks!",
+          "createdAt": "2021-03-07T17:49:04Z",
+          "updatedAt": "2021-03-07T17:49:04Z"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "MDU6SXNzdWU4MzAyNjkwODc=",
+      "title": "reconsider re-use of RFC 5829 link relations",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/issues/5",
+      "state": "CLOSED",
+      "author": "reschke",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "These were explicitly defined for version *control* related relations.\r\n\r\nIf their semantics are to be relaxed (which *might* be a good idea), we should revise/update that RFC.",
+      "createdAt": "2021-03-12T16:22:00Z",
+      "updatedAt": "2021-09-22T12:44:41Z",
+      "closedAt": "2021-09-22T12:44:41Z",
+      "comments": [
+        {
+          "author": "gabesullice",
+          "authorAssociation": "NONE",
+          "body": "I'm wondering what the expected usage of the `alternate` and `successor-version` link rels are in this context. In practice, why would a client that is already capable of using the new resource be making a request to the deprecated resource in the first place?\r\n\r\nIt might be a safer assumption that the client cannot retry its request without causing more problems. If a server really does want to redirect the client to an upgraded resource, perhaps a 3xx status code would be the better mechanism.\r\n\r\nIf those link relations are meant to convey information about _how_ to upgrade the client, isn't the content of the `deprecation` resource sufficient? For example, that resource could inform the client's owner that their client should begin following a different link relation in order to avoid visiting the deprecated resource again.\r\n",
+          "createdAt": "2021-03-12T18:04:45Z",
+          "updatedAt": "2021-03-12T18:04:54Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": ">I'm wondering what the expected usage of the alternate and successor-version link rels are in this context. In practice, why would a client that is already capable of using the new resource be making a request to the deprecated resource in the first place?\r\n\r\nCase: You are right for a new client. If resource is deprecated after the client has integrated with the deprecated version and gone into production, this header can be used to inform them about the alternate or successor-version.",
+          "createdAt": "2021-03-15T14:20:16Z",
+          "updatedAt": "2021-03-15T14:20:57Z"
+        },
+        {
+          "author": "gabesullice",
+          "authorAssociation": "NONE",
+          "body": "Right, but what do you expect the client in production to do with the link to a successor version? If the production client automatically follows the link, it is likely to break. Therefore, why have the link at all?",
+          "createdAt": "2021-03-28T12:05:48Z",
+          "updatedAt": "2021-03-28T12:07:29Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2021-03-28 14:06, Gabe Sullice wrote:\n> Right, but what do you expect the client in production to do with the \n> link to a successor version? If it automatically follows the link, it is \n> likely to break. Therefore, why have the link at all?\n\nthe intention is to make it easier for developers to find out what to \ndo. you can link them to a place that helps them to find out what to do.\n\ni think we have pretty universal consensus that expecting that you can \nfollow a link and that resource *is* the new resource is not very \nrealistic in most cases. so what we're doing here is trying to find some \nmiddle ground between expecting that full automation, or simply saying \n\"this one is not supported/recommended anymore, good luck with finding a \nreplacement.\"\n",
+          "createdAt": "2021-03-29T08:43:28Z",
+          "updatedAt": "2021-03-29T08:43:28Z"
+        },
+        {
+          "author": "gabesullice",
+          "authorAssociation": "NONE",
+          "body": "Thanks for clarifying that it is only meant for documentation purposes. The concern raised at the IETF meeting was that na\u00efve clients would try to follow it automatically though and that those semantics are fairly different than the original registration in RFC 5829.\r\n\r\nSince you say that \"the intention is to make it easier for developers to find out what to do. you can link them to a place that helps them to find out what to do.\"\r\n\r\nIt's not clear why the `deprecation` link relation type doesn't already fill that role. Its semantics appear to match what you just described:\r\n\r\n> the server can use links with the \"deprecation\" link relation type to communicate to the client where to find more information about deprecation of the context\u2026 the deprecation policy may be available as human-readable documentation or as machine-readable description.\r\n\r\nIf there's a gap between the definition of `deprecation` and the intended use of `successor-version`, then my suggestion is to tweak the definition of `deprecation` rather than adopt `successor-version` (and indirectly alter its semantics).\r\n\r\nFor example, we could add text like \"It is RECOMMENDED that the target resource provides a link to a resource which affords the same capabilities as the deprecated resource.\"\r\n\r\nIf we really want to provide link relation types to reference the new resource, we could recommend that the `deprecation` resource use `about` to reference the deprecated resource and its replacement. This would be semantically correct and would make it difficult to programmatically follow the link, which I think would be good to discourage.",
+          "createdAt": "2021-03-29T12:10:07Z",
+          "updatedAt": "2021-03-29T12:10:29Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "thanks everybody for chiming in. i think i am reconsidering our choice and it might indeed be sufficient to simply rely on the `deprecation` link relation for linking to documentation. @sdatgit @sdatspun2 , is it ok for you if we resolve things that way?",
+          "createdAt": "2021-03-29T13:54:43Z",
+          "updatedAt": "2021-03-29T13:54:43Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@gabesullice I am not sure how much naive-proof we should make this header :) As @dret mentioned, the link relations are for information purposes only, it is not required to use `successor-version` if API publisher does not want to. We can clarify this aspect but just because someone naive may start using it if seen and therefore it should not be in this spec is not a very convincing argument. ",
+          "createdAt": "2021-03-30T21:23:02Z",
+          "updatedAt": "2021-03-30T21:23:38Z"
+        },
+        {
+          "author": "darrelmiller",
+          "authorAssociation": "NONE",
+          "body": "We have a use case where intermediaries and log crawlers are going to identify uses of deprecated resources and notify API consumers that they should take action to update their client code.  Using a link relation as a signal is a considerably higher bar than detecting the presence of a header name.  Especially considering how \"interesting\" it is to parse link headers.  I would prefer there to be a simple deprecation header with a link relation in addition to discover more.",
+          "createdAt": "2021-07-06T13:45:44Z",
+          "updatedAt": "2021-07-06T13:45:44Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2021-07-06 15:45, Darrel wrote:\n> We have a use case where intermediaries and log crawlers are going to \n> identify uses of deprecated resources and notify API consumers that they \n> should take action to update their client code. Using a link relation as \n> a signal is a considerably higher bar than detecting the presence of a \n> header name. Especially considering how \"interesting\" it is to parse \n> link headers. I would prefer there to be a simple deprecation header \n> with a link relation in addition to discover more.\n\nthat one i don't fully understand. it is a really nice used case, but \nisn't that covered by building tooling to look for the header field and \nyou're done? the header field is still the signal, the link relation \nsimply is some additional info that may go with it.\n",
+          "createdAt": "2021-07-07T12:23:23Z",
+          "updatedAt": "2021-07-07T12:23:23Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": ">I would prefer there to be a simple deprecation header with a link relation in addition to discover more.\r\n\r\nAre you looking for something like the following for example?\r\n\r\nDeprecation: Sun, 11 Nov 2018 23:59:59 GMT; link=\"https://api.example.com/v2/customers\"; rel=\"successor-version\"\r\n\r\nI agree with @dret that tooling could be used instead with the existing syntax.",
+          "createdAt": "2021-07-07T12:53:17Z",
+          "updatedAt": "2021-07-07T12:53:17Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@darrelmiller, are you looking for what @sdatspun2 suggested (i.e., the addition of linking capabilities to the `Deprecation` header field)? if not, could you please clarify? thanks!",
+          "createdAt": "2021-07-17T10:22:28Z",
+          "updatedAt": "2021-07-17T10:22:28Z"
+        },
+        {
+          "author": "darrelmiller",
+          "authorAssociation": "NONE",
+          "body": "@sdatspun2 @dret Feel free to ignore my comment.  I didn't read close enough.  I thought there was a suggestion to only have the link relation and not have the `deprecation` header.  ",
+          "createdAt": "2021-07-18T17:28:30Z",
+          "updatedAt": "2021-07-18T17:28:30Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@darrelmiller Will you be ok to close this issue then?",
+          "createdAt": "2021-08-25T05:23:16Z",
+          "updatedAt": "2021-08-25T05:23:16Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "reading the last comments as this being ok to be closed, and closing it.",
+          "createdAt": "2021-09-22T12:44:41Z",
+          "updatedAt": "2021-09-22T12:44:41Z"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "id": "MDU6SXNzdWU4MzAyNjk3OTI=",
+      "title": "proposed example: redirect to new location",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/issues/6",
+      "state": "OPEN",
+      "author": "reschke",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [
+        "reschke",
+        "dret"
+      ],
+      "labels": [],
+      "body": "Maybe a good example would be a redirect to a different site, with \"Deprecation\" saying when the redirecting site is going to disappear.",
+      "createdAt": "2021-03-12T16:22:58Z",
+      "updatedAt": "2022-07-30T13:26:54Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Consider a post-production cases where client is using a version of resource that is now deprecated. Resource provider cannot make the choice for clients. Resource provider can inform the clients via this header about the choices available in case of deprecation. Let me know if I am missing something.",
+          "createdAt": "2021-03-15T14:25:25Z",
+          "updatedAt": "2021-03-15T14:25:25Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "i tend to agree with @sdatspun2 here: deprecation is something different from redirection. in some cases there may be a redirect in place, but that's not necessarily the case.",
+          "createdAt": "2021-07-01T10:06:23Z",
+          "updatedAt": "2021-07-01T10:06:23Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "any thoughts on this, @reschke? we discussed a lot more and still think that we should avoid overloading deprecation, both in the spec and in examples. what \"deprecation\" means is not something that we want to standardize, we simply want to allow resources to signal that they are deprecated (and it then requires additional information about the resource or the API to understand if/what something can be done about it programmatically).",
+          "createdAt": "2021-07-17T10:07:03Z",
+          "updatedAt": "2022-03-23T16:25:09Z"
+        },
+        {
+          "author": "darrelmiller",
+          "authorAssociation": "NONE",
+          "body": "@dret I'm not sure I understand why @reschke 's example wouldn't be helpful for readers.  Using the deprecation header to signal that resource A is going to be deprecated and in the future a client will not be able to use resource A to redirect to resource B, seems like a valid use case.  In the case of a permanent redirect, a deprecation header seems like a good signal to give to clients to update any locally stored URLs.\r\nAre you concerned that a finite set of examples would make readers believe there a limited set of scenarios where deprecation is appropriate?",
+          "createdAt": "2021-07-18T17:37:47Z",
+          "updatedAt": "2021-07-18T17:37:47Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I agree with @dret, we should avoid overloading the retype `deprecation` with redirect. However, would it help to overload just the reltype `successor-version` with redirect? See https://github.com/ietf-wg-httpapi/deprecation-header/blob/main/draft-ietf-httpapi-deprecation-header.md#recommend-replacement. \r\n\r\n>dret commented 15 days ago\r\nany thoughts on this, @reschke? we discussed a not more and still think that we should avoid overloading deprecation, both in the spec and in examples.\r\n\r\n>reschke commented on Mar 12\r\nMaybe a good example would be a redirect to a different site, with \"Deprecation\" saying when the redirecting site is going to disappear.",
+          "createdAt": "2021-08-01T14:28:17Z",
+          "updatedAt": "2021-08-01T14:28:17Z"
+        },
+        {
+          "author": "reschke",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": ">I agree with @dret, we should avoid overloading the retype deprecation with redirect.\r\n\r\nThat's not what this is about.\r\n\r\nBut are you disagreeing that one *can* use that field on a redirect?",
+          "createdAt": "2021-08-01T15:37:48Z",
+          "updatedAt": "2021-08-01T15:37:48Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@reschke Can you give example in the form of response? Perhaps you are saying that redirect with normal HTTP machinery but add Deprecation header too.",
+          "createdAt": "2021-08-23T05:03:42Z",
+          "updatedAt": "2021-08-23T05:03:42Z"
+        },
+        {
+          "author": "reschke",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "What I'm trying to say is that it seems natural to augment a redirect response with a deprecation header field.\r\n\r\nFor instance:\r\n\r\n~~~\r\n301 Permanent Redirect HTTP/1.1\r\nLocation: /foo\r\nSunset: ...\r\n~~~\r\n\r\nwould convey that the resource already redirects, but that the redirector will be taken out of service at a concrete time in the future.\r\n",
+          "createdAt": "2021-08-23T06:32:57Z",
+          "updatedAt": "2021-08-23T06:32:57Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@reschke  You mean deprecation, right? Makes sense for non-HTTP API applications indeed.\r\n\r\n301 Permanent Redirect HTTP/1.1\r\nLocation: /foo\r\nDeprecation: ...",
+          "createdAt": "2021-08-25T05:22:16Z",
+          "updatedAt": "2021-08-25T05:22:16Z"
+        },
+        {
+          "author": "reschke",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I think both deprecation and sunset could be applicable.",
+          "createdAt": "2021-08-25T07:03:52Z",
+          "updatedAt": "2021-08-25T07:03:52Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On Aug 25, 2021, at 09:04, Julian Reschke ***@***.***> wrote:\n> I think both deprecation and sunset could be applicable.\n> \n\nfwiw, sunset has been published as a separate RFC for a while, and at least for now, no update is planned. for the deprecation draft, we probably should just use the deprecation header field in examples.",
+          "createdAt": "2021-08-25T07:22:10Z",
+          "updatedAt": "2021-08-25T07:22:10Z"
+        },
+        {
+          "author": "darrelmiller",
+          "authorAssociation": "NONE",
+          "body": "@sdatspun2 Can I ask why you qualified your support for the example with \"for non-HTTP API\".  I do believe there are many HTTP API implementations that return redirects.  Making a caller aware that the initial resource is going away seems like a viable scenario.",
+          "createdAt": "2022-03-19T20:51:51Z",
+          "updatedAt": "2022-03-19T20:51:51Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@darrelmiller We have defined different and explicit rels for guiding the consumers of the API, see https://github.com/ietf-wg-httpapi/deprecation-header/blob/main/draft-ietf-httpapi-deprecation-header.md#recommend-replacement. In which case, the API publisher would redirect? How should the default behavior be specified by the API publisher?",
+          "createdAt": "2022-03-22T18:39:11Z",
+          "updatedAt": "2022-03-22T18:39:11Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "i m still a bit hesitant to venture too far into \"and here are all the things that could be done\" land, since this is an area where it seems we can expand on examples indefinitely. maybe i am a bit scarred by my recent linkset experience. my preference would be to not add examples when we can, but only when we have to.",
+          "createdAt": "2022-03-23T16:30:47Z",
+          "updatedAt": "2022-03-23T16:30:47Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "sorry for reviving this, @reschke, but since this is unresolved i'd like to re-open the discussion. my vote still goes to \"do we need such an example\" over \"can we add such an example\", and i don't think we need such an example. how strongly do you feel about having such an example in the spec?",
+          "createdAt": "2022-03-24T12:01:17Z",
+          "updatedAt": "2022-03-24T12:01:17Z"
+        },
+        {
+          "author": "reschke",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "AFAIR, I thought this would be a good example. I'll have to re-read the spec to see what examples it currently has, and whether they are better. That might take some time.",
+          "createdAt": "2022-03-24T12:49:42Z",
+          "updatedAt": "2022-03-24T12:49:42Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "please let us know what your conclusion is, @reschke. just repeating myself here: please don't just think about whether it's a *good* example, but whether it's a *necessary* example. thanks!",
+          "createdAt": "2022-03-24T13:21:16Z",
+          "updatedAt": "2022-03-24T13:21:16Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@reschke, i am doing a bit of housekeeping and noticed that this issue is still open. can you please have a quick look and see whether such an example in your opinion is needed? thanks!",
+          "createdAt": "2022-06-08T15:33:01Z",
+          "updatedAt": "2022-06-08T15:33:01Z"
+        },
+        {
+          "author": "reschke",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Noted. Will re-read over the weekend.",
+          "createdAt": "2022-07-29T15:07:15Z",
+          "updatedAt": "2022-07-29T15:07:15Z"
+        },
+        {
+          "author": "reschke",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Ok.\r\n\r\n1) Looked at the existing examples. These are confusing, because there are two, and the second essentially is a superset of the first. Things would be less confusing if this was streamlined.\r\n\r\n2) Are the examples sufficient? Maybe. I think it would be good if the examples should actual request/response pairs, instead of just repeating syntax defined earlier on. But it's an editorial choice.",
+          "createdAt": "2022-07-30T13:26:54Z",
+          "updatedAt": "2022-07-30T13:26:54Z"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "id": "MDU6SXNzdWU4MzY5Mzg4MTc=",
+      "title": "Deprecation scope",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/issues/7",
+      "state": "CLOSED",
+      "author": "darrelmiller",
+      "authorAssociation": "NONE",
+      "assignees": [
+        "dret"
+      ],
+      "labels": [],
+      "body": "The introduction to this RFC says:\r\n\r\n> The HTTP Deprecation Response Header Field can be used to signal to consumers of a URI-identified resource that the resource has been deprecated.\r\n\r\nHowever later in the documentation section it says:\r\n\r\n> For a resource, deprecation could involve one or more parts of request, response or both.\r\n\r\nThese two statements do not seem consistent.  My understanding of the term \"resource has been deprecated\" is that it will no longer respond with a 2XX to any HTTP method.  Is that understanding incorrect?\r\n\r\n Perhaps the initial paragraph could be changed to say,\r\n\r\n> The HTTP Deprecation Response Header Field can be used to signal to consumers of a URI-identified resource that one or more parts of resource has been deprecated.\r\n",
+      "createdAt": "2021-03-20T23:02:10Z",
+      "updatedAt": "2022-06-10T07:27:51Z",
+      "closedAt": "2022-06-10T07:27:51Z",
+      "comments": [
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2021-03-21 00:02, Darrel wrote:\n> The introduction to this RFC says:\n> \n>     The HTTP Deprecation Response Header Field can be used to signal to\n>     consumers of a URI-identified resource that the resource has been\n>     deprecated.\n> \n> However later in the documentation section it says:\n> \n>     For a resource, deprecation could involve one or more parts of\n>     request, response or both.\n\ngood catch, thanks. we did make the decision to only support deprecation \nat the resource level, so this sentence may be a left-over from the \nprevious language that claimed a more fine-grained facility, without \never providing a model for it.\n\nthis sentence should be removed.\n\n> These two statements do not seem consistent. My understanding of the \n> term \"resource has been deprecated\" is that it will no longer respond \n> with a 2XX to any HTTP method. Is that understanding incorrect?\n\nthat's not what deprecation is for this draft (but that's what \nsunsetting can be). deprecation simply means it's no longer the \nrecommended resource to use, and that maybe there's a replacement \nsomewhere, but that for the time being it's still usable.\n\n\"In several fields, deprecation is the discouragement of use of some \nterminology, feature, design, or practice, typically because it has been \nsuperseded or is no longer considered efficient or safe, without \ncompletely removing it or prohibiting its use. Typically, deprecated \nmaterials are not completely removed to ensure legacy compatibility or \nback up practice in case new methods are not functional in an odd scenario.\"\n\nhttps://en.wikipedia.org/wiki/Deprecation\n\n> Perhaps the initial paragraph could be changed to say,\n> \n>     The HTTP Deprecation Response Header Field can be used to signal to\n>     consumers of a URI-identified resource that one or more parts of\n>     resource has been deprecated.\n\nthanks for the suggestion, but the better edit is the other way round: \nremoving the language that hints at a deprecation model more \nfine-grained than at the resource level.\n\n-- \nerik wilde | ***@***.*** |\n            | http://dret.net/netdret    |\n            | http://twitter.com/dret    |\n",
+          "createdAt": "2021-03-21T14:08:34Z",
+          "updatedAt": "2021-03-21T14:08:34Z"
+        },
+        {
+          "author": "darrelmiller",
+          "authorAssociation": "NONE",
+          "body": "Consistency is good.  I am disappointed that we are heading in the direction of entire resource deprecation only, but I'm biased because we in Microsoft Graph are already using it for partial deprecation.",
+          "createdAt": "2021-05-01T01:52:11Z",
+          "updatedAt": "2021-05-01T01:52:11Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2021-05-01 03:52, Darrel wrote:\n> Consistency is good. I am disappointed that we are heading in the \n> direction of entire resource deprecation only, but I'm biased because we \n> in Microsoft Graph are already using it for partial deprecation.\n\nwithout knowing anything about it, i am assuming that the way you \nidentify deprecated features is specific to your API. is that correct?\n\ni think the problem we face is that any model supporting partial \ndeprecation would need to provide a way how to identify those features, \notherwise it would be relatively pointless. that's tricky to do when all \nthe current draft assumes is that your API is HTTP-based.\n",
+          "createdAt": "2021-05-01T13:04:09Z",
+          "updatedAt": "2021-05-01T13:04:09Z"
+        },
+        {
+          "author": "mikepizzo",
+          "authorAssociation": "NONE",
+          "body": "> without knowing anything about it, i am assuming that the way you identify deprecated features is specific to your API. is that correct?\r\n\r\nYes; Microsoft Graph has a way to describe the resources returned by its API, including whether individual members of the resources are deprecated.\r\n\r\n> i think the problem we face is that any model supporting partial deprecation would need to provide a way how to identify those features, otherwise it would be relatively pointless. that's tricky to do when all the current draft assumes is that your API is HTTP-based.\r\n\r\nIt seems like Darrel's suggestion would provide wiggle-room for services (like Microsoft Graph) that do have a separate mechanism for describing parts of a resource that are deprecated.\r\n\r\nGiven that we already have response headers for both deprecation and sunset (which some users find confusing), I'd really hate to introduce a 3rd response header for \"partial-deprecation\".",
+          "createdAt": "2021-05-04T21:08:34Z",
+          "updatedAt": "2021-05-04T21:08:34Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": ">Microsoft Graph has a way to describe the resources returned by its API, including whether individual members of the resources are deprecated.\r\n\r\n@darrelmiller @mikepizzo Can you provide a reference where it shows an example of deprecation of individual members. Originally, we were thinking that the header could point to API reference which if generated from an OAI doc would leverage OAI's `deprecated` flag to identify individual members of the deprecated resource. ",
+          "createdAt": "2021-05-11T13:44:12Z",
+          "updatedAt": "2021-05-11T13:44:12Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "if you have a partial deprecation model, @darrelmiller & @mikepizzo, would you say the entire resource is deprecated as a result of one part being deprecated? if yes, then maybe adding a \"and here's more info for those APIs that have partial deprecation models\" part makes sense. if not, then it seems that the partial deprecation info can be left entirely to whatever model the API has. would you agree?",
+          "createdAt": "2021-05-18T14:02:35Z",
+          "updatedAt": "2021-05-18T14:02:35Z"
+        },
+        {
+          "author": "mikepizzo",
+          "authorAssociation": "NONE",
+          "body": "@dret -- No, it's important to our API versioning that deprecating one part of the resource does not deprecate the entire resource.\r\n\r\n@sdatspun2 -- Our API represents a graph of resources. Resources have defined properties, and we want the ability to mark a property as deprecated in favor of a new property.\r\n\r\nFor example, we have an [educationSubmission](https://docs.microsoft.com/en-us/graph/api/resources/educationsubmission?view=graph-rest-beta) resource type that has properties such as recipient, status, and so forth.  It also has properties \"releasedBy\" and \"releasedDateTime\" that we want to mark as deprecated.\r\n\r\nWhile you can select an entire resource, in our API you're encouraged to use query options to select only the subset of properties you actually need from the resource.  If you do the later, you should only be alerted if you specifically select \"releasedBy\" and \"releasedDateTime\".\r\n\r\nWe do have a way to document that a resource, or property of a resource, has been deprecated, and I'm sure we will use the deprecated flag in our OAI description if we don't already.\r\n\r\nDoes that help?",
+          "createdAt": "2021-05-18T15:48:12Z",
+          "updatedAt": "2021-05-18T15:48:12Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@mikepizzo: if you say the resource itself does not get deprecated, is there anything speaking against just relying on the API mechanisms of deprecating some parts of it? why would you need a signal in addition to that, what would that be used for?",
+          "createdAt": "2021-05-18T15:52:15Z",
+          "updatedAt": "2021-05-18T15:52:15Z"
+        },
+        {
+          "author": "mikepizzo",
+          "authorAssociation": "NONE",
+          "body": "@dret -- We use the deprecation header to alert the application that the request that they made contained deprecated content. The app could then, for example, pop up a dialog to the user saying that this version of the app is referencing deprecated content and to please check if there is a newer version of the app available. ",
+          "createdAt": "2021-05-18T16:00:07Z",
+          "updatedAt": "2021-05-18T16:00:07Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "now i am a bit confused, @mikepizzo. the way the draft is currently phrased it is used to signal an API consumer that the resource is deprecated. what you're writing there seems to be rather different, i read it as using the header field not to make statement about the resource, but to make a statement about the request. is that correct? if so, then given the current definition of the header field, you're not communicating what you're intending to communicate.",
+          "createdAt": "2021-05-31T14:16:28Z",
+          "updatedAt": "2021-05-31T14:16:28Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "returning to the original discussion: partial deprecation. currently the idea is that the header field signals that a resource is deprecated, meaning that when it is present, the resource is deprecated. here are some points worth discussing:\r\n- if there is a concept of partial deprecation that would probably imply that the resource is only deprecated when the header field is present and there is no indication of a partial deprecation.\r\n- we seem to agree that partial deprecation is hard to generically describe, leaving it up to each API to define its own model of partial deprecation. if that's the case, then what is gained by also signalling partial deprecation in the header field, instead of just relying on whatever mechanism the API has to provide anyway?",
+          "createdAt": "2021-05-31T14:23:06Z",
+          "updatedAt": "2021-05-31T14:23:06Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "FYI: #8 seems related but it's \"about scope in the other direction\", by which i mean that instead of allowing a scope smaller that the resource, it talks about a scope larger than the resource.",
+          "createdAt": "2021-07-06T08:11:51Z",
+          "updatedAt": "2021-07-06T08:11:51Z"
+        },
+        {
+          "author": "darrelmiller",
+          "authorAssociation": "NONE",
+          "body": "@dret  Using strict interpretation of HTTP resources and representations, it does make sense to me to associate the Deprecation header to the resource in its entirety.  Trying to describe the evolution of the representation seems like a distinct problem.  Unfortunately, the reality of API implementations in the wild is there is frequently a tight coupling between resource identifier and representation design.  \r\n\r\nIf an API were to use the Deprecation header to signal that this \"version\" of the resource is being deprecated due to a change in the representation, would that be considered an acceptable use case?  My interpretation of deprecating a resource doesn't preclude an API from bringing back a new \"version\" of that resource in the future.\r\n\r\nDoes this seem like a reasonable \"misuse\" of the header?",
+          "createdAt": "2021-07-06T13:24:26Z",
+          "updatedAt": "2021-07-06T13:24:26Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2021-07-06 15:24, Darrel wrote:\n> @dret <https://github.com/dret> Using strict interpretation of HTTP \n> resources and representations, it does make sense to me to associate the \n> Deprecation header to the resource in its entirety. Trying to describe \n> the evolution of the representation seems like a distinct problem. \n\nso it seems we're on the same page here. it could be useful to describe \nthe evolution, but that seems like a hard problem to solve in a generic \nway so that it would be useful to expose at the HTTP level.\n\n> Unfortunately, the reality of API implementations in the wild is there \n> is frequently a tight coupling between resource identifier and \n> representation design.\n\nsometimes there is. but oftentimes these resources evolve (and/or their \nrepresentations do), but that's just a different concern from signaling \nthe deprecation of the resource itself.\n\n> If an API were to use the Deprecation header to signal that this \n> \"version\" of the resource is being deprecated due to a change in the \n> representation, would that be considered an acceptable use case? My \n> interpretation of deprecating a resource doesn't preclude an API from \n> bringing back a new \"version\" of that resource in the future.\n> Does this seem like a reasonable \"misuse\" of the header?\n\nthis is interesting because just recently somebody reached out and asked \nwhether it would be ok to deprecate specific representations, let's say \nyou're serving XML and JSON (using conneg) and will stop serving XML.\n\nin my mind, both your use case and that one are not covered by the \ncurrent spec. it would require an additional mechanism in the spec to \nsupport this use case, so that you can always differentiate between \n\"this representation type/design is deprecated\" and \"this resource is \ndeprecated\".\n\ni am also not sure that this idea of \"deprecating fields\" should be \ncovered by the same mechanism (as our current \"this resource is going \naway, you might want to deal with that\" approach). it is more about \nsupporting schema evolution and evolving the data model, and deprecating \na field is just one aspect of this general space.\n\n-- \nerik wilde | ***@***.*** |\n            | http://dret.net/netdret    |\n            | http://twitter.com/dret    |\n",
+          "createdAt": "2021-07-07T12:21:42Z",
+          "updatedAt": "2021-07-07T12:21:42Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "we're trying to reduce the list of open issues. @darrelmiller and @mikepizzo, what is your takeaway from this discussion? my next step would be to change the spec to be more clear that we do not support a model for partial deprecation, and that deprecation always applies at the resource level. is that a resolution you could live with? if not, how else can we address this issue?",
+          "createdAt": "2021-07-17T10:20:18Z",
+          "updatedAt": "2021-07-17T10:20:18Z"
+        },
+        {
+          "author": "darrelmiller",
+          "authorAssociation": "NONE",
+          "body": "Personally, I think it would be unfortunate to spend the time to bring this header through the whole process and not provide any support for signaling that some part of a resource has been deprecated.  My experience has been that fine grained deprecations are far more common in an API that complete resource deprecation.  However, mine is only one opinion and I don't think this being an open issue should block us from moving forward with the call for adoption. I think that will allow us to get more input into this topic.\r\n\r\nThis issue has some similarities to the challenges we are running into with the content-warning. where that header is signaling that somewhere in the payload there is a warning. Perhaps the solution is to have a companion `Content-Deprecation` header.  Maybe that does warrant a different specification, but it is worth a conversation.",
+          "createdAt": "2021-07-18T17:09:21Z",
+          "updatedAt": "2021-07-18T17:09:21Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "any updates on this one, @darrelmiller? keeping in line with `Sunset` it seems that `Deprecation` should behave similarly, i.e. (at least by default) making a statement about the resource. if you're proposing something in addition, then the desired semantics for you seem to be \"the resource is not deprecated, but parts of the model are\". if that's true, then that's something we're not covering currently, and if you'd like to see it covered, we need to start somewhere. the `Content-Deprecation` header field idea doesn't sound too far-fetched to me, and i like the fact that it is indeed a separate thing, and not mixed into the simpler resource-level model.",
+          "createdAt": "2021-11-02T13:33:07Z",
+          "updatedAt": "2021-11-02T13:33:07Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "At IETF-112, we agreed to not go into resource's representation. @darrelmiller should  we close this issue?",
+          "createdAt": "2021-11-15T15:12:33Z",
+          "updatedAt": "2021-11-15T15:12:33Z"
+        },
+        {
+          "author": "darrelmiller",
+          "authorAssociation": "NONE",
+          "body": "Yes,",
+          "createdAt": "2022-03-11T19:18:10Z",
+          "updatedAt": "2022-03-11T19:18:10Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "It feels like there still is some language in the draft referring to the idea of deprecation being \"below\" the resource level, specifically in the section about documentation.",
+          "createdAt": "2022-06-10T07:10:23Z",
+          "updatedAt": "2022-06-10T07:10:23Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Closing with a new set of edits.",
+          "createdAt": "2022-06-10T07:27:51Z",
+          "updatedAt": "2022-06-10T07:27:51Z"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "id": "MDU6SXNzdWU4MzY5NDAyMzM=",
+      "title": "Definition of resource context",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/issues/8",
+      "state": "CLOSED",
+      "author": "darrelmiller",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": ">The Deprecation response header field describes the deprecation. It either shows the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date), or it simply flags the resource context as being deprecated:\r\n\r\nIt is not clear to me the distinction between \"resource\" and \"resource context\".  Is the word \"context\" a significant qualifier?",
+      "createdAt": "2021-03-20T23:11:07Z",
+      "updatedAt": "2021-07-06T12:56:46Z",
+      "closedAt": "2021-07-06T12:56:46Z",
+      "comments": [
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2021-03-21 00:11, Darrel wrote:\n>     The Deprecation response header field describes the deprecation. It\n>     either shows the deprecation date, which may be in the future (the\n>     resource context will be deprecated at that date) or in the past\n>     (the resource context has been deprecated at that date), or it\n>     simply flags the resource context as being deprecated:\n> \n> It is not clear to me the distinction between \"resource\" and \"resource \n> context\". Is the word \"context\" a significant qualifier?\n\nthat was the idea, but apparently it didn't succeed. the idea was that \nwhile the header field technically applies to the resource/URI, it also \nshould be allowed to for example say \"when the home document starts \nannouncing deprecation, that applies to all resources of the API.\" that \nwould make it possible to restrict usage of the deprecation header field \nto select resources (such as the home resource) while still allowing the \nheader field to apply to the resource context (the API).\n\nthis is how sunset works as well, giving API providers the freedom to \nuse it on all resources, or on select ones only.\n\nhttps://tools.ietf.org/html/rfc8594#section-5\n\nthe disadvantage of this approach is that when used this way, \ndeprecation/sunset will only be visibly announced to consumers when they \ninteract with the resources that will carry those headers. but that's a \ndecision that the API designer can make one way or the other.\n\n-- \nerik wilde | ***@***.*** |\n            | http://dret.net/netdret    |\n            | http://twitter.com/dret    |\n",
+          "createdAt": "2021-03-21T10:17:26Z",
+          "updatedAt": "2021-03-21T10:17:26Z"
+        },
+        {
+          "author": "darrelmiller",
+          "authorAssociation": "NONE",
+          "body": "I like the way the Sunset header spec is explicit about the fact that an API designer can document the fact that deprecation of one resource can signal the deprecation of related resources.  I don't think using the term \"resource context\" conveys it as clearly.  ",
+          "createdAt": "2021-05-01T01:48:36Z",
+          "updatedAt": "2021-05-01T01:48:36Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2021-05-01 03:48, Darrel wrote:\n> I like the way the Sunset header spec is explicit about the fact that an \n> API designer can document the fact that deprecation of one resource can \n> signal the deprecation of related resources. I don't think using the \n> term \"resource context\" conveys it as clearly.\n\nok, this makes sense. in that case it seems that the deprecation header \nspec should follow the wording of the sunset header spec more closely.\n",
+          "createdAt": "2021-05-01T14:29:09Z",
+          "updatedAt": "2021-05-01T14:29:09Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@darrelmiller, would you be ok with the above proposal?",
+          "createdAt": "2021-07-01T10:09:07Z",
+          "updatedAt": "2021-07-01T10:09:07Z"
+        },
+        {
+          "author": "darrelmiller",
+          "authorAssociation": "NONE",
+          "body": "@dret   Yes.",
+          "createdAt": "2021-07-01T16:17:59Z",
+          "updatedAt": "2021-07-01T16:17:59Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@darrelmiller: i made the proposed change, if you're fine with it, feel free to close the issue. thanks for your contribution!",
+          "createdAt": "2021-07-06T08:13:48Z",
+          "updatedAt": "2021-07-06T08:13:48Z"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "id": "MDU6SXNzdWU4MzY5NDA4NjE=",
+      "title": "Clarification on multiplicity of deprecation links",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/issues/9",
+      "state": "CLOSED",
+      "author": "darrelmiller",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "The specification says:\r\n\r\n> Servers MUST NOT include more than one Deprecation header field in the same response.\r\n\r\nIf two parts of the resource are deprecated at different times, what is the expected date in the deprecation header?  The first or last?\r\n\r\nRegarding the deprecation link, the spec says:\r\n\r\n> In addition to the Deprecation HTTP header field, the server can use links with the \"deprecation\" link relation type\r\n\r\nDoes the use of plural \"links\" indicate that multiple deprecation links can be included?",
+      "createdAt": "2021-03-20T23:15:30Z",
+      "updatedAt": "2021-05-01T01:54:08Z",
+      "closedAt": "2021-05-01T01:54:08Z",
+      "comments": [
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2021-03-21 00:15, Darrel wrote:\n> The specification says:\n> \n>     Servers MUST NOT include more than one Deprecation header field in\n>     the same response.\n> \n> If two parts of the resource are deprecated at different times, what is \n> the expected date in the deprecation header? The first or last?\n\nthe spec cannot deprecate different parts of a response. deprecation of \nthe resource always is done as a whole.\n\n> Regarding the deprecation link, the spec says:\n> \n>     In addition to the Deprecation HTTP header field, the server can use\n>     links with the \"deprecation\" link relation type\n> \n> Does the use of plural \"links\" indicate that multiple deprecation links \n> can be included?\n\nno, that should be singular instead. good catch, thanks!\n\n-- \nerik wilde | ***@***.*** |\n            | http://dret.net/netdret    |\n            | http://twitter.com/dret    |\n",
+          "createdAt": "2021-03-21T10:23:11Z",
+          "updatedAt": "2021-03-21T10:23:11Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "ooops, i was wrong. yes, multiple `deprecation`-typed links can be used, because they link to info/documentation. they could for example use link attributes such as media types or language to link to different resources.",
+          "createdAt": "2021-03-21T10:26:28Z",
+          "updatedAt": "2021-03-21T10:26:28Z"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "id": "MDU6SXNzdWU5NTU1MDgxMDY=",
+      "title": "Use Structured Fields",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/issues/11",
+      "state": "OPEN",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "dret"
+      ],
+      "labels": [],
+      "body": "It's not a mandated requirement, but new fields are encouraged to use Structured Fields --\r\n  https://httpwg.org/specs/rfc8941.html\r\n\r\nThis has a number of advantages:\r\n\r\n- well-specified parsing and serialisation algorithms\r\n- better interop\r\n- less security issues\r\n- common library support\r\n- possible future ability for alternative serialisations that are more efficient (i.e., binary headers)",
+      "createdAt": "2021-07-29T06:30:30Z",
+      "updatedAt": "2022-08-10T12:15:14Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2021-07-29 08:30, Mark Nottingham wrote:\n> It's not a mandated requirement, but new fields are encouraged to use \n> Structured Fields --\n> https://httpwg.org/specs/rfc8941.html \n> <https://httpwg.org/specs/rfc8941.html>\n\nthanks for the reminder and pointer. assuming we change the draft to use \nonly a date (as proposed in #12), we would end up using a \"sf-string\" \nand then stick to the IMF-fixdate (which seems to be in the new HTTP \nspecs as well) that we currently reference, right?\n\nafaict, this wouldn't change much about what we want to allow, but it \nwould have the advantages you're pointing out:\n\n> This has a number of advantages:\n> \n>   * well-specified parsing and serialisation algorithms\n>   * better interop\n>   * less security issues\n>   * common library support\n>   * possible future ability for alternative serialisations that are more\n>     efficient (i.e., binary headers)\n\ni think i am in favor. what do others think?\n\n",
+          "createdAt": "2021-07-30T10:11:39Z",
+          "updatedAt": "2021-07-30T10:11:39Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "You might want to consider using a sf-integer to represent the epoch date; that doesn't require any extra parsing or error handling.",
+          "createdAt": "2021-07-31T04:44:18Z",
+          "updatedAt": "2021-07-31T04:44:18Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On Jul 31, 2021, at 06:45, Mark Nottingham ***@***.***> wrote:\n> You might want to consider using a sf-integer to represent the epoch date; that doesn't require any extra parsing or error handling.\n> \n\nthat's one way to go. so far we wanted to keep this header field consistent with the sunset header field, but that's not a hard requirement.",
+          "createdAt": "2021-07-31T07:40:20Z",
+          "updatedAt": "2021-07-31T07:40:20Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@mnot Typically, in API's payload schema date string in iso 8601 format is preferred. header value in the form of sf-string with IMF-fixdate would be consistent instead of sf-integer imo.",
+          "createdAt": "2021-08-23T04:59:00Z",
+          "updatedAt": "2021-08-23T04:59:00Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "i'd agree with @sdatspun2 here in that most dates in the API space seem to be strings. if the string doesn't match `IMF-fixdate`, you'd simply do the same as if you wouldn't find the expected integer (if we were using epoch dates), i assume. ",
+          "createdAt": "2021-11-12T14:03:20Z",
+          "updatedAt": "2021-11-12T14:03:20Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "Parsing dates is _nasty_ -- it takes non-trivial CPU and there are a lot of error cases around it. Not all libraries do it the same way, in the details. It's also a drag on perf at high rates. So it depends on how much you value consistently here...",
+          "createdAt": "2021-11-15T03:12:16Z",
+          "updatedAt": "2021-11-15T03:12:16Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I am wondering how we can introduce this change such that existing implementations are not broken...",
+          "createdAt": "2022-01-03T14:23:33Z",
+          "updatedAt": "2022-01-03T14:23:33Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2022-01-03 06:23, Sanjay Dalal wrote:\n> I am wondering how we can introduce this change such that existing \n> implementations are not broken...\n\ni don't think that's even an option with this issue. my main concerns \nstill are compatibility with \"Sunset\" and human-readability. but if the \ngeneral HTTP trend is towards integers, that's an important concern. i \nhaven't looked at all HTTP fields with dates, but aren't many/most (at \nleast of the older ones) also using ISO instead of integer?\n\nsince this is mostly a question of design coherence in the general HTTP \nspace, maybe we should ask the list as our best source of info? i'll do \na short twitter poll just because i am curious about the word on the \nstreet... ;-)\n\nhttps://twitter.com/dret/status/1478045696360017920\n\nand just saying: this (#11) issue is (at least originally) about \nshifting the definition of the header field from standalone to \nstructured headers. i am still in favor of that. the issue of changing \nthe date representation to an epoch date just crept in as an additional \npossible change to make.\n\n-- \nerik wilde | ***@***.*** |\n            | http://dret.net/netdret    |\n            | http://twitter.com/dret    |\n",
+          "createdAt": "2022-01-03T16:50:28Z",
+          "updatedAt": "2022-01-03T16:50:28Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "results so far:\r\n\r\n<img width=\"591\" alt=\"image\" src=\"https://user-images.githubusercontent.com/1848612/148002582-53785710-b356-464a-a73d-9d1cc890b443.png\">\r\n\r\nbut again, this is not so much addressing the original topic of this issue, but the later topic of how the deprecation date should be represented.",
+          "createdAt": "2022-01-04T02:43:37Z",
+          "updatedAt": "2022-01-04T02:43:37Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "this one now is identified as a blocker in the WG project board and we need to resolve it. i am still in favor of the `Sunset` format (the ISO date) and so seem to be most developers out there. @mnot feels strongly about using a more robust format. i think we all agree that supporting both would be the worst possible idea. how do we resolve this? should we take it to the list?",
+          "createdAt": "2022-03-24T11:42:32Z",
+          "updatedAt": "2022-03-24T11:42:32Z"
+        },
+        {
+          "author": "richsalz",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Yes, I think take it to the list is the best thing for now.\r\n",
+          "createdAt": "2022-03-24T11:48:20Z",
+          "updatedAt": "2022-03-24T11:48:20Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "done here: https://mailarchive.ietf.org/arch/msg/httpapi/vQTGGK2hMx0KqLZ4wMbNMzaY67g",
+          "createdAt": "2022-03-24T11:54:57Z",
+          "updatedAt": "2022-03-24T11:54:57Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "we had very limited discussion (thanks @ioggstream) but we didn't get any further to a resolution.",
+          "createdAt": "2022-05-18T08:03:43Z",
+          "updatedAt": "2022-05-18T08:03:43Z"
+        },
+        {
+          "author": "obfischer",
+          "authorAssociation": "NONE",
+          "body": "Dear all, \r\n\r\nI contacted @dret via Twitter and he told me, that the question of the date format is the most blocking one. I read all the arguments given here in this issue and also the very small mail thread. \r\n\r\nI would even go for a HTTP-date. The reason is quite easy: The sunset header uses this format too. IMHO, the sunset header requires the deprecation header and the deprecation header requires the sunset header. Only both of them together would allow an API provider to reflect the whole lifecycle. And as you require both of then, they should be as similar as possible.\r\n\r\nUsing the iso date format is also fine IMHO. I always vote wherever I can for the ISO date format. Yes, @mnot is right if he points out, that performance issues must be considered. But humans are quite bad in understanding timestamps and in important cases is more important that a human being can read and understand it. For example it is easier to send the value of the header to a logging system and to present it to someone as to take a timestamp and to convert it. I have seen so many errors in date computation in my life, that I started to love ISO 8601.",
+          "createdAt": "2022-06-03T18:56:56Z",
+          "updatedAt": "2022-06-03T18:56:56Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Proposed resolution: Closing with no action (i.e., keeping the ISO date format). Main reasons:\r\n- Alignment with \"Sunset\" header field.\r\n- Most developers seem to favor ISO format.",
+          "createdAt": "2022-06-08T15:13:39Z",
+          "updatedAt": "2022-06-08T15:13:39Z"
+        },
+        {
+          "author": "pimterry",
+          "authorAssociation": "NONE",
+          "body": "Just to add another vote/2\u00a2: I would also personally lean towards ISO.\r\n\r\nI think the clearest argument against ISO in general is performance, but I would be surprised if that's relevant here - I don't think deprecation headers are the kind of thing that people are parsing in performance-sensitive scenarios in the first place.\r\n\r\nIn most real-world cases, I'd expect that this header will primarily either be spotted & parsed by a human (where ISO seems widely preferred for readability) or detected by tooling during development (where either format would be fine, but performance generally isn't critical and consistency with the closely related sunset header is mildly helpful for dev tool devs).\r\n\r\nFor performance-sensitive clients, they're free to just ignore the header - there's no need to parse every deprecation header on responses in high-performance production scenarios. If HTTP clients do start to add support for parsing and reporting deprecations automatically, I expect they'll do so in development environments only, since that's a common pattern for other such warnings.\r\n\r\nHandling this shouldn't be a performance issue for servers either, since they'll typically be returning a single fixed value every time.\r\n\r\nI'd prioritize human readability over performance concerns.",
+          "createdAt": "2022-06-08T15:45:45Z",
+          "updatedAt": "2022-06-08T15:45:45Z"
+        },
+        {
+          "author": "andreineculau",
+          "authorAssociation": "NONE",
+          "body": "> You might want to consider using a sf-integer to represent the epoch date; that doesn't require any extra parsing or error handling.\r\n\r\nWouldn't this be the first instance of an HTTP header to use epoch? \ud83e\udd14\r\nUnless HTTP-date is deemed consistently wrong, better be consistent. Whatever issues people would encounter with parsing HTTP-date for the Deprecation header, it wouldn't be new issues.",
+          "createdAt": "2022-06-08T16:06:18Z",
+          "updatedAt": "2022-06-08T16:06:18Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "@pimterry, I think your arguments make sense for this particular header. What I'm looking for is a convention for _all_ dates in HTTP, including Expires/Date/etc., which are handled at might higher rates by server software (including CDNs), so performance matters a lot more.\r\n\r\nI say \"all dates\" because it'd be good to converge on one way to do it eventually.\r\n\r\nIf folks are dead-set against using an integer, another option would be to define a new structured type as an extension to RFC8941. E.g., the textual format could identify it with an `@` followed by an ISO 8601 date, so it'd look like this in HTTP/1.1:\r\n\r\n~~~\r\nDate: @2022-06-14T06:21:47Z \r\n~~~\r\n\r\nIf we want to follow this path, we'd need a draft to define the type, likely in the HTTP WG. I don't think it'd noticeably block this spec, because it's a small, defined bit of work.\r\n\r\nThoughts?",
+          "createdAt": "2022-06-14T07:09:08Z",
+          "updatedAt": "2022-06-14T07:09:08Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": ">define a new structured type as an extension to RFC8941\r\n\r\n+1\r\n\r\n> the textual format could identify it with an @ followed by an ISO 8601 date\r\n\r\nIs using @ for such a convention? Are there any such examples elsewhere? \r\n",
+          "createdAt": "2022-06-16T01:48:23Z",
+          "updatedAt": "2022-06-16T01:48:41Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "Structured fields need an initial character to be able to distinguish a type; `@` seems like a fitting one for dates.",
+          "createdAt": "2022-06-16T01:52:16Z",
+          "updatedAt": "2022-06-16T01:52:16Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On Jun 16, 2022, at 03:52, Mark Nottingham ***@***.***> wrote:\n> Structured fields need an initial character to be able to distinguish a type; @ seems like a fitting one for dates.\n\nthat approach is a bit counter the idea to have \"Deprecation\" use the same syntax as \"Sunset\". that's still a good goal to have in my mind.",
+          "createdAt": "2022-06-16T05:40:53Z",
+          "updatedAt": "2022-06-16T05:40:53Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "Why is it a good goal? If everything must look like everything that already exists, all changes and improvements are ruled out.",
+          "createdAt": "2022-06-16T05:54:11Z",
+          "updatedAt": "2022-06-16T05:54:11Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On Jun 16, 2022, at 07:54, Mark Nottingham ***@***.***> wrote:\n> Why is it a good goal? If everything must look like everything that already exists, all changes and improvements are ruled out.\n> \n\nthis is not about everything, this is just about these two header fields which are closely related. they're not two randomly picked ones, so consistency would be useful.\n\nbut again, if it seems like we cannot move this along, despite the overwhelming opinion by the (admittedly random) set of people who voiced their opinion on the matter, then it has to be changed to remove that block.",
+          "createdAt": "2022-06-16T07:02:02Z",
+          "updatedAt": "2022-06-16T07:02:02Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "So far, discussion in the HTTP WG has been leaning towards _not_ having a special Date type, but continuing to use Integer (or Decimal, where appropriate). So if folks here think that human-readabiliy is more important, I'd suggest sticking with String.\r\n\r\nThat would make it look like:\r\n\r\n~~~\r\nDeprecation: \"Sun, 11 Nov 2018 23:59:59 GMT\"\r\n~~~",
+          "createdAt": "2022-06-16T07:44:36Z",
+          "updatedAt": "2022-06-16T07:44:36Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2022-06-16 10:44, Mark Nottingham wrote:\n> So far, discussion in the HTTP WG has been leaning towards /not/ having \n> a special Date type, but continuing to use Integer (or Decimal, where \n> appropriate). So if folks here think that human-readabiliy is more \n> important, I'd suggest sticking with String.\n> That would make it look like:\n> |Deprecation: \"Sun, 11 Nov 2018 23:59:59 GMT\" |\n\nto be honest, if we decide that we're not trying/wanting to align the \nDeprecation and Sunset headers at the syntax level, then i'd rather \nbreak consistency in an obvious way (let's say by going with integer). \nthat seems less confusing than introducing subtle differences (like \nprefixing with `@` or surrounding with quotes) that seem to carry the \nrisk of always confusing people who are thinking about deprecating and \nsunsetting their APIs.\n",
+          "createdAt": "2022-06-16T08:58:27Z",
+          "updatedAt": "2022-06-16T08:58:27Z"
+        },
+        {
+          "author": "squarooticus",
+          "authorAssociation": "NONE",
+          "body": "The only really compelling argument in favor of a structured date encoding would be to accommodate different timescales: TAI instead of UTC, for example. But that's unworkable unless all such employed timescales are universally understood, which limits the extensibility you might hope to achieve. It's equivalent and far simpler to convert all timestamps to a single reference timescale (e.g., UTC). Prioritizing human-readability of dates embedded in a protocol that is otherwise primarily binary nowadays seems like cognitive dissonance.",
+          "createdAt": "2022-06-16T11:23:16Z",
+          "updatedAt": "2022-06-16T11:23:16Z"
+        },
+        {
+          "author": "pimterry",
+          "authorAssociation": "NONE",
+          "body": "> The only really compelling argument in favor of a structured date encoding would be to accommodate different timescales\r\n\r\nThis is an interesting point! Sunset & deprecation are fundamentally human events, so they're really defined relative to a human timezone, not an abstract perfect UTC moment in time (https://codeblog.jonskeet.uk/2019/03/27/storing-utc-is-not-a-silver-bullet/ has good points on this in general). Totally agree though - while that would be mildly useful, I think it's not workable/worthwhile in practice.\r\n\r\n> Prioritizing human-readability of dates embedded in a protocol that is otherwise primarily binary nowadays seems like cognitive dissonance.\r\n\r\nIt's binary on the wire in HTTP/2 & 3, but from a developer point of view HTTP is still primarily interacted with as chunks of text. Human-readable strings in headers would be conveniently exposed as inteligible strings OOTB in browser dev tools, API clients like Postman, HTTP debugging/mitm tools, HTTP request logs (both in-app & via Sentry etc), HTTP library error messages, etc etc.\r\n\r\nThose are the kind of places where these specific headers are most likely to provide most value, imo. None of those cases get much benefit from optimizing for machine-processing.\r\n\r\n> to be honest, if we decide that we're not trying/wanting to align the Deprecation and Sunset headers at the syntax level, then i'd rather break consistency in an obvious way\r\n\r\nI don't like the conclusion, but it is a good point. I fully agree that a subtle difference would be worst.\r\n\r\nPersonally though, given the fixed choice of consistency between sunset & deprecation, vs consistency with structured fields elsewhere, I would choose the former. They're so tightly linked that using different date formats is going to be a constant source of pain (and more practically: a constant source of APIs unknowingly using the same format for both regardless of the specs).\r\n\r\nThere's no possible way to compatibly change the sunset header at all now, to progressively move towards aligning both with structured headers somehow?",
+          "createdAt": "2022-06-16T11:55:57Z",
+          "updatedAt": "2022-06-16T11:55:57Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2022-06-16 14:56, Tim Perry wrote:\n>     Prioritizing human-readability of dates embedded in a protocol that\n>     is otherwise primarily binary nowadays seems like cognitive dissonance.\n> It's binary on the wire in HTTP/2 & 3, but from a developer point of \n> view HTTP is still primarily interacted with as chunks of text. \n> Human-readable strings in headers would be conveniently exposed as \n> inteligible strings OOTB in browser dev tools, API clients like Postman, \n> HTTP debugging/mitm tools, HTTP request logs (both in-app & via Sentry \n> etc), HTTP library error messages, etc et > Those are the kind of places where these specific headers are most\n> likely to provide most value, imo. None of those cases get much benefit \n> from optimizing for machine-processing.\n\nyes, this is a good selection of typical use cases. it's important to \nkeep in mind that these are dates that are rather different from caching \ntimestamps and similarly critical runtime headers. these headers are \nmostly flags that become interesting when they are raised, and then at \nsome point somebody (a human in most cases) needs to look at them and \ntake action.\n\n>     to be honest, if we decide that we're not trying/wanting to align\n>     the Deprecation and Sunset headers at the syntax level, then i'd\n>     rather break consistency in an obvious way\n> \n> I don't like the conclusion, but it is a good point. I fully agree that \n> a subtle difference would be worst.\n\ni don't like the conclusion either but middle ground (making them \n\"almost the same\") seems to be the worst possible outcome here.\n\n> There's no possible way to compatibly change the sunset header at all \n> now, to progressively move towards aligning both with structured headers \n> somehow?\n\ni am all for improving the landscape over time as we learn what works \nwell and what doesn't work so well. i am just not convinced that this \nheader is the best one to start with. given where we are, sunset is RFC \nand part of many API styleguides and APIs, we cannot take it back. if at \nsome point in time we decide that both (assuming deprecation uses ISO) \nmust be modernized, we probably should create a new RFC, but in that \ncase we probably should use new names because this would be a breaking \nchange.\n",
+          "createdAt": "2022-06-16T14:02:56Z",
+          "updatedAt": "2022-06-16T14:02:56Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "If alignment between the syntax of Sunset and Deprecation is important, there's another option -- we could define a new field to satisfy both use cases.\r\n\r\nE.g.,\r\n\r\n~~~\r\nDeprecation: @2022-06-14T06:21:47Z; sunset=@2023-06-01T00:00:00Z \r\n~~~",
+          "createdAt": "2022-06-17T06:50:58Z",
+          "updatedAt": "2022-06-17T06:50:58Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2022-06-17 09:51, Mark Nottingham wrote:\r\n> If alignment between the syntax of Sunset and Deprecation is important, \r\n> there's another option -- we could define a new field to satisfy both \r\n> use cases.\r\n> E.g.,\r\n> |Deprecation: @2022-06-14T06:21:47Z; ***@***.***:00:00Z |\r\n\r\nthat's an interesting idea. @ioggstream provided his ideas in a private \r\nconversation and here's a similar but slightly different idea:\r\n\r\nLifecycle: deprecation=@2022-06-14T06:21:47Z; sunset=@2023-06-01T00:00:00Z\r\n\r\nthe dictionary could be backed by a registry with initial entries for \r\nsunset and deprecation, and the spec would obsolete RFC 8594. i like it \r\nbecause it's open and extensible (with the usual challenge of how to \r\nmanage the namespace...).\r\n\r\nfor this to work, i assume we would stop work on the deprecation draft, \r\nstart a lifecycle draft, and also start work on the structured field \r\ntype. this seems like it would take at least another year to be finished \r\nand published, quite likely even more. that's not great, but on the \r\nother hand the openness and extensibility may be worth that additional \r\ninvestment and delay.\r\n\r\nbut it seems like this discussion now is way bigger than just this \r\nissue. i'll be waiting for some feedback on this issue because i am \r\ninterested what other folks think, but i quite like the idea even though \r\nwe would have the additional work and delay in front of us.\r\n",
+          "createdAt": "2022-06-17T15:24:39Z",
+          "updatedAt": "2022-06-17T15:29:55Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "I think a year is a bit pessimistic, FWIW. You don't necessarily need to set up a registry -- the syntax is naturally extensible, so one option would be just to have future extensions update the RFC defining the header.",
+          "createdAt": "2022-06-18T02:44:46Z",
+          "updatedAt": "2022-06-18T02:44:46Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On Jun 18, 2022, at 04:45, Mark Nottingham ***@***.***> wrote:\n> I think a year is a bit pessimistic, FWIW. You don't necessarily need to set up a registry -- the syntax is naturally extensible, so one option would be just to have future extensions update the RFC defining the header.\n> \n\ntrue. the main challenge is how to manage the namespace, not how to implement that management. either way works, a registry may make it easier to track things, but then again i'm not so sure how many standardized extensions we would see. ",
+          "createdAt": "2022-06-18T06:30:21Z",
+          "updatedAt": "2022-06-18T06:30:21Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I'd rather have distinct wells-scoped headers.\r\n\r\n>Deprecation: @2022-06-14T06:21:47Z; sunset=@2023-06-01T00:00:00Z \r\n\r\nConsidering that deprecation will always come before sunset, this could be an option going forward. However, this requires the RFC Sunset itself to be deprecated. And also, there could be cases where API goes directly into sunset for some reasons where this header won't be useful and one has to use Sunset header only.\r\n\r\n>Lifecycle: deprecation=@2022-06-14T06:21:47Z; sunset=@2023-06-01T00:00:00Z\r\n\r\nWhat other states of lifecycle could there be? I know that these 2 are not the only ones. But what are the use cases where an API developer would use Lifecycle: active=xxx for example? Is there a use case like Lifecycle: suspended=yyyy or Lifecycle: resumed=zzz?\r\n\r\nI'd rather have distinct wells-scoped headers.",
+          "createdAt": "2022-06-18T12:46:55Z",
+          "updatedAt": "2022-06-18T13:15:35Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "@sdatspun2 can you say _why_ you have that preference?",
+          "createdAt": "2022-06-18T13:14:19Z",
+          "updatedAt": "2022-06-18T13:14:19Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@mnot I am recalling our discussion with @dret in 19 re how Deprecation needed to be a well-scoped, distinct header separate from Sunset since it is a distinct lifecycle stage semantically different from Sunset. We settled that with a distinct, well-scoped header for Deprecation. \r\n\r\nNow if we add sunset to Deprecation, there would be duplication of Sunset's functionality since I cannot imagine that Sunset is going away. I can imagine cases where an API goes directly into the sunset (without deprecation) for some reasons (e.g. ch11 :). Here, the Deprecation header (with ;sunset) won't be useful and one has to use the Sunset header only. ",
+          "createdAt": "2022-06-18T13:55:45Z",
+          "updatedAt": "2022-06-18T13:55:45Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Now regarding\r\n\r\n>Lifecycle: deprecation=@2022-06-14T06:21:47Z; sunset=@2023-06-01T00:00:00Z\r\n\r\nThis is more flexible and comprehensive indeed where new API states could be added in future. Indeed, this new header would allow the direct sunset use case too.\r\n\r\n>Lifecycle: sunset=@2023-06-01T00:00:00Z\r\n\r\nBut, I wouldn't know what those additional states and (imagined?) use cases are for which this flexibility is proposed. Are there use cases like API is suspended and resumed at some later time? If not and if deprecation and sunset are the only states that are anticipated, then why not have 2 separate distinct headers.\r\n",
+          "createdAt": "2022-06-18T13:57:02Z",
+          "updatedAt": "2022-06-18T14:11:35Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2022-06-18 16:57, Sanjay Dalal wrote:\n> Now regarding\n> \n>     Lifecycle: ***@***.***:21:47Z, ***@***.***:00:00Z\n> \n> This is more flexible and comprehensive indeed where new API states \n> could be added in future. Indeed, this new header would allow the direct \n> sunset use case.\n> \n>     Lifecycle: ***@***.***:00:00Z\n\nyes, that's the nice thing. it would obsolete Sunset but in a way that's \nopen and extensible, which feels like a good thing to have.\n\n> But, I wouldn't know what those additional states and (imagined?) use \n> cases are for which this flexibility is proposed. Are there use cases \n> like API is suspended and resumed at some later time? If not and if \n> deprecation and sunset are the only states that are anticipated, then \n> why not have 2 separate distinct headers.\n\nin our CAM book we talk about five stages of an API lifecycle. think \nstages like \"experimental\", \"production\", and yes, \"deprecated\". we also \nsay that these are not *the* five stages, but that it makes sense for an \norganization to have a lifecycle model that they apply for their API \nmanagement.\n\nif you buy into this premise, then it's nice to have a representation \nwhere you can easily mix let's say the two main events we've discussed \nso far, \"deprecation\" and \"sunset\", and maybe we also throw in \n\"production\" for an easy way to identify the way when an API entered \nproduction. organizations can then mix their own stages in, and if we \nsettle on a reasonable way to manage that namespace (i.e., to identify \nregistered stages and to identify private stages) then we have have \nsomething here with a broader scope than just Deprecation/Sunset.\n",
+          "createdAt": "2022-06-18T14:15:22Z",
+          "updatedAt": "2022-06-18T14:15:22Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": ">in our CAM book we talk about five stages of an API lifecycle. think stages like \"experimental\", \"production\"\r\n\r\nWe had listed lifecycle stages PayPal's REST API guidelines (which seems to be private now) where we had listed beta, live (your production) in addition to deprecated and retired (aka sunset). But, I don't think beta was ever utilized and there was no need to have anything for live. Perhaps, alpha, beta, early-access, etc. could be the potential stages and if registry is available then we don't have to define these.\r\n\r\n> maybe we also throw in \"production\" for an easy way to identify the way when an API entered production.\r\n\r\nTypically, this is done by removing the stage the API was in (i.e. removing beta). I wonder why would an API developer want to respond to every API request with a header just to indicate when it went into production, unnecessary imo. \r\n\r\n>it would obsolete Sunset but in a way that's open and extensible, which feels like a good thing to have.\r\n\r\nWhat is the process and timeline to obsolete the Sunset RFC? Would it be coordinated with this potentially new header's release?\r\n",
+          "createdAt": "2022-06-18T15:37:12Z",
+          "updatedAt": "2022-06-18T15:37:12Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2022-06-18 18:37, Sanjay Dalal wrote:\n> We had listed lifecycle stages PayPal's REST API guidelines (which seems \n> to be private now) where we had listed beta, live (your production) in \n> addition to deprecated and retired (aka sunset). But, I don't think beta \n> was ever utilized and there was no need to have anything for live. \n> Perhaps, alpha, beta, early-access, etc. could be the potential stages \n> and if registry is available then we don't have to define these.\n\nthat will be up for discussion. i think with sunset and deprecation we \nmay have identified the most obvious candidates. whether there are other \ncandidates and which ones is something we'll have to discuss.\n\n>     maybe we also throw in \"production\" for an easy way to identify the\n>     way when an API entered production.\n> \n> Typically, this is done by removing the stage the API was in (i.e. \n> removing beta). I wonder why would an API developer want to respond to \n> every API request with a header just to indicate when it went into \n> production, unnecessary imo.\n\nthat's true. my usual recommendation is to provide these lifecycle \nheaders only on API home documents anyway. that way tooling can easily \npick them up, but they're not part of the typical data traffic of the API.\n",
+          "createdAt": "2022-06-18T18:01:36Z",
+          "updatedAt": "2022-06-18T18:01:36Z"
+        },
+        {
+          "author": "ioggstream",
+          "authorAssociation": "NONE",
+          "body": "@dret if we think that `Lifecycle` is a viable solution, I don't think we need to pass from a new adoption unless the chairs think this is required.\r\n\r\nAbout the discussion one/two headers and obsoleting `Sunset`, I think that the editors have the most comprehensive view on the actual landscape so I think it's their choice.\r\n",
+          "createdAt": "2022-06-20T07:57:21Z",
+          "updatedAt": "2022-06-20T07:57:35Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "Just an update -- in the syntax that seems to have favour in the HTTP WG, it might look something like:\r\n\r\n> Lifecycle: deprecate=@1623233894, sunset=@1659922372",
+          "createdAt": "2022-08-08T01:33:13Z",
+          "updatedAt": "2022-08-08T01:33:13Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2022-08-08 03:33, Mark Nottingham wrote:\n> Just an update -- in the syntax that seems to have favour in the HTTP \n> WG, it might look something like:\n>     Lifecycle: ***@***.***, ***@***.***\n\nin terms of using a format that's easy to recognize and easy to parse, \nthat one looks like it's ticking the right boxes.\n",
+          "createdAt": "2022-08-08T09:02:47Z",
+          "updatedAt": "2022-08-08T09:02:47Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I would propose to use nouns for event names\n\ni.e. deprecation = @\u2026\n\nCatching up on emails and discussions. Sorry for missing 114\u2026.family emergency. \n\nSent from my mobile.\n\n> On Aug 8, 2022, at 2:33 PM, Erik Wilde ***@***.***> wrote:\n> \ufeff\n> On 2022-08-08 03:33, Mark Nottingham wrote:\n> > Just an update -- in the syntax that seems to have favour in the HTTP \n> > WG, it might look something like:\n> > Lifecycle: ***@***.***, ***@***.***\n> \n> in terms of using a format that's easy to recognize and easy to parse, \n> that one looks like it's ticking the right boxes.\n> \u2014\n> Reply to this email directly, view it on GitHub, or unsubscribe.\n> You are receiving this because you were mentioned.\n",
+          "createdAt": "2022-08-08T09:35:31Z",
+          "updatedAt": "2022-08-08T09:35:31Z"
+        },
+        {
+          "author": "ioggstream",
+          "authorAssociation": "NONE",
+          "body": "> that's true. my usual recommendation is to provide these lifecycle\r\nheaders only on API home documents anyway. that way tooling can easily\r\npick them up, but they're not part of the typical data traffic of the API\r\n\r\n\r\n:+1: If we want to shift to Lifecycle, in this specific case values should be human readable, since this information is relevant to humans.\r\n\r\n\r\n\r\n>  `Lifecycle: deprecate=@1623233894, sunset=@1659922372`\r\n\r\nA specific ISO profile  can be used, eg. `@2022-01-01 or @2022-01-01T10:10:10Z.`\r\nIn the future, a SF processor can use the `@` prefix to encode/decode the date on the wire if needed. \r\n\r\nedited: see https://github.com/httpwg/http-extensions/issues/2162#issuecomment-1209439005",
+          "createdAt": "2022-08-09T13:57:51Z",
+          "updatedAt": "2022-08-10T12:15:14Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "@ioggstream if you want to argue a different textual format for structured dates, you'll need to do that in the HTTP WG - see https://github.com/httpwg/http-extensions/issues/2162",
+          "createdAt": "2022-08-09T23:01:57Z",
+          "updatedAt": "2022-08-09T23:01:57Z"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "id": "MDU6SXNzdWU5NTU1MDg3MDg=",
+      "title": "Fields that have alternative forms",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/issues/12",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "dret"
+      ],
+      "labels": [],
+      "body": "... are considered a 'bad smell'. \r\n\r\nInstead of a date vs. a fixed string, could we just say that a date in the past is equal to 'true'?",
+      "createdAt": "2021-07-29T06:31:36Z",
+      "updatedAt": "2022-03-28T07:01:37Z",
+      "closedAt": "2022-03-28T07:01:37Z",
+      "comments": [
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2021-07-29 08:31, Mark Nottingham wrote:\n> ... are considered a 'bad smell'.\n> Instead of a date vs. a fixed string, could we just say that a date in \n> the past is equal to 'true'?\n\ni guess we could. and we already say that a date in the past means that \nthe resource is deprecated. the motivation to allow a flag was to not \nforce services to make up a date when they don't have one and simply \nwant to flag something as deprecated. but we could also \"force\" them to \nmake up a date by not allowing the \"true\" flag.\n\ni am fine either way and i do see the point that the syntax may cause \nsome implementations to not parse the field correctly. maybe others can \nweigh in as well?\n",
+          "createdAt": "2021-07-30T07:05:20Z",
+          "updatedAt": "2021-07-30T07:05:20Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "FWIW, I see it like Expires -- if it's already stale, you just assign a date in the past.",
+          "createdAt": "2021-07-31T04:46:04Z",
+          "updatedAt": "2021-07-31T04:46:04Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On Jul 31, 2021, at 06:46, Mark Nottingham ***@***.***> wrote:\n> FWIW, I see it like Expires -- if it's already stale, you just assign a date in the past.\n> \n\ni could definitely live with such a design.",
+          "createdAt": "2021-07-31T07:53:56Z",
+          "updatedAt": "2021-07-31T07:53:56Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "One use case was to align the header's usage with API contract as defined using OpenAPI. Having boolean helps align this header with OpenAPI's `deprecated` flag which does not require date. Forcing API developers to add a random date in the past in case if it is not available due toe various reasons would not be desirable for various other reasons (SLA?). Although, I wish that OpenAPI adds date for `deprecated`. \r\n\r\n>If the deprecation date is not known, the header field can carry the simple string \"true\", indicating that the resource context is deprecated, without indicating when that happened:\r\n\r\nOn Jul 31, 2021, at 06:46, Mark Nottingham ***@***.***> wrote:\r\n FWIW, I see it like Expires -- if it's already stale, you just assign a date in the past.\r\n",
+          "createdAt": "2021-08-01T14:09:57Z",
+          "updatedAt": "2021-08-01T14:43:30Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "For Expires, January 1 1970 (epoch 0) is widely used.",
+          "createdAt": "2021-08-03T00:29:12Z",
+          "updatedAt": "2021-08-03T00:29:12Z"
+        },
+        {
+          "author": "darrelmiller",
+          "authorAssociation": "NONE",
+          "body": "@sdatspun2  I wish OpenAPI supported deprecated date also.  But when we do, it won't be with a property that can be boolean or date.",
+          "createdAt": "2021-11-12T03:02:24Z",
+          "updatedAt": "2021-11-12T03:02:24Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Ok @darrelmiller, thanks for clarification on the OpenAPI side of things.\r\n\r\nI agree. We can just use date. There are some implementations out there, I would not know if any of those use boolean but since we are not an RFC yet, such a change should not be unexpected.",
+          "createdAt": "2021-11-15T03:20:32Z",
+          "updatedAt": "2021-11-15T03:20:32Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "it seems like we can safely remove the alternative syntax. i have created a PR asking for review by @mnot.",
+          "createdAt": "2022-03-24T11:38:41Z",
+          "updatedAt": "2022-03-24T11:38:41Z"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "id": "MDU6SXNzdWU5NTU1MTAwMDQ=",
+      "title": "Deprecation link relation type",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/issues/13",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "dret"
+      ],
+      "labels": [],
+      "body": "Reading the text, I'm confused, is this linking to information that's about:\r\n\r\n1. a specific deprecation event that's occured\r\n2. the entire API's policy for deprecation in the future \r\n\r\n?",
+      "createdAt": "2021-07-29T06:33:49Z",
+      "updatedAt": "2022-06-10T06:27:16Z",
+      "closedAt": "2022-06-10T06:27:16Z",
+      "comments": [
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2021-07-29 08:34, Mark Nottingham wrote:\n> Reading the text, I'm confused, is this linking to information that's about:\n> \n>  1. a specific deprecation event that's occured\n>  2. the entire API's policy for deprecation in the future\n> \n\nthe intent was that it can be both. the current text says:\n\n\"This can happen before the actual deprecation, to make a deprecation \npolicy discoverable, or after deprecation, when there may be \ndocumentation about the deprecation, and possibly documentation of how \nto manage it.\"\n\nthe goal was to specifically allow both things you listed above. is that \nunclear, or do you think it should only be one of those two things?\n",
+          "createdAt": "2021-07-30T10:27:57Z",
+          "updatedAt": "2021-07-30T10:27:57Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "Having a single link relation mean two different things is a bit odd; if someone wants to automate something based upon it, they'll need to have a way of distinguishing them.",
+          "createdAt": "2021-07-31T04:45:03Z",
+          "updatedAt": "2021-07-31T04:45:03Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On Jul 31, 2021, at 06:45, Mark Nottingham ***@***.***> wrote:\n> Having a single link relation mean two different things is a bit odd; if someone wants to automate something based upon it, they'll need to have a way of distinguishing them.\n> \ni'd argue it's one thing: information about deprecation. the nature of it may change depending on whether you look it up before or after depreciation, but it the one place where you'll find deprecation info.\n\nwhat kind of automation are you expecting? for the status, we have the header field itself. if it's some kind of crawler for deprecation policies, shouldn't that crawler be able to process such a policy for both deprecated and not-yet-deprecated resources?\n\n",
+          "createdAt": "2021-07-31T07:53:10Z",
+          "updatedAt": "2021-07-31T07:53:10Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "how should we proceed with this one? if we want to provide detailed links to various aspects that may relate to deprecation, we could probably find even more than the two examples given by @mnot above. from the design perspective, the goal was to be able to link to *anything* that may be useful, but yes, this could be various things. if we want to automate things, wouldn't it be sufficient to base that on the media type of the target of the `deprecation` link type?",
+          "createdAt": "2022-03-23T16:59:09Z",
+          "updatedAt": "2022-03-23T16:59:09Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "Personally -- I'd hold off creating a link relation type until I had some formats defined that it'd point to, so we could understand the use cases in more detail...",
+          "createdAt": "2022-03-23T20:41:20Z",
+          "updatedAt": "2022-03-23T20:41:20Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2022-03-23 21:41, Mark Nottingham wrote:\n> Personally -- I'd hold off creating a link relation type until I had \n> some formats defined that it'd point to, so we could understand the use \n> cases in more detail...\n\nthat's interesting. in my mind, with links and link targets being so \nnicely different on the web, there's potential in defining the one \nwithout the other, as there are always generic formats to fallback to \nwhen there are (not yet) specific ones.\n\nbut i agree that this is a bit speculative, and that i have no idea \nif/how for example the \"Sunset\" link relation is being used. i have \nrecommended for API guidelines to mention it as a way to make \ninformation about sunset policies discoverable, but i have no data \nif/how this is being used.\n",
+          "createdAt": "2022-03-24T07:42:09Z",
+          "updatedAt": "2022-03-24T07:42:09Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@mnot: since you qualified your last response with \"personally\", how should be resolve this issue? are you against having such a link relation, or would you be ok with having it without having/defining specific media types for linked resources?",
+          "createdAt": "2022-03-24T12:02:57Z",
+          "updatedAt": "2022-03-24T12:02:57Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "I'm not against it -- I just wonder if it's well-defined enough to be useful as it is.",
+          "createdAt": "2022-03-27T22:05:10Z",
+          "updatedAt": "2022-03-27T22:05:10Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2022-03-28 00:05, Mark Nottingham wrote:\n> I'm not against it -- I just wonder if it's well-defined enough to be \n> useful as it is.\n\ni would argue that it's useful to encourage people to have well-defined \ndeprecation policies and to document them and to make them discoverable. \nthat's something that's independent of specific media types people would \nuse to represent that information. and it's certainly something i am \nencouraging as part of general API design guidelines, but i have no data \non how much people are agreeing with that or already doing it in \nexisting APIs.\n",
+          "createdAt": "2022-03-28T07:05:21Z",
+          "updatedAt": "2022-03-28T07:05:21Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@mnot, how strongly are you feeling about this? do you want to see changes (the link relation type removed or additional wording about media types for the referenced resource) or are you ok with leaving this as it is?",
+          "createdAt": "2022-06-08T15:28:58Z",
+          "updatedAt": "2022-06-08T15:28:58Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "Re-read and the current text looks sufficient; happy to close.",
+          "createdAt": "2022-06-09T23:20:24Z",
+          "updatedAt": "2022-06-09T23:20:24Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "thanks for the feedback, @mnot. closing.",
+          "createdAt": "2022-06-10T06:27:16Z",
+          "updatedAt": "2022-06-10T06:27:16Z"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "id": "MDU6SXNzdWU5NTU1MTQwMzM=",
+      "title": "Requirements in Security Considerations",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/issues/14",
+      "state": "OPEN",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "dret"
+      ],
+      "labels": [],
+      "body": "... is generally frowned upon. ",
+      "createdAt": "2021-07-29T06:40:43Z",
+      "updatedAt": "2022-03-23T16:49:04Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "darrelmiller",
+          "authorAssociation": "NONE",
+          "body": "@dret Would it be acceptable to move these requirements into the documentation section?",
+          "createdAt": "2022-03-19T17:16:08Z",
+          "updatedAt": "2022-03-19T17:16:08Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "i don't see a reason why not. i'll assign this one to myself.",
+          "createdAt": "2022-03-23T16:49:00Z",
+          "updatedAt": "2022-03-23T16:49:00Z"
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "id": "I_kwDOE0P-y85CEVG4",
+      "title": "Relationship to HTTP status code usage",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/issues/17",
+      "state": "CLOSED",
+      "author": "dret",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "dret"
+      ],
+      "labels": [],
+      "body": "This was raised on the mailing list: Is there a recommended status code to use with the header field? My response to this was that there isn't one, and then @ioggstream was wondering whether we should say that. If anybody feels like that would be a good idea, please comment here. Thanks!",
+      "createdAt": "2022-01-19T18:36:03Z",
+      "updatedAt": "2022-03-24T12:05:30Z",
+      "closedAt": "2022-03-23T16:42:08Z",
+      "comments": [
+        {
+          "author": "ioggstream",
+          "authorAssociation": "NONE",
+          "body": "Thanks for filing this. ",
+          "createdAt": "2022-01-19T18:38:58Z",
+          "updatedAt": "2022-01-19T18:38:58Z"
+        },
+        {
+          "author": "darrelmiller",
+          "authorAssociation": "NONE",
+          "body": "My observation is that this header is similar in class to the \"Response Context\" headers https://datatracker.ietf.org/doc/html/rfc7231#section-7.4 \r\n> The remaining response header fields provide more information about\r\n   the target resource for potential use in later requests.\r\n\r\nIn the descriptions of these response headers there is no mention of HTTP method or Status Code unless there is some additional constraint on the use of the header for a specific scenario.  Unless there are constraints or semantic differences in this header due to the method or status code, it seems to be convention to say nothing.",
+          "createdAt": "2022-03-19T17:12:50Z",
+          "updatedAt": "2022-03-19T17:12:50Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "i am taking @darrelmiller's sole response as my representative sample and claim victory on this one with no changes to the draft.",
+          "createdAt": "2022-03-23T16:42:08Z",
+          "updatedAt": "2022-03-23T16:42:08Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "That seems like the right outcome to me, FWIW.",
+          "createdAt": "2022-03-23T20:41:58Z",
+          "updatedAt": "2022-03-23T20:41:58Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "FWIW, i just \"archived\" this on @darrelmiller's project board because it seemed to me that having resolved issues on there is not particularly helpful, and issues don't automatically disappear from the project when they are closed.",
+          "createdAt": "2022-03-24T12:05:30Z",
+          "updatedAt": "2022-03-24T12:05:30Z"
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "id": "I_kwDOE0P-y85LeHsR",
+      "title": "Removing link relation use with Link header",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/issues/20",
+      "state": "CLOSED",
+      "author": "dret",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "dret"
+      ],
+      "labels": [],
+      "body": "Re-reading #5 it seems we closed that one too early. Reading through where the draft currently uses link relations I think we need to clarify or to simplify.\r\n\r\n- How is `alternate` supposed to be used, what's different from using the version-related link relations?\r\n- @reschke's original concern still stands: We're \"misusing\" link relations that have a different specified purpose.\r\n- If we're saying \"don't auto-follow any of these\", then @gabesullice's remark still holds: why not treat it as what we say it is, i.e. hints for humans, and say that these should be given in the resource that's linked to via `deprecation`?\r\n\r\nWorking on #14 it seems that this change would allow us to address 14 very effectively, because then we don't have to add all the language where we say \"better don't treat the link relations in the way they're usually treated, i.e. as traversable links.\"",
+      "createdAt": "2022-06-09T14:04:21Z",
+      "updatedAt": "2022-06-10T07:28:28Z",
+      "closedAt": "2022-06-10T07:28:28Z",
+      "comments": [
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "My proposal for resolution is to remove all language around `successor-version`, `latest-version`, and `alternate`, and to add some language recommending to make this information discoverable via `deprecation`. @sdatspun2, what do you think?",
+          "createdAt": "2022-06-09T14:05:58Z",
+          "updatedAt": "2022-06-09T14:05:58Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@dret \r\n>add some language recommending to make this information discoverable via deprecation\r\n\r\nThat does not harm. \r\n\r\nHowever, \r\n\r\n>My proposal for resolution is to remove all language around successor-version, latest-version, and alternate\r\n\r\nWe did not try to redefine these, we are just using these as defined in https://www.iana.org/assignments/link-relations/link-relations.xhtml. \r\n\r\n@reschke only `alternate` which is referred in HTML might be considered misused perhaps :) and we can remove. But `successor-version`, `latest-version` use the terms resources and this draft uses the same terms as well, literally and semantically. Do you agree or am I ignoring something obvious to you?\r\n\r\n`latest-version`: When included on a versioned resource, this link points to a resource containing the latest (e.g., current) version.\r\n`successor-version`: When included on a versioned resource, this link points to a resource containing the successor version in the version history.\r\n",
+          "createdAt": "2022-06-09T21:11:10Z",
+          "updatedAt": "2022-06-09T21:11:10Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "No - 6829 is about navigating between revisions of a document under version control -- the concept of API versioning is a (potentially very) different thing. These link relations weren't defined for that, and a consumer that understands their semantics is going to be confused by this use. Agree with @dret - remove it all. ",
+          "createdAt": "2022-06-09T23:47:12Z",
+          "updatedAt": "2022-06-09T23:47:12Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": ">My proposal for resolution is to remove all language around successor-version, latest-version, and alternate\r\n> These link relations weren't defined for that, and a consumer that understands their semantics is going to be confused by this use. ..Agree with @dret - remove it all.\r\n\r\nOk, single reltype for `deprecation`, it is then. API developer can provide additional documentation regarding alternate, successor, etc. versions on the documentation at that link.",
+          "createdAt": "2022-06-10T04:29:55Z",
+          "updatedAt": "2022-06-10T04:29:55Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2022-06-10 01:47, Mark Nottingham wrote:\n> No - 6829 is about navigating between revisions of a document under \n> version control -- the concept of API versioning is a (potentially very) \n> different thing. These link relations weren't defined for that, and a \n> consumer that understands their semantics is going to be confused by \n> this use. Agree with @dret <https://github.com/dret> - remove it all.\n\nthat was my point. a new API version may/will provide access to the same \nresource version (just providing a different way to interact with them), \nso the semantics are very different and potentially confusing.\n",
+          "createdAt": "2022-06-10T06:26:42Z",
+          "updatedAt": "2022-06-10T06:26:42Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Closing after removing the link relation use as discussed.",
+          "createdAt": "2022-06-10T07:28:28Z",
+          "updatedAt": "2022-06-10T07:28:28Z"
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "id": "I_kwDOE0P-y85LhxVr",
+      "title": "Change registration registry for the header field",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/issues/21",
+      "state": "OPEN",
+      "author": "dret",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "dret"
+      ],
+      "labels": [],
+      "body": "The current draft still requests publication in the IANA message field registry. There now is a specific registry for HTTP fields, and the registration request should be changed to that registry.",
+      "createdAt": "2022-06-10T07:01:45Z",
+      "updatedAt": "2022-06-10T07:01:48Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 22,
+      "id": "I_kwDOE0P-y85O25ru",
+      "title": "link to HTTP IMF-fixdate is dangling; also http-date vs imf-fixdate",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/issues/22",
+      "state": "OPEN",
+      "author": "reschke",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [
+        "dret"
+      ],
+      "labels": [],
+      "body": "I also note that Sunset uses http-date, which is a superset.\r\n\r\nRestricting to imf-date is well-intended, but IMHO not a good idea as the assumption is that recipients will just use generic HTTP date parsers, right?",
+      "createdAt": "2022-07-30T12:52:00Z",
+      "updatedAt": "2022-08-01T16:05:29Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2022-07-30 15:52, Julian Reschke wrote:\n> I also note that Sunset uses http-date, which is a superset.\n> \n> Restricting to imf-date is well-intended, but IMHO not a good idea as \n> the assumption is that recipients will just use generic HTTP date \n> parsers, right?\n\nthat's a good point, thanks. i'll leave this one open just in case we \nend up finishing \"Deprecation\" instead of starting \"Lifecycle\".\n",
+          "createdAt": "2022-07-31T19:12:01Z",
+          "updatedAt": "2022-07-31T19:12:01Z"
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "id": "I_kwDOE0P-y85O251b",
+      "title": "\"header\" vs \"field\"",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/issues/23",
+      "state": "CLOSED",
+      "author": "reschke",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-07-30T12:54:50Z",
+      "updatedAt": "2022-08-01T16:04:08Z",
+      "closedAt": "2022-08-01T16:04:08Z",
+      "comments": []
+    },
+    {
+      "number": 24,
+      "id": "I_kwDOE0P-y85O3B18",
+      "title": "intro to header field inprecise",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/issues/24",
+      "state": "OPEN",
+      "author": "reschke",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [
+        "dret"
+      ],
+      "labels": [],
+      "body": "> The Deprecation HTTP response header field allows a server to communicate to a client that the resource in context of the message is or will be deprecated.\r\n\r\nWhat exactly does \"in context of the message\" mean? Is this about the resource being deprecated only in certain contexts (which?), or about the actual *resource* (URI) being deprecated depending on the request context?",
+      "createdAt": "2022-07-30T13:29:27Z",
+      "updatedAt": "2022-08-01T16:05:30Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
+  "pulls": [
+    {
+      "number": 1,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTQ1NDAzMTY1",
+      "title": "First draft under HTTP API WG",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/pull/1",
+      "state": "MERGED",
+      "author": "sdatspun2",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "A new version of I-D, draft-ietf-httpapi-deprecation-header-00.txt as submitted and posted to the\r\nIETF repository.\r\n\r\nReplaces: draft-dalal-deprecation-header\r\n\r\nName:           draft-ietf-httpapi-deprecation-header\r\nRevision:       00\r\nTitle:          The Deprecation HTTP Header\r\nDocument date:  2020-12-23\r\nGroup:          httpapi\r\nPages:          13\r\nURL:            https://www.ietf.org/archive/id/draft-ietf-httpapi-deprecation-header-00.txt\r\nStatus:         https://datatracker.ietf.org/doc/draft-ietf-httpapi-deprecation-header/\r\nHtmlized:       https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-deprecation-header\r\nHtmlized:       https://tools.ietf.org/html/draft-ietf-httpapi-deprecation-header-00\r\n",
+      "createdAt": "2020-12-24T15:14:29Z",
+      "updatedAt": "2020-12-24T16:47:55Z",
+      "baseRepository": "ietf-wg-httpapi/deprecation-header",
+      "baseRefName": "main",
+      "baseRefOid": "1572f2af45ca2d471fe7b53f7f8cb7087fb78b5b",
+      "headRepository": "sdatspun2/httpapi-deprecation-header",
+      "headRefName": "main",
+      "headRefOid": "3bc863acaf43f4b811ae8f6c000cc6faeb02d7e5",
+      "closedAt": "2020-12-24T16:47:55Z",
+      "mergedAt": "2020-12-24T16:47:55Z",
+      "mergedBy": "dret",
+      "mergeCommit": {
+        "oid": "ed10d9401087a5d446832ed2893e3b9409ac9793"
+      },
+      "comments": [
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@richsalz  @dret Here is the pull request to accept.",
+          "createdAt": "2020-12-24T15:50:33Z",
+          "updatedAt": "2020-12-24T15:51:22Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 10,
+      "id": "MDExOlB1bGxSZXF1ZXN0NjMyNTg1NjM1",
+      "title": "remove TAB character",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/pull/10",
+      "state": "MERGED",
+      "author": "reschke",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2021-05-07T11:19:51Z",
+      "updatedAt": "2021-05-07T12:32:34Z",
+      "baseRepository": "ietf-wg-httpapi/deprecation-header",
+      "baseRefName": "main",
+      "baseRefOid": "58fc50a3ad4613554426de0c585e09af8de75bcb",
+      "headRepository": "reschke/deprecation-header",
+      "headRefName": "patch-1",
+      "headRefOid": "c3d117e52f371c1c9abbc59284b47a6cf8beb5ba",
+      "closedAt": "2021-05-07T12:32:20Z",
+      "mergedAt": "2021-05-07T12:32:20Z",
+      "mergedBy": "dret",
+      "mergeCommit": {
+        "oid": "c281ca484f9360272476da49216e96b72ac567f6"
+      },
+      "comments": [
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "nice catch. old school!",
+          "createdAt": "2021-05-07T12:32:34Z",
+          "updatedAt": "2021-05-07T12:32:34Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 15,
+      "id": "MDExOlB1bGxSZXF1ZXN0Njk5MjU0MTcz",
+      "title": "Editorial suggestions",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/pull/15",
+      "state": "MERGED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2021-07-29T06:41:31Z",
+      "updatedAt": "2021-07-29T10:49:42Z",
+      "baseRepository": "ietf-wg-httpapi/deprecation-header",
+      "baseRefName": "main",
+      "baseRefOid": "17ddf012a1f8d74a9ad76078508a810b08819561",
+      "headRepository": "ietf-wg-httpapi/deprecation-header",
+      "headRefName": "mnot-patch-1",
+      "headRefOid": "ee7c0d5cbe6913eef48212bfa11007124446f59c",
+      "closedAt": "2021-07-29T10:49:42Z",
+      "mergedAt": "2021-07-29T10:49:42Z",
+      "mergedBy": "dret",
+      "mergeCommit": {
+        "oid": "2fdac4e77b27e15fb943c5e1fa401190d9472acf"
+      },
+      "comments": [
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "thanks a lot, this is very good and helpful!",
+          "createdAt": "2021-07-29T10:49:38Z",
+          "updatedAt": "2021-07-29T10:49:38Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 18,
+      "id": "PR_kwDOE0P-y8408cvA",
+      "title": "Remove alternative form (resolves #12)",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/pull/18",
+      "state": "MERGED",
+      "author": "dret",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-03-24T11:33:05Z",
+      "updatedAt": "2022-03-28T07:01:37Z",
+      "baseRepository": "ietf-wg-httpapi/deprecation-header",
+      "baseRefName": "main",
+      "baseRefOid": "2fdac4e77b27e15fb943c5e1fa401190d9472acf",
+      "headRepository": "ietf-wg-httpapi/deprecation-header",
+      "headRefName": "remove-alternative-form",
+      "headRefOid": "ec9a3e772036d2d38efe4bb7515c14b7c768f974",
+      "closedAt": "2022-03-28T07:01:37Z",
+      "mergedAt": "2022-03-28T07:01:37Z",
+      "mergedBy": "dret",
+      "mergeCommit": {
+        "oid": "00babf26b90417dd85d00a19d8f57ab5a6ab29e4"
+      },
+      "comments": [
+        {
+          "author": "sdatgit",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Looks good to me.",
+          "createdAt": "2022-03-27T13:21:43Z",
+          "updatedAt": "2022-03-27T13:21:43Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOE0P-y842_DFt",
+          "commit": {
+            "abbreviatedOid": "ec9a3e7"
+          },
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "LGTM",
+          "createdAt": "2022-03-27T21:12:15Z",
+          "updatedAt": "2022-03-27T21:12:15Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "id": "PR_kwDOE0P-y841Xh4_",
+      "title": "Get editors' draft working",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/pull/19",
+      "state": "MERGED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "This repo wasn't set up with the automated tooling; this PR corrects that, and fixes up a few other small things.",
+      "createdAt": "2022-03-31T04:38:15Z",
+      "updatedAt": "2022-04-02T01:58:22Z",
+      "baseRepository": "ietf-wg-httpapi/deprecation-header",
+      "baseRefName": "main",
+      "baseRefOid": "00babf26b90417dd85d00a19d8f57ab5a6ab29e4",
+      "headRepository": "mnot/deprecation-header",
+      "headRefName": "main",
+      "headRefOid": "b3de6a1dfb0e37cc0914cb36d8ea3acc06ce4292",
+      "closedAt": "2022-03-31T07:49:01Z",
+      "mergedAt": "2022-03-31T07:49:01Z",
+      "mergedBy": "dret",
+      "mergeCommit": {
+        "oid": "e8c5abafa0864081633ceda4c683fe955c60e0b5"
+      },
+      "comments": [
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "it seems like there's some problem with this update, @mnot: https://github.com/ietf-wg-httpapi/deprecation-header/actions/runs/2069654450",
+          "createdAt": "2022-03-31T07:53:51Z",
+          "updatedAt": "2022-03-31T07:53:51Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "MEMBER",
+          "body": "Fixed.",
+          "createdAt": "2022-04-02T01:58:22Z",
+          "updatedAt": "2022-04-02T01:58:22Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 25,
+      "id": "PR_kwDOE0P-y848Yczi",
+      "title": "\"field\" terminology (fixes #23)",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/pull/25",
+      "state": "MERGED",
+      "author": "reschke",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-07-31T14:45:56Z",
+      "updatedAt": "2022-08-01T16:04:07Z",
+      "baseRepository": "ietf-wg-httpapi/deprecation-header",
+      "baseRefName": "main",
+      "baseRefOid": "fab5e10951fad1a92ad7f9e3317b9465d1bfc48a",
+      "headRepository": "reschke/deprecation-header",
+      "headRefName": "patch-2",
+      "headRefOid": "19e36e2425f7d03eefc1bbaba23ae3a08053de36",
+      "closedAt": "2022-08-01T16:04:07Z",
+      "mergedAt": "2022-08-01T16:04:07Z",
+      "mergedBy": "dret",
+      "mergeCommit": {
+        "oid": "7a97bb757f3bf5fbd6333813417d75696a0cee00"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOE0P-y84_CLmq",
+          "commit": {
+            "abbreviatedOid": "19e36e2"
+          },
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "thanks so much, those were *a lot* of changes!",
+          "createdAt": "2022-08-01T16:03:49Z",
+          "updatedAt": "2022-08-01T16:03:49Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "id": "PR_kwDOE0P-y848fu2K",
+      "title": "fix links into [HTTP]",
+      "url": "https://github.com/ietf-wg-httpapi/deprecation-header/pull/26",
+      "state": "MERGED",
+      "author": "reschke",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-08-02T10:51:40Z",
+      "updatedAt": "2022-08-03T09:23:59Z",
+      "baseRepository": "ietf-wg-httpapi/deprecation-header",
+      "baseRefName": "main",
+      "baseRefOid": "7a97bb757f3bf5fbd6333813417d75696a0cee00",
+      "headRepository": "reschke/deprecation-header",
+      "headRefName": "patch-3",
+      "headRefOid": "fad322e8c1916db1b6cb6b63c0a9dc7fa7ed79e3",
+      "closedAt": "2022-08-02T18:26:48Z",
+      "mergedAt": "2022-08-02T18:26:48Z",
+      "mergedBy": "dret",
+      "mergeCommit": {
+        "oid": "4d11cc315dcc13629eb428a4c1d81941c53b83e0"
+      },
+      "comments": [
+        {
+          "author": "reschke",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Well, as long as this is a WG work item, we should keep it in shape.",
+          "createdAt": "2022-08-03T09:23:59Z",
+          "updatedAt": "2022-08-03T09:23:59Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOE0P-y84_IpvK",
+          "commit": {
+            "abbreviatedOid": "fad322e"
+          },
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "thanks, and happily accepted. but please don't spend any more time improving this draft which in all likelihood will be abandoned in favor of a new \"API Lifecycle\" draft. thanks!",
+          "createdAt": "2022-08-02T18:26:36Z",
+          "updatedAt": "2022-08-02T18:26:36Z",
+          "comments": []
+        }
+      ]
+    }
+  ]
+}
