@@ -35,7 +35,13 @@ author:
 normative:
   HTTP: RFC9110
   LINK: RFC8288
-
+  SFBIS:
+      title: Structured Field Values for HTTP
+      date: 2023-11-06
+      author:
+      - ins: M. Nottingham
+      - ins: P-H. Kamp
+      target: https://datatracker.ietf.org/doc/draft-ietf-httpbis-sfbis/
 
 informative:
 
@@ -62,7 +68,7 @@ In addition to the Deprecation header field, the resource provider can use other
 
 {::boilerplate bcp14-tagged}
 
-This specification uses the Augmented Backus-Naur Form (ABNF) notation of {{!RFC5234}} and includes, by reference, the IMF-fixdate rule as defined in {{Section 5.6.7 of HTTP}}.
+This specification uses the Augmented Backus-Naur Form (ABNF) notation of {{!RFC5234}} and includes, by reference, the sf-date format as defined in [SFBIS].
 
 The term "resource" is to be interpreted as defined in {{Section 3.1 of HTTP}}.
 
@@ -72,19 +78,20 @@ The `Deprecation` HTTP response header field allows a server to communicate to a
 
 ## Syntax
 
-The `Deprecation` response header field describes the deprecation of the resource identified with the response it occurred within (see {{Section 6.4.2 of HTTP}}). It conveys the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date).
+The `Deprecation` response header field describes the deprecation of the resource identified with the response it occurred within (see {{Section 6.4.2 of HTTP}}). It conveys the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date). `Deprecation` is an Item Structured Header {{!RFC8941}}. Refer to Section 3.3.7 of [SFBIS] for ABNF of `sf-date`:
 
 ~~~ abnf
-Deprecation = IMF-fixdate
+Deprecation = sf-date
 ~~~
+
 
 Servers MUST NOT include more than one `Deprecation` header field in the same response.
 
-The date is the date when the resource was or will be deprecated. It is in the form of an IMF-fixdate timestamp.
+The date is the date when the resource was or will be deprecated. It is in the form of an Structured Field Dates as defined in Section 3.3.7 of [SFBIS].
 
-The following example shows that the resource context has been deprecated on Sunday, November 11, 2018 at 23:59:59 GMT:
+The following example shows that the resource context has been deprecated on Friday, November 24, 2023 at 23:59:59 GMT:
 
-    Deprecation: Sun, 11 Nov 2018 23:59:59 GMT
+    Deprecation: @1700830799
 
 The deprecation date can be in the future. This means that the resource will be deprecated at the indicated date in the future.
 
@@ -118,7 +125,7 @@ In this example the linked content provides additional information about depreca
 
 The following example uses the same link header field, but also announces a deprecation date using a Deprecation header field:
 
-    Deprecation: Sun, 11 Nov 2018 23:59:59 GMT
+    Deprecation: @1700830799
     Link: <https://developer.example.com/deprecation>;
           rel="deprecation"; type="text/html"
 
@@ -131,10 +138,10 @@ In addition to the deprecation related information, if the resource provider wan
 
 The timestamp given in the `Sunset` header field MUST NOT be earlier than the one given in the `Deprecation` header field.
 
-The following example shows that the resource in context has been deprecated since Sunday, November 11, 2018 at 23:59:59 GMT and its sunset date is Wednesday, November 11, 2020 at 23:59:59 GMT.
+The following example shows that the resource in context has been deprecated since Friday, November 24, 2023 at 23:59:59 GMT and its sunset date is Sunday, November 24, 2024 at 23:59:59 GMT.
 
-    Deprecation: Sun, 11 Nov 2018 23:59:59 GMT
-    Sunset: Wed, 11 Nov 2020 23:59:59 GMT
+    Deprecation: @1700830799
+    Sunset: Sun, 24 Nov 2024 23:59:59 GMT
 
 # Resource Behavior
 
@@ -277,18 +284,23 @@ The following examples do not show complete HTTP interactions. They only show th
 
 The first example shows a deprecation header field with date information:
 
-    Deprecation: Sun, 11 Nov 2018 23:59:59 GMT
+    Deprecation: @1700830799
 
 The second example shows a deprecation header field with a link for the resource's deprecation policy. In addition, it shows the sunset date for the deprecated resource:
 
-    Deprecation: Sun, 11 Nov 2018 23:59:59 GMT
-    Sunset: Wed, 11 Nov 2020 23:59:59 GMT
+    Deprecation: @1700830799
+    Sunset: Sun, 24 Nov 2024 23:59:59 GMT
     Link: <https://developer.example.com/deprecation>; rel="deprecation"
 
 
 
 --- back
 
+# Changes from Draft-03 {#changes}
+
+This revision has made the following changes:
+
+* Date format is changed from IMF-fixdate rule as defined in {{Section 5.6.7 of HTTP}} to Structured Field for Dates as defined in Section 3.3.7 of [SFBIS].
 
 # Acknowledgments
 
