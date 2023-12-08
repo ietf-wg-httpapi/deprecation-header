@@ -5,7 +5,7 @@
 HTTPAPI                                                         S. Dalal
 Internet-Draft                                                          
 Intended status: Standards Track                                E. Wilde
-Expires: 30 May 2024                                    27 November 2023
+Expires: 10 June 2024                                    8 December 2023
 
 
                    The Deprecation HTTP Header Field
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 May 2024.
+   This Internet-Draft will expire on 10 June 2024.
 
 Copyright Notice
 
@@ -77,21 +77,21 @@ Table of Contents
      2.2.  Scope
    3.  The Deprecation Link Relation Type
      3.1.  Documentation
+       3.1.1.  Security Considerations
    4.  Sunset
    5.  Resource Behavior
    6.  IANA Considerations
      6.1.  The Deprecation HTTP Response Header Field
      6.2.  The Deprecation Link Relation Type
-   7.  Implementation Status
-     7.1.  Implementing the Deprecation Header Field
-     7.2.  Implementing the Concept
-   8.  Security Considerations
-   9.  Examples
-   10. References
-     10.1.  Normative References
-     10.2.  Informative References
-   Appendix A.  Changes from Draft-03
-   Appendix B.  Acknowledgments
+   7.  Examples
+   8.  References
+     8.1.  Normative References
+     8.2.  Informative References
+   Appendix A.  Implementation Status
+     A.1.  Implementing the Deprecation Header Field
+     A.2.  Implementing the Concept
+   Appendix B.  Changes from Draft-03
+   Appendix C.  Acknowledgments
    Authors' Addresses
 
 1.  Introduction
@@ -250,6 +250,30 @@ Table of Contents
    about the deprecation, allowing consumers to discover information
    about the deprecation and how to best manage it.
 
+3.1.1.  Security Considerations
+
+   The Deprecation header field SHOULD be treated as a hint, meaning
+   that the resource is indicating (and not guaranteeing with certainty)
+   that it will be or is deprecated.  Applications consuming the
+   resource SHOULD check the resource documentation to verify
+   authenticity and accuracy.  Resource documentation SHOULD provide
+   additional information about the deprecation, potentially including
+   recommendation(s) for replacement.
+
+   In cases where the Deprecation header field value is a date in the
+   future, it can lead to information that otherwise might not be
+   available.  Therefore, applications consuming the resource SHOULD
+   verify the resource documentation and if possible, consult the
+   resource developer to discuss potential impact due to deprecation and
+   plan for possible transition to recommended resource.
+
+   In cases where a Link header field is used to provide documentation,
+   one should assume that the content of the Link header field may not
+   be secure, private or integrity-guaranteed, and due caution should be
+   exercised when using it.  Applications consuming the resource SHOULD
+   check the referred resource documentation to verify authenticity and
+   accuracy.
+
 4.  Sunset
 
    In addition to the deprecation related information, if the resource
@@ -282,7 +306,8 @@ Table of Contents
 6.1.  The Deprecation HTTP Response Header Field
 
    The Deprecation response header field should be added to the
-   permanent registry of message header fields (see [RFC3864]).
+   "Hypertext Transfer Protocol (HTTP) Field Name Registry" registry
+   (Section 16.3.1 of [HTTP])
 
    Header Field Name: Deprecation
 
@@ -317,7 +342,68 @@ Table of Contents
    Specification document: this specification,
            Section 3 "The Deprecation Link Relation Type"
 
-7.  Implementation Status
+7.  Examples
+
+   The following example does not show complete HTTP interaction.  It
+   only shows those HTTP header fields in a response that are relevant
+   for resource deprecation.
+
+   Deprecation: @1688169599
+   Link: <https://developer.example.com/deprecation>; rel="deprecation"
+
+8.  References
+
+8.1.  Normative References
+
+   [HTTP]     Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
+              Ed., "HTTP Semantics", STD 97, RFC 9110,
+              DOI 10.17487/RFC9110, June 2022,
+              <https://www.rfc-editor.org/rfc/rfc9110>.
+
+   [LINK]     Nottingham, M., "Web Linking", RFC 8288,
+              DOI 10.17487/RFC8288, October 2017,
+              <https://www.rfc-editor.org/rfc/rfc8288>.
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/rfc/rfc2119>.
+
+   [RFC5234]  Crocker, D., Ed. and P. Overell, "Augmented BNF for Syntax
+              Specifications: ABNF", STD 68, RFC 5234,
+              DOI 10.17487/RFC5234, January 2008,
+              <https://www.rfc-editor.org/rfc/rfc5234>.
+
+   [RFC7234]  Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
+              Ed., "Hypertext Transfer Protocol (HTTP/1.1): Caching",
+              RFC 7234, DOI 10.17487/RFC7234, June 2014,
+              <https://www.rfc-editor.org/rfc/rfc7234>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+   [RFC8941]  Nottingham, M. and P. Kamp, "Structured Field Values for
+              HTTP", RFC 8941, DOI 10.17487/RFC8941, February 2021,
+              <https://www.rfc-editor.org/rfc/rfc8941>.
+
+   [SFBIS]    Nottingham, M. and P.-H. Kamp, "Structured Field Values
+              for HTTP", 6 November 2023,
+              <https://datatracker.ietf.org/doc/draft-ietf-httpbis-
+              sfbis/>.
+
+8.2.  Informative References
+
+   [RFC7942]  Sheffer, Y. and A. Farrel, "Improving Awareness of Running
+              Code: The Implementation Status Section", BCP 205,
+              RFC 7942, DOI 10.17487/RFC7942, July 2016,
+              <https://www.rfc-editor.org/rfc/rfc7942>.
+
+   [RFC8594]  Wilde, E., "The Sunset HTTP Header Field", RFC 8594,
+              DOI 10.17487/RFC8594, May 2019,
+              <https://www.rfc-editor.org/rfc/rfc8594>.
+
+Appendix A.  Implementation Status
 
    Note to RFC Editor: Please remove this section before publication.
 
@@ -341,7 +427,7 @@ Table of Contents
    It is up to the individual working groups to use this information as
    they see fit".
 
-7.1.  Implementing the Deprecation Header Field
+A.1.  Implementing the Deprecation Header Field
 
    This is a list of implementations that implement the deprecation
    header field:
@@ -405,7 +491,7 @@ Table of Contents
 
    *  Reference: https://phabricator.wikimedia.org/T232485
 
-7.2.  Implementing the Concept
+A.2.  Implementing the Concept
 
    This is a list of implementations that implement the general concept,
    but do so using different mechanisms:
@@ -447,107 +533,7 @@ Table of Contents
    *  Reference: https://github.com/paypal/api-standards/blob/master/
       api-style-guide.md#runtime
 
-8.  Security Considerations
-
-   The Deprecation header field SHOULD be treated as a hint, meaning
-   that the resource is indicating (and not guaranteeing with certainty)
-   that it will be or is deprecated.  Applications consuming the
-   resource SHOULD check the resource documentation to verify
-   authenticity and accuracy.  Resource documentation SHOULD provide
-   additional information about the deprecation, potentially including
-   recommendation(s) for replacement.
-
-   In cases where the Deprecation header field value is a date in the
-   future, it can lead to information that otherwise might not be
-   available.  Therefore, applications consuming the resource SHOULD
-   verify the resource documentation and if possible, consult the
-   resource developer to discuss potential impact due to deprecation and
-   plan for possible transition to recommended resource.
-
-   In cases where a Link header field is used to provide documentation,
-   one should assume that the content of the Link header field may not
-   be secure, private or integrity-guaranteed, and due caution should be
-   exercised when using it.  Applications consuming the resource SHOULD
-   check the referred resource documentation to verify authenticity and
-   accuracy.
-
-9.  Examples
-
-   The following examples do not show complete HTTP interactions.  They
-   only show those HTTP header fields in a response that are relevant
-   for resource deprecation.
-
-   The first example shows a deprecation header field with date
-   information:
-
-   Deprecation: @1688169599
-
-   The second example shows a deprecation header field with a link for
-   the resource's deprecation policy.  In addition, it shows the sunset
-   date for the deprecated resource:
-
-   Deprecation: @1688169599
-   Sunset: Sun, 30 Jun 2024 23:59:59 GMT
-   Link: <https://developer.example.com/deprecation>; rel="deprecation"
-
-10.  References
-
-10.1.  Normative References
-
-   [HTTP]     Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
-              Ed., "HTTP Semantics", STD 97, RFC 9110,
-              DOI 10.17487/RFC9110, June 2022,
-              <https://www.rfc-editor.org/rfc/rfc9110>.
-
-   [LINK]     Nottingham, M., "Web Linking", RFC 8288,
-              DOI 10.17487/RFC8288, October 2017,
-              <https://www.rfc-editor.org/rfc/rfc8288>.
-
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119,
-              DOI 10.17487/RFC2119, March 1997,
-              <https://www.rfc-editor.org/rfc/rfc2119>.
-
-   [RFC3864]  Klyne, G., Nottingham, M., and J. Mogul, "Registration
-              Procedures for Message Header Fields", BCP 90, RFC 3864,
-              DOI 10.17487/RFC3864, September 2004,
-              <https://www.rfc-editor.org/rfc/rfc3864>.
-
-   [RFC5234]  Crocker, D., Ed. and P. Overell, "Augmented BNF for Syntax
-              Specifications: ABNF", STD 68, RFC 5234,
-              DOI 10.17487/RFC5234, January 2008,
-              <https://www.rfc-editor.org/rfc/rfc5234>.
-
-   [RFC7234]  Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
-              Ed., "Hypertext Transfer Protocol (HTTP/1.1): Caching",
-              RFC 7234, DOI 10.17487/RFC7234, June 2014,
-              <https://www.rfc-editor.org/rfc/rfc7234>.
-
-   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
-              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
-              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
-
-   [RFC8941]  Nottingham, M. and P. Kamp, "Structured Field Values for
-              HTTP", RFC 8941, DOI 10.17487/RFC8941, February 2021,
-              <https://www.rfc-editor.org/rfc/rfc8941>.
-
-   [SFBIS]    Nottingham, M. and P.-H. Kamp, "Structured Field Values
-              for HTTP", 6 November 2023,
-              <https://datatracker.ietf.org/doc/draft-ietf-httpbis-
-              sfbis/>.
-
-10.2.  Informative References
-
-   [RFC7942]  Sheffer, Y. and A. Farrel, "Improving Awareness of Running
-              Code: The Implementation Status Section", BCP 205,
-              RFC 7942, DOI 10.17487/RFC7942, July 2016,
-              <https://www.rfc-editor.org/rfc/rfc7942>.
-
-   [RFC8594]  Wilde, E., "The Sunset HTTP Header Field", RFC 8594,
-              DOI 10.17487/RFC8594, May 2019,
-              <https://www.rfc-editor.org/rfc/rfc8594>.
-
-Appendix A.  Changes from Draft-03
+Appendix B.  Changes from Draft-03
 
    This revision has made the following changes:
 
@@ -555,7 +541,7 @@ Appendix A.  Changes from Draft-03
       Section 5.6.7 of [HTTP] to Structured Field for Date as defined in
       Section 3.3.7 of [SFBIS].
 
-Appendix B.  Acknowledgments
+Appendix C.  Acknowledgments
 
    The authors would like to thank Nikhil Kolekar, Darrel Miller, Mark
    Nottingham, and Roberto Polli for their contributions.
