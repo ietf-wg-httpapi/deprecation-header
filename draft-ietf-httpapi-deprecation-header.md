@@ -131,6 +131,14 @@ The following example uses the same link header field, but also announces a depr
 
 Given that the deprecation date is in the past, the linked information resource may have been updated to include information about the deprecation, allowing consumers to discover information about the deprecation and how to best manage it.
 
+### Security Considerations
+
+The Deprecation header field SHOULD be treated as a hint, meaning that the resource is indicating (and not guaranteeing with certainty) that it will be or is deprecated. Applications consuming the resource SHOULD check the resource documentation to verify authenticity and accuracy. Resource documentation SHOULD provide additional information about the deprecation, potentially including recommendation(s) for replacement.
+
+In cases where the Deprecation header field value is a date in the future, it can lead to information that otherwise might not be available. Therefore, applications consuming the resource SHOULD verify the resource documentation and if possible, consult the resource developer to discuss potential impact due to deprecation and plan for possible transition to recommended resource.
+
+In cases where a `Link` header field is used to provide documentation, one should assume that the content of the  `Link` header field may not be secure, private or integrity-guaranteed, and due caution should be exercised when using it. Applications consuming the resource SHOULD check the referred resource documentation to verify authenticity and accuracy.
+
 
 # Sunset
 
@@ -151,7 +159,7 @@ The act of deprecation does not change any behavior of the resource. Deprecated 
 
 ## The Deprecation HTTP Response Header Field
 
-The `Deprecation` response header field should be added to the permanent registry of message header fields (see {{!RFC3864}}).
+The `Deprecation` response header field should be added to the "Hypertext Transfer Protocol (HTTP) Field Name Registry" registry ({{Section 16.3.1 of HTTP}})
 
     Header Field Name: Deprecation
 
@@ -188,6 +196,15 @@ The `deprecation` link relation type should be added to the permanent registry o
             Section 3 "The Deprecation Link Relation Type"
 
 
+# Examples
+
+The following example does not show complete HTTP interaction. It only shows those HTTP header fields in a response that are relevant for resource deprecation.
+
+    Deprecation: @1688169599
+    Link: <https://developer.example.com/deprecation>; rel="deprecation"
+
+
+--- back
 
 # Implementation Status
 
@@ -268,33 +285,6 @@ Organization: PayPal
 - Description: PayPal uses a custom HTTP header field named `PayPal-Deprecated`
 - Reference: https://github.com/paypal/api-standards/blob/master/api-style-guide.md#runtime
 
-
-# Security Considerations
-
-The Deprecation header field SHOULD be treated as a hint, meaning that the resource is indicating (and not guaranteeing with certainty) that it will be or is deprecated. Applications consuming the resource SHOULD check the resource documentation to verify authenticity and accuracy. Resource documentation SHOULD provide additional information about the deprecation, potentially including recommendation(s) for replacement.
-
-In cases where the Deprecation header field value is a date in the future, it can lead to information that otherwise might not be available. Therefore, applications consuming the resource SHOULD verify the resource documentation and if possible, consult the resource developer to discuss potential impact due to deprecation and plan for possible transition to recommended resource.
-
-In cases where a `Link` header field is used to provide documentation, one should assume that the content of the  `Link` header field may not be secure, private or integrity-guaranteed, and due caution should be exercised when using it. Applications consuming the resource SHOULD check the referred resource documentation to verify authenticity and accuracy.
-
-
-# Examples
-
-The following examples do not show complete HTTP interactions. They only show those HTTP header fields in a response that are relevant for resource deprecation.
-
-The first example shows a deprecation header field with date information:
-
-    Deprecation: @1688169599
-
-The second example shows a deprecation header field with a link for the resource's deprecation policy. In addition, it shows the sunset date for the deprecated resource:
-
-    Deprecation: @1688169599
-    Sunset: Sun, 30 Jun 2024 23:59:59 GMT
-    Link: <https://developer.example.com/deprecation>; rel="deprecation"
-
-
-
---- back
 
 # Changes from Draft-03 {#changes}
 
