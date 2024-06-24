@@ -2,7 +2,7 @@
 coding: utf-8
 abbrev:
 title: The Deprecation HTTP Header Field
-docname: draft-ietf-httpapi-deprecation-header-latest
+docname: draft-ietf-httpapi-deprecation-header-04
 category: std
 
 ipr: trust200902
@@ -48,7 +48,7 @@ informative:
 
 --- abstract
 
-The Deprecation HTTP response header field is used to signal to consumers of a URI-identified resource that the resource will be or has been deprecated. Additionally, the deprecation link relation can be used to link to a resource that provides additional information about planned or existing deprecation, and possibly ways in which clients can best manage deprecation.
+The Deprecation HTTP response header field is used to signal to consumers of a resource (in the sense of [URI]) that the resource will be or has been deprecated. Additionally, the deprecation link relation can be used to link to a resource that provides additional information about planned or existing deprecation, and possibly ways in which clients can best manage deprecation.
 
 
 --- middle
@@ -68,7 +68,7 @@ In addition to the Deprecation header field, the resource provider can use other
 
 {::boilerplate bcp14-tagged}
 
-This specification uses the Augmented Backus-Naur Form (ABNF) notation of {{!RFC5234}} and includes, by reference, the sf-date format as defined in [SFBIS].
+This document uses the terminology from Section 3 of [SFBIS] to specify syntax and parsing of Date.
 
 The term "resource" is to be interpreted as defined in {{Section 3.1 of HTTP}}.
 
@@ -84,8 +84,6 @@ The `Deprecation` response header field describes the deprecation of the resourc
 Deprecation = sf-date
 ~~~
 
-
-Servers MUST NOT include more than one `Deprecation` header field in the same response.
 
 The date is the date when the resource was or will be deprecated. It is in the form of an Structured Field Date as defined in Section 3.3.7 of [SFBIS].
 
@@ -130,14 +128,6 @@ The following example uses the same link header field, but also announces a depr
           rel="deprecation"; type="text/html"
 
 Given that the deprecation date is in the past, the linked information resource may have been updated to include information about the deprecation, allowing consumers to discover information about the deprecation and how to best manage it.
-
-### Security Considerations
-
-The Deprecation header field SHOULD be treated as a hint, meaning that the resource is indicating (and not guaranteeing with certainty) that it will be or is deprecated. Applications consuming the resource SHOULD check the resource documentation to verify authenticity and accuracy. Resource documentation SHOULD provide additional information about the deprecation, potentially including recommendation(s) for replacement.
-
-In cases where the Deprecation header field value is a date in the future, it can lead to information that otherwise might not be available. Therefore, applications consuming the resource SHOULD verify the resource documentation and if possible, consult the resource developer to discuss potential impact due to deprecation and plan for possible transition to recommended resource.
-
-In cases where a `Link` header field is used to provide documentation, one should assume that the content of the  `Link` header field may not be secure, private or integrity-guaranteed, and due caution should be exercised when using it. Applications consuming the resource SHOULD check the referred resource documentation to verify authenticity and accuracy.
 
 
 # Sunset
@@ -203,6 +193,14 @@ The following example does not show complete HTTP interaction. It only shows tho
     Deprecation: @1688169599
     Link: <https://developer.example.com/deprecation>; rel="deprecation"
 
+
+### Security Considerations
+
+The Deprecation header field SHOULD be treated as a hint, meaning that the resource is indicating (and not guaranteeing with certainty) that it will be or is deprecated. Applications consuming the resource SHOULD check the resource documentation to verify authenticity and accuracy. Resource documentation SHOULD provide additional information about the deprecation, potentially including recommendation(s) for replacement.
+
+In cases where the Deprecation header field value is a date in the future, it can lead to information that otherwise might not be available. Therefore, applications consuming the resource SHOULD verify the resource documentation and if possible, consult the resource developer to discuss potential impact due to deprecation and plan for possible transition to recommended resource.
+
+In cases where a `Link` header field is used to provide documentation, one should assume that the content of the  `Link` header field may not be secure, private or integrity-guaranteed, and due caution should be exercised when using it. Applications consuming the resource SHOULD check the referred resource documentation to verify authenticity and accuracy.
 
 --- back
 
@@ -290,7 +288,9 @@ Organization: PayPal
 
 This revision has made the following changes:
 
-* Date format is changed from IMF-fixdate rule as defined in {{Section 5.6.7 of HTTP}} to Structured Field for Date as defined in Section 3.3.7 of [SFBIS].
+* Changed 'URI-identified resource' to 'resource (in the sense of [URI])'
+* Uses Notational Conventions for Structured Fields as suggested in HTTP Editorial Style Guide
+* Security Considerations moved below the IANA Considerations
 
 # Acknowledgments
 
