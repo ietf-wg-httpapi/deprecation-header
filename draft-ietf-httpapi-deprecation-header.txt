@@ -5,7 +5,7 @@
 HTTPAPI                                                         S. Dalal
 Internet-Draft                                                          
 Intended status: Standards Track                                E. Wilde
-Expires: 26 December 2024                                   24 June 2024
+Expires: 22 January 2025                                    21 July 2024
 
 
                    The Deprecation HTTP Header Field
@@ -14,8 +14,8 @@ Expires: 26 December 2024                                   24 June 2024
 Abstract
 
    The Deprecation HTTP response header field is used to signal to
-   consumers of a resource (in the sense of [URI]) that the resource
-   will be or has been deprecated.  Additionally, the deprecation link
+   consumers of a resource (in the sense of URI) that the resource will
+   be or has been deprecated.  Additionally, the deprecation link
    relation can be used to link to a resource that provides additional
    information about planned or existing deprecation, and possibly ways
    in which clients can best manage deprecation.
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 December 2024.
+   This Internet-Draft will expire on 22 January 2025.
 
 Copyright Notice
 
@@ -82,15 +82,14 @@ Table of Contents
    6.  IANA Considerations
      6.1.  The Deprecation HTTP Response Header Field
      6.2.  The Deprecation Link Relation Type
-   7.  Examples
-     7.1.  Security Considerations
+   7.  Security Considerations
    8.  References
      8.1.  Normative References
      8.2.  Informative References
    Appendix A.  Implementation Status
      A.1.  Implementing the Deprecation Header Field
      A.2.  Implementing the Concept
-   Appendix B.  Changes from Draft-03
+   Appendix B.  Changes from Draft-04
    Appendix C.  Acknowledgments
    Authors' Addresses
 
@@ -123,8 +122,8 @@ Table of Contents
    BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
-   This document uses the terminology from Section 3 of [SFBIS] to
-   specify syntax and parsing of Date.
+   This document uses the terminology from Section 3 of
+   [STRUCTURED-FIELDS] to specify syntax and parsing of Date.
 
    The term "resource" is to be interpreted as defined in Section 3.1 of
    [HTTP].
@@ -143,13 +142,13 @@ Table of Contents
    be in the future (the resource context will be deprecated at that
    date) or in the past (the resource context has been deprecated at
    that date).  Deprecation is an Item Structured Header [RFC8941].
-   Refer to Section 3.3.7 of [SFBIS] for ABNF of sf-date:
+   Refer to Section 3.3.7 of [STRUCTURED-FIELDS] for ABNF of sf-date:
 
    Deprecation = sf-date
 
    The date is the date when the resource was or will be deprecated.  It
    is in the form of an Structured Field Date as defined in
-   Section 3.3.7 of [SFBIS].
+   Section 3.3.7 of [STRUCTURED-FIELDS].
 
    The following example shows that the resource context has been
    deprecated on Friday, June 30, 2023 at 23:59:59 GMT:
@@ -227,12 +226,12 @@ Table of Contents
    about deprecation of the resource context.  There is no Deprecation
    header field in the response, and thus the resource is not (yet)
    deprecated.  However, the resource already exposes a link where
-   information is available how deprecation is managed for the resource
-   context.  This may be documentation explaining the use of the
-   Deprecation header field, and also explaining under which
+   information is available describing how deprecation is managed for
+   the resource.  This may be the documentation explaining the use of
+   the Deprecation header field, and also explaining under which
    circumstances and with which policies (announcement before
    deprecation; continued operation after deprecation) deprecation might
-   be happening.
+   take place.
 
    The following example uses the same link header field, but also
    announces a deprecation date using a Deprecation header field:
@@ -314,24 +313,13 @@ Table of Contents
    Specification document: this specification,
            Section 3 "The Deprecation Link Relation Type"
 
-7.  Examples
+7.  Security Considerations
 
-   The following example does not show complete HTTP interaction.  It
-   only shows those HTTP header fields in a response that are relevant
-   for resource deprecation.
-
-   Deprecation: @1688169599
-   Link: <https://developer.example.com/deprecation>; rel="deprecation"
-
-7.1.  Security Considerations
-
-   The Deprecation header field SHOULD be treated as a hint, meaning
+   The Deprecation header field should be treated as a hint, meaning
    that the resource is indicating (and not guaranteeing with certainty)
-   that it will be or is deprecated.  Applications consuming the
-   resource SHOULD check the resource documentation to verify
-   authenticity and accuracy.  Resource documentation SHOULD provide
-   additional information about the deprecation, potentially including
-   recommendation(s) for replacement.
+   that it will be or is deprecated.  Resource documentation SHOULD
+   provide additional information about the deprecation, potentially
+   including recommendation(s) for replacement.
 
    In cases where the Deprecation header field value is a date in the
    future, it can lead to information that otherwise might not be
@@ -365,11 +353,6 @@ Table of Contents
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/rfc/rfc2119>.
 
-   [RFC7234]  Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
-              Ed., "Hypertext Transfer Protocol (HTTP/1.1): Caching",
-              RFC 7234, DOI 10.17487/RFC7234, June 2014,
-              <https://www.rfc-editor.org/rfc/rfc7234>.
-
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
@@ -378,10 +361,16 @@ Table of Contents
               HTTP", RFC 8941, DOI 10.17487/RFC8941, February 2021,
               <https://www.rfc-editor.org/rfc/rfc8941>.
 
-   [SFBIS]    Nottingham, M. and P.-H. Kamp, "Structured Field Values
-              for HTTP", 6 November 2023,
-              <https://datatracker.ietf.org/doc/draft-ietf-httpbis-
-              sfbis/>.
+   [RFC9111]  Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
+              Ed., "HTTP Caching", STD 98, RFC 9111,
+              DOI 10.17487/RFC9111, June 2022,
+              <https://www.rfc-editor.org/rfc/rfc9111>.
+
+   [STRUCTURED-FIELDS]
+              Nottingham, M. and P. Kamp, "Structured Field Values for
+              HTTP", 23 January 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
+              sfbis-05>.
 
 8.2.  Informative References
 
@@ -505,7 +494,7 @@ A.2.  Implementing the Concept
    Organization: Ultipro
 
    *  Description: Ultipro uses the HTTP Warning header field as
-      described in Section 5.5 of [RFC7234] with code 299
+      described in Section 5.5 of [RFC9111] with code 299
 
    *  Reference: https://connect.ultipro.com/api-deprecation
 
@@ -524,7 +513,7 @@ A.2.  Implementing the Concept
    *  Reference: https://github.com/paypal/api-standards/blob/master/
       api-style-guide.md#runtime
 
-Appendix B.  Changes from Draft-03
+Appendix B.  Changes from Draft-04
 
    This revision has made the following changes:
 
