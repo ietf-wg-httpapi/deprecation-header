@@ -35,20 +35,20 @@ author:
 normative:
   HTTP: RFC9110
   LINK: RFC8288
-  SFBIS:
+  STRUCTURED-FIELDS:
       title: Structured Field Values for HTTP
-      date: 2023-11-06
+      date: 2024-01-23
       author:
       - ins: M. Nottingham
-      - ins: P-H. Kamp
-      target: https://datatracker.ietf.org/doc/draft-ietf-httpbis-sfbis/
+      - ins: P. Kamp
+      target: https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-sfbis-05
 
 informative:
 
 
 --- abstract
 
-The Deprecation HTTP response header field is used to signal to consumers of a resource (in the sense of [URI]) that the resource will be or has been deprecated. Additionally, the deprecation link relation can be used to link to a resource that provides additional information about planned or existing deprecation, and possibly ways in which clients can best manage deprecation.
+The Deprecation HTTP response header field is used to signal to consumers of a resource (in the sense of URI) that the resource will be or has been deprecated. Additionally, the deprecation link relation can be used to link to a resource that provides additional information about planned or existing deprecation, and possibly ways in which clients can best manage deprecation.
 
 
 --- middle
@@ -68,7 +68,7 @@ In addition to the Deprecation header field, the resource provider can use other
 
 {::boilerplate bcp14-tagged}
 
-This document uses the terminology from Section 3 of [SFBIS] to specify syntax and parsing of Date.
+This document uses the terminology from Section 3 of [STRUCTURED-FIELDS] to specify syntax and parsing of Date.
 
 The term "resource" is to be interpreted as defined in {{Section 3.1 of HTTP}}.
 
@@ -78,14 +78,14 @@ The `Deprecation` HTTP response header field allows a server to communicate to a
 
 ## Syntax
 
-The `Deprecation` response header field describes the deprecation of the resource identified with the response it occurred within (see {{Section 6.4.2 of HTTP}}). It conveys the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date). `Deprecation` is an Item Structured Header {{!RFC8941}}. Refer to Section 3.3.7 of [SFBIS] for ABNF of `sf-date`:
+The `Deprecation` response header field describes the deprecation of the resource identified with the response it occurred within (see {{Section 6.4.2 of HTTP}}). It conveys the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date). `Deprecation` is an Item Structured Header {{!RFC8941}}. Refer to Section 3.3.7 of [STRUCTURED-FIELDS] for ABNF of `sf-date`:
 
 ~~~ abnf
 Deprecation = sf-date
 ~~~
 
 
-The date is the date when the resource was or will be deprecated. It is in the form of an Structured Field Date as defined in Section 3.3.7 of [SFBIS].
+The date is the date when the resource was or will be deprecated. It is in the form of an Structured Field Date as defined in Section 3.3.7 of [STRUCTURED-FIELDS].
 
 The following example shows that the resource context has been deprecated on Friday, June 30, 2023 at 23:59:59 GMT:
 
@@ -119,7 +119,7 @@ The purpose of the `Deprecation` header field is to provide a hint about depreca
     Link: <https://developer.example.com/deprecation>;
           rel="deprecation"; type="text/html"
 
-In this example the linked content provides additional information about deprecation of the resource context. There is no Deprecation header field in the response, and thus the resource is not (yet) deprecated. However, the resource already exposes a link where information is available how deprecation is managed for the resource context. This may be documentation explaining the use of the Deprecation header field, and also explaining under which circumstances and with which policies (announcement before deprecation; continued operation after deprecation) deprecation might be happening.
+In this example the linked content provides additional information about deprecation of the resource context. There is no Deprecation header field in the response, and thus the resource is not (yet) deprecated. However, the resource already exposes a link where information is available describing how deprecation is managed for the resource. This may be the documentation explaining the use of the Deprecation header field, and also explaining under which circumstances and with which policies (announcement before deprecation; continued operation after deprecation) deprecation might take place.
 
 The following example uses the same link header field, but also announces a deprecation date using a Deprecation header field:
 
@@ -186,23 +186,16 @@ The `deprecation` link relation type should be added to the permanent registry o
             Section 3 "The Deprecation Link Relation Type"
 
 
-# Examples
+# Security Considerations
 
-The following example does not show complete HTTP interaction. It only shows those HTTP header fields in a response that are relevant for resource deprecation.
-
-    Deprecation: @1688169599
-    Link: <https://developer.example.com/deprecation>; rel="deprecation"
-
-
-### Security Considerations
-
-The Deprecation header field SHOULD be treated as a hint, meaning that the resource is indicating (and not guaranteeing with certainty) that it will be or is deprecated. Applications consuming the resource SHOULD check the resource documentation to verify authenticity and accuracy. Resource documentation SHOULD provide additional information about the deprecation, potentially including recommendation(s) for replacement.
+The Deprecation header field should be treated as a hint, meaning that the resource is indicating (and not guaranteeing with certainty) that it will be or is deprecated. Resource documentation SHOULD provide additional information about the deprecation, potentially including recommendation(s) for replacement.
 
 In cases where the Deprecation header field value is a date in the future, it can lead to information that otherwise might not be available. Therefore, applications consuming the resource SHOULD verify the resource documentation and if possible, consult the resource developer to discuss potential impact due to deprecation and plan for possible transition to recommended resource.
 
 In cases where a `Link` header field is used to provide documentation, one should assume that the content of the  `Link` header field may not be secure, private or integrity-guaranteed, and due caution should be exercised when using it. Applications consuming the resource SHOULD check the referred resource documentation to verify authenticity and accuracy.
 
 --- back
+
 
 # Implementation Status
 
@@ -270,7 +263,7 @@ Organization: IBM
 
 Organization: Ultipro
 
-- Description: Ultipro uses the HTTP `Warning` header field as described in Section 5.5 of {{!RFC7234}} with code `299`
+- Description: Ultipro uses the HTTP `Warning` header field as described in Section 5.5 of {{!RFC9111}} with code `299`
 - Reference:  https://connect.ultipro.com/api-deprecation
 
 Organization: Clearbit
@@ -284,7 +277,7 @@ Organization: PayPal
 - Reference: https://github.com/paypal/api-standards/blob/master/api-style-guide.md#runtime
 
 
-# Changes from Draft-03 {#changes}
+# Changes from Draft-04 {#changes}
 
 This revision has made the following changes:
 
