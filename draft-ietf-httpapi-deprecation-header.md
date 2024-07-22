@@ -281,7 +281,7 @@ Organization: PayPal
 
 This revision has made the following changes:
 
-* Changed 'URI-identified resource' to 'resource (in the sense of [URI])'
+* Changed 'URI-identified resource' to 'resource (in the sense of URI)'
 * Uses Notational Conventions for Structured Fields as suggested in HTTP Editorial Style Guide
 * Security Considerations moved below the IANA Considerations
 
