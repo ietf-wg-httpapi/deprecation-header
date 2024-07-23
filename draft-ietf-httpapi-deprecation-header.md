@@ -188,11 +188,10 @@ The `deprecation` link relation type should be added to the permanent registry o
 
 # Security Considerations
 
-The Deprecation header field should be treated as a hint, meaning that the resource is indicating (and not guaranteeing with certainty) that it will be or is deprecated. Resource documentation SHOULD provide additional information about the deprecation, potentially including recommendation(s) for replacement.
+The Deprecation header field should be treated as a hint, meaning that the resource is indicating (and not guaranteeing with certainty) that it will be or is deprecated. Deprecated resources almost MUST function as before, even though one might consider non-functional details such as making them progressively less efficient with longer response time for example. 
 
-In cases where the Deprecation header field value is a date in the future, it can lead to information that otherwise might not be available. Therefore, applications consuming the resource SHOULD verify the resource documentation and if possible, consult the resource developer to discuss potential impact due to deprecation and plan for possible transition to recommended resource.
+Resource documentation SHOULD provide additional information about the deprecation, potentially including recommendation(s) for replacement. Applications consuming the resource SHOULD check the referred resource documentation to verify authenticity and accuracy. In cases where a `Link` header field is used to provide documentation, one should assume that the content of the  `Link` header field may not be secure, private or integrity-guaranteed, and due caution should be exercised when using it. Also, in cases where the Deprecation header field value is a date in the future, it can lead to information that otherwise might not be available. Therefore, applications consuming the resource SHOULD, if possible, consult the resource developer to discuss potential impact due to deprecation and plan for possible transition to a recommended resource(s). 
 
-In cases where a `Link` header field is used to provide documentation, one should assume that the content of the  `Link` header field may not be secure, private or integrity-guaranteed, and due caution should be exercised when using it. Applications consuming the resource SHOULD check the referred resource documentation to verify authenticity and accuracy.
 
 --- back
 
@@ -281,9 +280,9 @@ Organization: PayPal
 
 This revision has made the following changes:
 
-* Changed 'URI-identified resource' to 'resource (in the sense of [URI])'
-* Uses Notational Conventions for Structured Fields as suggested in HTTP Editorial Style Guide
-* Security Considerations moved below the IANA Considerations
+* Fixed references for structured fields, RFC9111 instead of RFC7234
+* Security Considerations is Heading#1
+* Removed redundant example
 
 # Acknowledgments
 
