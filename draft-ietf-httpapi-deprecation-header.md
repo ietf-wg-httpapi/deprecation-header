@@ -35,13 +35,8 @@ author:
 normative:
   HTTP: RFC9110
   LINK: RFC8288
-  STRUCTURED-FIELDS:
-      title: Structured Field Values for HTTP
-      date: 2024-01-23
-      author:
-      - ins: M. Nottingham
-      - ins: P. Kamp
-      target: https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-sfbis-05
+  STRUCTURED-FIELDS: I-D.ietf-httpbis-sfbis
+
 
 informative:
 
