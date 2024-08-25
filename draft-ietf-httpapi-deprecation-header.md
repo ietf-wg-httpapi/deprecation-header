@@ -76,9 +76,8 @@ The `Deprecation` HTTP response header field allows a server to communicate to a
 
 The `Deprecation` response header field describes the deprecation of the resource identified with the response it occurred within (see {{Section 6.4.2 of HTTP}}). It conveys the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date). `Deprecation` is an Item Structured Header {{!RFC8941}}. Refer to Section 3.3.7 of [STRUCTURED-FIELDS] for `sf-date`:
 
-~~~ 
-Deprecation = sf-date
-~~~
+    Deprecation = sf-date
+
 
 
 The date is the date when the resource was or will be deprecated. It is in the form of an Structured Field Date as defined in Section 3.3.7 of [STRUCTURED-FIELDS].
