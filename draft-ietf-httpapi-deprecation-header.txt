@@ -5,7 +5,7 @@
 HTTPAPI                                                         S. Dalal
 Internet-Draft                                                          
 Intended status: Standards Track                                E. Wilde
-Expires: 22 January 2025                                    21 July 2024
+Expires: 26 February 2025                                 25 August 2024
 
 
                    The Deprecation HTTP Header Field
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 22 January 2025.
+   This Internet-Draft will expire on 26 February 2025.
 
 Copyright Notice
 
@@ -89,7 +89,7 @@ Table of Contents
    Appendix A.  Implementation Status
      A.1.  Implementing the Deprecation Header Field
      A.2.  Implementing the Concept
-   Appendix B.  Changes from Draft-04
+   Appendix B.  Changes from Draft-05
    Appendix C.  Acknowledgments
    Authors' Addresses
 
@@ -142,7 +142,7 @@ Table of Contents
    be in the future (the resource context will be deprecated at that
    date) or in the past (the resource context has been deprecated at
    that date).  Deprecation is an Item Structured Header [RFC8941].
-   Refer to Section 3.3.7 of [STRUCTURED-FIELDS] for ABNF of sf-date:
+   Refer to Section 3.3.7 of [STRUCTURED-FIELDS] for sf-date:
 
    Deprecation = sf-date
 
@@ -215,9 +215,11 @@ Table of Contents
    about deprecation to the resource consumer.  Upon reception of the
    Deprecation header field, the client developer can look up the
    resource's documentation in order to find deprecation related
-   information.  The resource provider can provide a link to the
-   resource documentation using a Link header field with relation type
-   deprecation as shown below:
+   information.  The documentation MAY provide a guide and timeline to
+   migrate away from the deprecated resource to a new resource(s)
+   replacing the deprecated resource, if applicable.  The resource
+   provider can provide a link to the resource documentation using a
+   Link header field with relation type deprecation as shown below:
 
    Link: <https://developer.example.com/deprecation>;
          rel="deprecation"; type="text/html"
@@ -227,11 +229,19 @@ Table of Contents
    header field in the response, and thus the resource is not (yet)
    deprecated.  However, the resource already exposes a link where
    information is available describing how deprecation is managed for
-   the resource.  This may be the documentation explaining the use of
-   the Deprecation header field, and also explaining under which
-   circumstances and with which policies (announcement before
-   deprecation; continued operation after deprecation) deprecation might
-   take place.
+   the resource.  This may be the documentation explaining under which
+   circumstances and with which policies deprecation might take place.
+   For example, a policy may indicate that deprecation of a resource(s)
+   will always be signaled in the dedicated places at least N days ahead
+   of the planned deprecation date and then only the resource(s) would
+   be deprecated.  Or a policy may indicate that resource(s) would be
+   deprecated first and then only be signaled as deprecated at dedicated
+   places.  The documentation in addition to the deprecation policy may
+   also provide a migration guide exaplaining to consumers of the
+   resource how to migrate to a new resource(s) or an alternate
+   resource(s) before the deprecation date.  Such policy and
+   documentation would be very useful to consumers of the resource to
+   plan ahead and migrate successfully.
 
    The following example uses the same link header field, but also
    announces a deprecation date using a Deprecation header field:
@@ -250,7 +260,7 @@ Table of Contents
    In addition to the deprecation related information, if the resource
    provider wants to convey to the client application that the
    deprecated resource is expected to become unresponsive at a specific
-   point in time, the Sunset HTTP header field [RFC8594] can be used in
+   point in time, the Sunset HTTP header field [SUNSET] can be used in
    addition to the Deprecation header field.
 
    The timestamp given in the Sunset header field MUST NOT be earlier
@@ -282,7 +292,7 @@ Table of Contents
 
    Header Field Name: Deprecation
 
-   Applicable Protocol: Hypertext Transfer Protocol (HTTP)
+   Protocol: Hypertext Transfer Protocol (HTTP)
 
    Status: Standard
 
@@ -299,41 +309,39 @@ Table of Contents
    The deprecation link relation type should be added to the permanent
    registry of link relation types (Section 4.2 of [LINK]).
 
-   Relation Type: deprecation
+Relation Name: deprecation
 
-   Applicable Protocol: Hypertext Transfer Protocol (HTTP)
+Description: Identifies deprecation related documentation for the context that is primarily intended for human consumption.
 
-   Status: Standard
+Author: Sanjay Dalal <sanjay.dalal@cal.berkeley.edu>,
+        Erik Wilde <erik.wilde@dret.net>
 
-   Author: Sanjay Dalal <sanjay.dalal@cal.berkeley.edu>,
-           Erik Wilde <erik.wilde@dret.net>
-
-   Change controller: IETF
-
-   Specification document: this specification,
-           Section 3 "The Deprecation Link Relation Type"
+Specification document: this specification,
+        Section 3 "The Deprecation Link Relation Type"
 
 7.  Security Considerations
 
    The Deprecation header field should be treated as a hint, meaning
    that the resource is indicating (and not guaranteeing with certainty)
-   that it will be or is deprecated.  Resource documentation SHOULD
-   provide additional information about the deprecation, potentially
-   including recommendation(s) for replacement.
+   that it will be or is deprecated.  Deprecated resources MUST function
+   (almost) as before, even though one might consider non-functional
+   details such as making them progressively less efficient with longer
+   response time for example.
 
-   In cases where the Deprecation header field value is a date in the
-   future, it can lead to information that otherwise might not be
-   available.  Therefore, applications consuming the resource SHOULD
-   verify the resource documentation and if possible, consult the
-   resource developer to discuss potential impact due to deprecation and
-   plan for possible transition to recommended resource.
-
-   In cases where a Link header field is used to provide documentation,
-   one should assume that the content of the Link header field may not
-   be secure, private or integrity-guaranteed, and due caution should be
-   exercised when using it.  Applications consuming the resource SHOULD
-   check the referred resource documentation to verify authenticity and
-   accuracy.
+   Resource documentation SHOULD provide additional information about
+   the deprecation, such as including recommendation(s) for replacement.
+   Applications consuming the resource SHOULD check the referred
+   resource documentation to verify authenticity and accuracy.  In cases
+   where a Link header field is used to provide documentation, one
+   should assume (unless served over HTTPS) that the content of the Link
+   header field may not be secure, private or integrity-guaranteed, and
+   due caution should be exercised when using it.  Also, in cases where
+   the Deprecation header field value is a date in the future, it can
+   lead to information that otherwise might not be available.
+   Therefore, applications consuming the resource SHOULD, if possible,
+   consult the resource developer to discuss potential impact due to
+   deprecation and plan for possible transition to a recommended
+   resource(s).
 
 8.  References
 
@@ -368,9 +376,14 @@ Table of Contents
 
    [STRUCTURED-FIELDS]
               Nottingham, M. and P. Kamp, "Structured Field Values for
-              HTTP", 23 January 2024,
+              HTTP", Work in Progress, Internet-Draft, draft-ietf-
+              httpbis-sfbis-06, 21 April 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
-              sfbis-05>.
+              sfbis-06>.
+
+   [SUNSET]   Wilde, E., "The Sunset HTTP Header Field", RFC 8594,
+              DOI 10.17487/RFC8594, May 2019,
+              <https://www.rfc-editor.org/rfc/rfc8594>.
 
 8.2.  Informative References
 
@@ -378,10 +391,6 @@ Table of Contents
               Code: The Implementation Status Section", BCP 205,
               RFC 7942, DOI 10.17487/RFC7942, July 2016,
               <https://www.rfc-editor.org/rfc/rfc7942>.
-
-   [RFC8594]  Wilde, E., "The Sunset HTTP Header Field", RFC 8594,
-              DOI 10.17487/RFC8594, May 2019,
-              <https://www.rfc-editor.org/rfc/rfc8594>.
 
 Appendix A.  Implementation Status
 
@@ -513,17 +522,15 @@ A.2.  Implementing the Concept
    *  Reference: https://github.com/paypal/api-standards/blob/master/
       api-style-guide.md#runtime
 
-Appendix B.  Changes from Draft-04
+Appendix B.  Changes from Draft-05
 
    This revision has made the following changes:
 
-   *  Changed 'URI-identified resource' to 'resource (in the sense of
-      [URI])'
+   *  Fixed Link Relation Template
 
-   *  Uses Notational Conventions for Structured Fields as suggested in
-      HTTP Editorial Style Guide
+   *  Made RFC8594 (Sunset) a normative reference
 
-   *  Security Considerations moved below the IANA Considerations
+   *  Removed ABNF for sf-date
 
 Appendix C.  Acknowledgments
 

@@ -25,7 +25,7 @@
     pycountry 22.3.5
     PyYAML 6.0.1
     requests 2.32.3
-    setuptools 69.5.1
+    setuptools 70.3.0
     wcwidth 0.2.13
 -->
 <link href="draft-ietf-httpapi-deprecation-header.xml" rel="alternate" type="application/rfc+xml">
@@ -1025,11 +1025,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">The Deprecation HTTP Header Field</td>
-<td class="right">July 2024</td>
+<td class="right">August 2024</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Dalal &amp; Wilde</td>
-<td class="center">Expires 22 January 2025</td>
+<td class="center">Expires 26 February 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1042,12 +1042,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-httpapi-deprecation-header-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-07-21" class="published">21 July 2024</time>
+<time datetime="2024-08-25" class="published">25 August 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-01-22">22 January 2025</time></dd>
+<dd class="expires"><time datetime="2025-02-26">26 February 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1099,7 +1099,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 22 January 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 26 February 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1198,7 +1198,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
-            <p id="section-toc.1-1.10.1"><a href="#appendix-B" class="auto internal xref">Appendix B</a>.  <a href="#name-changes-from-draft-04" class="internal xref">Changes from Draft-04</a></p>
+            <p id="section-toc.1-1.10.1"><a href="#appendix-B" class="auto internal xref">Appendix B</a>.  <a href="#name-changes-from-draft-05" class="internal xref">Changes from Draft-05</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
             <p id="section-toc.1-1.11.1"><a href="#appendix-C" class="auto internal xref">Appendix C</a>.  <a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
@@ -1244,8 +1244,8 @@ appear in all capitals, as shown here.<a href="#section-1.1-1" class="pilcrow">�
         <h3 id="name-syntax">
 <a href="#section-2.1" class="section-number selfRef">2.1. </a><a href="#name-syntax" class="section-name selfRef">Syntax</a>
         </h3>
-<p id="section-2.1-1">The <code>Deprecation</code> response header field describes the deprecation of the resource identified with the response it occurred within (see <span><a href="https://rfc-editor.org/rfc/rfc9110#section-6.4.2" class="relref">Section 6.4.2</a> of [<a href="#HTTP" class="cite xref">HTTP</a>]</span>). It conveys the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date). <code>Deprecation</code> is an Item Structured Header <span>[<a href="#RFC8941" class="cite xref">RFC8941</a>]</span>. Refer to Section 3.3.7 of <span>[<a href="#STRUCTURED-FIELDS" class="cite xref">STRUCTURED-FIELDS</a>]</span> for ABNF of <code>sf-date</code>:<a href="#section-2.1-1" class="pilcrow">¶</a></p>
-<div class="lang-abnf sourcecode" id="section-2.1-2">
+<p id="section-2.1-1">The <code>Deprecation</code> response header field describes the deprecation of the resource identified with the response it occurred within (see <span><a href="https://rfc-editor.org/rfc/rfc9110#section-6.4.2" class="relref">Section 6.4.2</a> of [<a href="#HTTP" class="cite xref">HTTP</a>]</span>). It conveys the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date). <code>Deprecation</code> is an Item Structured Header <span>[<a href="#RFC8941" class="cite xref">RFC8941</a>]</span>. Refer to Section 3.3.7 of <span>[<a href="#STRUCTURED-FIELDS" class="cite xref">STRUCTURED-FIELDS</a>]</span> for <code>sf-date</code>:<a href="#section-2.1-1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.1-2">
 <pre>
 Deprecation = sf-date
 </pre><a href="#section-2.1-2" class="pilcrow">¶</a>
@@ -1285,14 +1285,14 @@ Deprecation: @1688169599
         <h3 id="name-documentation">
 <a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-documentation" class="section-name selfRef">Documentation</a>
         </h3>
-<p id="section-3.1-1">The purpose of the <code>Deprecation</code> header field is to provide a hint about deprecation to the resource consumer. Upon reception of the <code>Deprecation</code> header field, the client developer can look up the resource's documentation in order to find deprecation related information. The resource provider can provide a link to the resource documentation using a <code>Link</code> header field with relation type <code>deprecation</code> as shown below:<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.1-1">The purpose of the <code>Deprecation</code> header field is to provide a hint about deprecation to the resource consumer. Upon reception of the <code>Deprecation</code> header field, the client developer can look up the resource's documentation in order to find deprecation related information. The documentation <span class="bcp14">MAY</span> provide a guide and timeline to migrate away from the deprecated resource to a new resource(s) replacing the deprecated resource, if applicable. The resource provider can provide a link to the resource documentation using a <code>Link</code> header field with relation type <code>deprecation</code> as shown below:<a href="#section-3.1-1" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-3.1-2">
 <pre>
 Link: &lt;https://developer.example.com/deprecation&gt;;
       rel="deprecation"; type="text/html"
 </pre><a href="#section-3.1-2" class="pilcrow">¶</a>
 </div>
-<p id="section-3.1-3">In this example the linked content provides additional information about deprecation of the resource context. There is no Deprecation header field in the response, and thus the resource is not (yet) deprecated. However, the resource already exposes a link where information is available describing how deprecation is managed for the resource. This may be the documentation explaining the use of the Deprecation header field, and also explaining under which circumstances and with which policies (announcement before deprecation; continued operation after deprecation) deprecation might take place.<a href="#section-3.1-3" class="pilcrow">¶</a></p>
+<p id="section-3.1-3">In this example the linked content provides additional information about deprecation of the resource context. There is no Deprecation header field in the response, and thus the resource is not (yet) deprecated. However, the resource already exposes a link where information is available describing how deprecation is managed for the resource. This may be the documentation explaining under which circumstances and with which policies deprecation might take place. For example, a policy may indicate that deprecation of a resource(s) will always be signaled in the dedicated places at least N days ahead of the planned deprecation date and then only the resource(s) would be deprecated. Or a policy may indicate that resource(s) would be deprecated first and then only be signaled as deprecated at dedicated places. The documentation in addition to the deprecation policy may also provide a migration guide exaplaining to consumers of the resource how to migrate to a new resource(s) or an alternate resource(s) before the deprecation date. Such policy and documentation would be very useful to consumers of the resource to plan ahead and migrate successfully.<a href="#section-3.1-3" class="pilcrow">¶</a></p>
 <p id="section-3.1-4">The following example uses the same link header field, but also announces a deprecation date using a Deprecation header field:<a href="#section-3.1-4" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-3.1-5">
 <pre>
@@ -1311,7 +1311,7 @@ Link: &lt;https://developer.example.com/deprecation&gt;;
       <h2 id="name-sunset">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-sunset" class="section-name selfRef">Sunset</a>
       </h2>
-<p id="section-4-1">In addition to the deprecation related information, if the resource provider wants to convey to the client application that the deprecated resource is expected to become unresponsive at a specific point in time, the Sunset HTTP header field <span>[<a href="#RFC8594" class="cite xref">RFC8594</a>]</span> can be used in addition to the <code>Deprecation</code> header field.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-1">In addition to the deprecation related information, if the resource provider wants to convey to the client application that the deprecated resource is expected to become unresponsive at a specific point in time, the Sunset HTTP header field <span>[<a href="#SUNSET" class="cite xref">SUNSET</a>]</span> can be used in addition to the <code>Deprecation</code> header field.<a href="#section-4-1" class="pilcrow">¶</a></p>
 <p id="section-4-2">The timestamp given in the <code>Sunset</code> header field <span class="bcp14">MUST NOT</span> be earlier than the one given in the <code>Deprecation</code> header field.<a href="#section-4-2" class="pilcrow">¶</a></p>
 <p id="section-4-3">The following example shows that the resource in context has been deprecated since Friday, June 30, 2023 at 23:59:59 GMT and its sunset date is Sunday, June 30, 2024 at 23:59:59 GMT. Please note that for historical reasons the Sunset HTTP header field uses a different data type for date.<a href="#section-4-3" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-4-4">
@@ -1345,7 +1345,7 @@ Sunset: Sun, 30 Jun 2024 23:59:59 GMT
 <pre>
 Header Field Name: Deprecation
 
-Applicable Protocol: Hypertext Transfer Protocol (HTTP)
+Protocol: Hypertext Transfer Protocol (HTTP)
 
 Status: Standard
 
@@ -1368,16 +1368,12 @@ Specification document: this specification,
 <p id="section-6.2-1">The <code>deprecation</code> link relation type should be added to the permanent registry of link relation types (<span><a href="https://rfc-editor.org/rfc/rfc8288#section-4.2" class="relref">Section 4.2</a> of [<a href="#LINK" class="cite xref">LINK</a>]</span>).<a href="#section-6.2-1" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-6.2-2">
 <pre>
-Relation Type: deprecation
+Relation Name: deprecation
 
-Applicable Protocol: Hypertext Transfer Protocol (HTTP)
-
-Status: Standard
+Description: Identifies deprecation related documentation for the context that is primarily intended for human consumption.
 
 Author: Sanjay Dalal &lt;sanjay.dalal@cal.berkeley.edu&gt;,
         Erik Wilde &lt;erik.wilde@dret.net&gt;
-
-Change controller: IETF
 
 Specification document: this specification,
         Section 3 "The Deprecation Link Relation Type"
@@ -1392,9 +1388,8 @@ Specification document: this specification,
       <h2 id="name-security-considerations">
 <a href="#section-7" class="section-number selfRef">7. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-7-1">The Deprecation header field should be treated as a hint, meaning that the resource is indicating (and not guaranteeing with certainty) that it will be or is deprecated. Resource documentation <span class="bcp14">SHOULD</span> provide additional information about the deprecation, potentially including recommendation(s) for replacement.<a href="#section-7-1" class="pilcrow">¶</a></p>
-<p id="section-7-2">In cases where the Deprecation header field value is a date in the future, it can lead to information that otherwise might not be available. Therefore, applications consuming the resource <span class="bcp14">SHOULD</span> verify the resource documentation and if possible, consult the resource developer to discuss potential impact due to deprecation and plan for possible transition to recommended resource.<a href="#section-7-2" class="pilcrow">¶</a></p>
-<p id="section-7-3">In cases where a <code>Link</code> header field is used to provide documentation, one should assume that the content of the  <code>Link</code> header field may not be secure, private or integrity-guaranteed, and due caution should be exercised when using it. Applications consuming the resource <span class="bcp14">SHOULD</span> check the referred resource documentation to verify authenticity and accuracy.<a href="#section-7-3" class="pilcrow">¶</a></p>
+<p id="section-7-1">The Deprecation header field should be treated as a hint, meaning that the resource is indicating (and not guaranteeing with certainty) that it will be or is deprecated. Deprecated resources <span class="bcp14">MUST</span> function (almost) as before, even though one might consider non-functional details such as making them progressively less efficient with longer response time for example.<a href="#section-7-1" class="pilcrow">¶</a></p>
+<p id="section-7-2">Resource documentation <span class="bcp14">SHOULD</span> provide additional information about the deprecation, such as including recommendation(s) for replacement. Applications consuming the resource <span class="bcp14">SHOULD</span> check the referred resource documentation to verify authenticity and accuracy. In cases where a <code>Link</code> header field is used to provide documentation, one should assume (unless served over HTTPS) that the content of the  <code>Link</code> header field may not be secure, private or integrity-guaranteed, and due caution should be exercised when using it. Also, in cases where the Deprecation header field value is a date in the future, it can lead to information that otherwise might not be available. Therefore, applications consuming the resource <span class="bcp14">SHOULD</span>, if possible, consult the resource developer to discuss potential impact due to deprecation and plan for possible transition to a recommended resource(s).<a href="#section-7-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-combined-references">
@@ -1433,8 +1428,12 @@ Specification document: this specification,
 <span class="refAuthor">Fielding, R., Ed.</span>, <span class="refAuthor">Nottingham, M., Ed.</span>, and <span class="refAuthor">J. Reschke, Ed.</span>, <span class="refTitle">"HTTP Caching"</span>, <span class="seriesInfo">STD 98</span>, <span class="seriesInfo">RFC 9111</span>, <span class="seriesInfo">DOI 10.17487/RFC9111</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9111">https://www.rfc-editor.org/rfc/rfc9111</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="STRUCTURED-FIELDS">[STRUCTURED-FIELDS]</dt>
+        <dd>
+<span class="refAuthor">Nottingham, M.</span> and <span class="refAuthor">P. Kamp</span>, <span class="refTitle">"Structured Field Values for HTTP"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-sfbis-06</span>, <time datetime="2024-04-21" class="refDate">21 April 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-sfbis-06">https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-sfbis-06</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="SUNSET">[SUNSET]</dt>
       <dd>
-<span class="refAuthor">Nottingham, M.</span> and <span class="refAuthor">P. Kamp</span>, <span class="refTitle">"Structured Field Values for HTTP"</span>, <time datetime="2024-01-23" class="refDate">23 January 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-sfbis-05">https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-sfbis-05</a>&gt;</span>. </dd>
+<span class="refAuthor">Wilde, E.</span>, <span class="refTitle">"The Sunset HTTP Header Field"</span>, <span class="seriesInfo">RFC 8594</span>, <span class="seriesInfo">DOI 10.17487/RFC8594</span>, <time datetime="2019-05" class="refDate">May 2019</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8594">https://www.rfc-editor.org/rfc/rfc8594</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -1446,12 +1445,8 @@ Specification document: this specification,
         </h3>
 <dl class="references">
 <dt id="RFC7942">[RFC7942]</dt>
-        <dd>
-<span class="refAuthor">Sheffer, Y.</span> and <span class="refAuthor">A. Farrel</span>, <span class="refTitle">"Improving Awareness of Running Code: The Implementation Status Section"</span>, <span class="seriesInfo">BCP 205</span>, <span class="seriesInfo">RFC 7942</span>, <span class="seriesInfo">DOI 10.17487/RFC7942</span>, <time datetime="2016-07" class="refDate">July 2016</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7942">https://www.rfc-editor.org/rfc/rfc7942</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC8594">[RFC8594]</dt>
       <dd>
-<span class="refAuthor">Wilde, E.</span>, <span class="refTitle">"The Sunset HTTP Header Field"</span>, <span class="seriesInfo">RFC 8594</span>, <span class="seriesInfo">DOI 10.17487/RFC8594</span>, <time datetime="2019-05" class="refDate">May 2019</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8594">https://www.rfc-editor.org/rfc/rfc8594</a>&gt;</span>. </dd>
+<span class="refAuthor">Sheffer, Y.</span> and <span class="refAuthor">A. Farrel</span>, <span class="refTitle">"Improving Awareness of Running Code: The Implementation Status Section"</span>, <span class="seriesInfo">BCP 205</span>, <span class="seriesInfo">RFC 7942</span>, <span class="seriesInfo">DOI 10.17487/RFC7942</span>, <time datetime="2016-07" class="refDate">July 2016</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7942">https://www.rfc-editor.org/rfc/rfc7942</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -1595,19 +1590,19 @@ other implementations may exist.<a href="#appendix-A-2" class="pilcrow">¶</a></
 </div>
 <div id="changes">
 <section id="appendix-B">
-      <h2 id="name-changes-from-draft-04">
-<a href="#appendix-B" class="section-number selfRef">Appendix B. </a><a href="#name-changes-from-draft-04" class="section-name selfRef">Changes from Draft-04</a>
+      <h2 id="name-changes-from-draft-05">
+<a href="#appendix-B" class="section-number selfRef">Appendix B. </a><a href="#name-changes-from-draft-05" class="section-name selfRef">Changes from Draft-05</a>
       </h2>
 <p id="appendix-B-1">This revision has made the following changes:<a href="#appendix-B-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="appendix-B-2.1">
-          <p id="appendix-B-2.1.1">Changed 'URI-identified resource' to 'resource (in the sense of [URI])'<a href="#appendix-B-2.1.1" class="pilcrow">¶</a></p>
+          <p id="appendix-B-2.1.1">Fixed Link Relation Template<a href="#appendix-B-2.1.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-B-2.2">
-          <p id="appendix-B-2.2.1">Uses Notational Conventions for Structured Fields as suggested in HTTP Editorial Style Guide<a href="#appendix-B-2.2.1" class="pilcrow">¶</a></p>
+          <p id="appendix-B-2.2.1">Made RFC8594 (Sunset) a normative reference<a href="#appendix-B-2.2.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-B-2.3">
-          <p id="appendix-B-2.3.1">Security Considerations moved below the IANA Considerations<a href="#appendix-B-2.3.1" class="pilcrow">¶</a></p>
+          <p id="appendix-B-2.3.1">Removed ABNF for sf-date<a href="#appendix-B-2.3.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 </section>
