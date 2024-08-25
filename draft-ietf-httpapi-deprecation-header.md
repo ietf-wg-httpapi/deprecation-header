@@ -268,13 +268,13 @@ Organization: PayPal
 - Reference: https://github.com/paypal/api-standards/blob/master/api-style-guide.md#runtime
 
 
-# Changes from Draft-04 {#changes}
+# Changes from Draft-05 {#changes}
 
 This revision has made the following changes:
 
-* Fixed references for structured fields, RFC9111 instead of RFC7234
-* Security Considerations is Heading#1
-* Removed redundant example
+* Fixed Link Relation Template
+* Made RFC8594 (Sunset) a normative reference
+* Removed ABNF for sf-date
 
 # Acknowledgments
 
