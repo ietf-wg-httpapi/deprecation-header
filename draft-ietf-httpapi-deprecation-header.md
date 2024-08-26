@@ -2,7 +2,7 @@
 coding: utf-8
 abbrev:
 title: The Deprecation HTTP Header Field
-docname: draft-ietf-httpapi-deprecation-header-latest
+docname: draft-ietf-httpapi-deprecation-header-06
 category: std
 
 ipr: trust200902
@@ -36,7 +36,6 @@ normative:
   HTTP: RFC9110
   LINK: RFC8288
   STRUCTURED-FIELDS: I-D.ietf-httpbis-sfbis
-  SUNSET: RFC8594
 
 
 informative:
@@ -127,7 +126,7 @@ Given that the deprecation date is in the past, the linked information resource 
 
 # Sunset
 
-In addition to the deprecation related information, if the resource provider wants to convey to the client application that the deprecated resource is expected to become unresponsive at a specific point in time, the Sunset HTTP header field [SUNSET] can be used in addition to the `Deprecation` header field.
+In addition to the deprecation related information, if the resource provider wants to convey to the client application that the deprecated resource is expected to become unresponsive at a specific point in time, the Sunset HTTP header field {{!RFC8594}} can be used in addition to the `Deprecation` header field.
 
 The timestamp given in the `Sunset` header field MUST NOT be earlier than the one given in the `Deprecation` header field.
 
