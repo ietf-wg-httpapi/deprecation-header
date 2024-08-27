@@ -5,7 +5,7 @@
 HTTPAPI                                                         S. Dalal
 Internet-Draft                                                          
 Intended status: Standards Track                                E. Wilde
-Expires: 26 February 2025                                 25 August 2024
+Expires: 28 February 2025                                 27 August 2024
 
 
                    The Deprecation HTTP Header Field
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 February 2025.
+   This Internet-Draft will expire on 28 February 2025.
 
 Copyright Notice
 
@@ -260,7 +260,7 @@ Table of Contents
    In addition to the deprecation related information, if the resource
    provider wants to convey to the client application that the
    deprecated resource is expected to become unresponsive at a specific
-   point in time, the Sunset HTTP header field [SUNSET] can be used in
+   point in time, the Sunset HTTP header field [RFC8594] can be used in
    addition to the Deprecation header field.
 
    The timestamp given in the Sunset header field MUST NOT be earlier
@@ -365,6 +365,10 @@ Specification document: this specification,
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
+   [RFC8594]  Wilde, E., "The Sunset HTTP Header Field", RFC 8594,
+              DOI 10.17487/RFC8594, May 2019,
+              <https://www.rfc-editor.org/rfc/rfc8594>.
+
    [RFC8941]  Nottingham, M. and P. Kamp, "Structured Field Values for
               HTTP", RFC 8941, DOI 10.17487/RFC8941, February 2021,
               <https://www.rfc-editor.org/rfc/rfc8941>.
@@ -380,10 +384,6 @@ Specification document: this specification,
               httpbis-sfbis-06, 21 April 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
               sfbis-06>.
-
-   [SUNSET]   Wilde, E., "The Sunset HTTP Header Field", RFC 8594,
-              DOI 10.17487/RFC8594, May 2019,
-              <https://www.rfc-editor.org/rfc/rfc8594>.
 
 8.2.  Informative References
 
