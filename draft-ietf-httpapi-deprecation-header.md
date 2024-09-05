@@ -258,13 +258,13 @@ Organization: PayPal
 - Reference: https://github.com/paypal/api-standards/blob/master/api-style-guide.md#runtime
 
 
-# Changes from Draft-05 {#changes}
+# Changes from Draft-06 {#changes}
 
 This revision has made the following changes:
 
+* Fixed Header Field Template
 * Fixed Link Relation Template
-* Made RFC8594 (Sunset) a normative reference
-* Removed ABNF for sf-date
+
 
 # Acknowledgments
 
