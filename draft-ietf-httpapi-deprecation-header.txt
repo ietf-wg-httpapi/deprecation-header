@@ -89,7 +89,7 @@ Table of Contents
    Appendix A.  Implementation Status
      A.1.  Implementing the Deprecation Header Field
      A.2.  Implementing the Concept
-   Appendix B.  Changes from Draft-05
+   Appendix B.  Changes from Draft-06
    Appendix C.  Acknowledgments
    Authors' Addresses
 
@@ -514,15 +514,13 @@ A.2.  Implementing the Concept
    *  Reference: https://github.com/paypal/api-standards/blob/master/
       api-style-guide.md#runtime
 
-Appendix B.  Changes from Draft-05
+Appendix B.  Changes from Draft-06
 
    This revision has made the following changes:
 
+   *  Fixed Header Field Template
+
    *  Fixed Link Relation Template
-
-   *  Made RFC8594 (Sunset) a normative reference
-
-   *  Removed ABNF for sf-date
 
 Appendix C.  Acknowledgments
 
