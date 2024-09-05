@@ -147,14 +147,9 @@ The `Deprecation` response header field should be added to the "Hypertext Transf
 
     Header Field Name: Deprecation
 
-    Protocol: Hypertext Transfer Protocol (HTTP)
+    Structured Type: Item
 
-    Status: Standard
-
-    Author: Sanjay Dalal <sanjay.dalal@cal.berkeley.edu>,
-            Erik Wilde <erik.wilde@dret.net>
-
-    Change controller: IETF
+    Status: permanent
 
     Specification document: this specification,
                 Section 2 "The Deprecation HTTP Response Header Field"
@@ -167,10 +162,7 @@ The `deprecation` link relation type should be added to the permanent registry o
 
     Relation Name: deprecation
 
-    Description: Identifies deprecation related documentation for the context that is primarily intended for human consumption.
-
-    Author: Sanjay Dalal <sanjay.dalal@cal.berkeley.edu>,
-            Erik Wilde <erik.wilde@dret.net>
+    Description: Refers to a resource that is documentation (intended for human consumption) about the deprecation of the link's context.
 
     Specification document: this specification,
             Section 3 "The Deprecation Link Relation Type"
