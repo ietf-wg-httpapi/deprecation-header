@@ -5,7 +5,7 @@
 HTTPAPI                                                         S. Dalal
 Internet-Draft                                                          
 Intended status: Standards Track                                E. Wilde
-Expires: 28 February 2025                                 27 August 2024
+Expires: 9 March 2025                                   5 September 2024
 
 
                    The Deprecation HTTP Header Field
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 February 2025.
+   This Internet-Draft will expire on 9 March 2025.
 
 Copyright Notice
 
@@ -292,14 +292,9 @@ Table of Contents
 
    Header Field Name: Deprecation
 
-   Protocol: Hypertext Transfer Protocol (HTTP)
+   Structured Type: Item
 
-   Status: Standard
-
-   Author: Sanjay Dalal <sanjay.dalal@cal.berkeley.edu>,
-           Erik Wilde <erik.wilde@dret.net>
-
-   Change controller: IETF
+   Status: permanent
 
    Specification document: this specification,
                Section 2 "The Deprecation HTTP Response Header Field"
@@ -311,10 +306,7 @@ Table of Contents
 
 Relation Name: deprecation
 
-Description: Identifies deprecation related documentation for the context that is primarily intended for human consumption.
-
-Author: Sanjay Dalal <sanjay.dalal@cal.berkeley.edu>,
-        Erik Wilde <erik.wilde@dret.net>
+Description: Refers to a resource that is documentation (intended for human consumption) about the deprecation of the link's context.
 
 Specification document: this specification,
         Section 3 "The Deprecation Link Relation Type"
