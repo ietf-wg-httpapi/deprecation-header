@@ -56,7 +56,7 @@ Deprecation of an HTTP resource ({{Section 3.1 of HTTP}}) communicates informati
 
 The act of deprecation does not change any behavior of the resource. It informs clients of the fact that a resource will be or is deprecated. The Deprecation HTTP response header field can be used to convey this at runtime to clients and carries information indicating when the deprecation will be in effect.
 
-In addition to the Deprecation header field, the resource provider can use other header fields to convey additional information related to deprecation. This can be information such as where to find documentation related to the deprecation, what can be used as a replacement, and when a deprecated resource becomes non-operational.
+In addition to the Deprecation header field, the resource provider can use other header fields such as Link ([LINK]) to convey additional information related to deprecation. This can be information such as where to find documentation related to the deprecation, what can be used as a replacement, and when a deprecated resource becomes non-operational.
 
 
 ##  Notational Conventions
@@ -75,13 +75,13 @@ The `Deprecation` HTTP response header field allows a server to communicate to a
 
 The `Deprecation` response header field describes the deprecation of the resource identified with the response it occurred within (see {{Section 6.4.2 of HTTP}}). It conveys the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date). `Deprecation` is an Item Structured Header {{!RFC8941}}. Refer to Section 3.3.7 of [STRUCTURED-FIELDS] for `sf-date`:
 
-    Deprecation = sf-date
+    "Deprecation = sf-date"
 
 
 
 The date is the date when the resource was or will be deprecated. It is in the form of an Structured Field Date as defined in Section 3.3.7 of [STRUCTURED-FIELDS].
 
-The following example shows that the resource context has been deprecated on Friday, June 30, 2023 at 23:59:59 GMT:
+The following example shows that the resource context has been deprecated on Friday, June 30, 2023 at 23:59:59 UTC:
 
     Deprecation: @1688169599
 
@@ -130,10 +130,10 @@ In addition to the deprecation related information, if the resource provider wan
 
 The timestamp given in the `Sunset` header field MUST NOT be earlier than the one given in the `Deprecation` header field.
 
-The following example shows that the resource in context has been deprecated since Friday, June 30, 2023 at 23:59:59 GMT and its sunset date is Sunday, June 30, 2024 at 23:59:59 GMT. Please note that for historical reasons the Sunset HTTP header field uses a different data type for date.
+The following example shows that the resource in context has been deprecated since Friday, June 30, 2023 at 23:59:59 UTC and its sunset date is Sunday, June 30, 2024 at 23:59:59 UTC. Please note that for historical reasons the Sunset HTTP header field uses a different data format for date.
 
     Deprecation: @1688169599
-    Sunset: Sun, 30 Jun 2024 23:59:59 GMT
+    Sunset: Sun, 30 Jun 2024 23:59:59 UTC
 
 # Resource Behavior
 
@@ -182,7 +182,7 @@ Resource documentation SHOULD provide additional information about the deprecati
 
 Note to RFC Editor: Please remove this section before publication.
 
-This section records the status of known implementations of the protocol defined by this specification at the time of posting of this Internet-Draft, and is based on a proposal described in {{?RFC7942}}.  The description of implementations in this section is intended to assist the IETF in its decision processes in progressing drafts to RFCs.  Please note that the listing of any individual implementation here does not imply endorsement by the IETF. Furthermore, no effort has been spent to verify the information presented here that was supplied by IETF contributors.  This is not intended as, and must not be construed to be, a catalog of available implementations or their features.  Readers are advised to note that
+This section records the status of known implementations of the protocol defined by this specification at the time of posting of this Internet-Draft.  The description of implementations in this section is intended to assist the IETF in its decision processes in progressing drafts to RFCs.  Please note that the listing of any individual implementation here does not imply endorsement by the IETF. Furthermore, no effort has been spent to verify the information presented here that was supplied by IETF contributors.  This is not intended as, and must not be construed to be, a catalog of available implementations or their features.  Readers are advised to note that
 other implementations may exist.
 
 According to RFC 7942, "this will allow reviewers and working groups to assign due consideration to documents that have the benefit of running code, which may serve as evidence of valuable experimentation and feedback that have made the implemented protocols more mature. It is up to the individual working groups to use this information as they see fit".
@@ -244,7 +244,7 @@ Organization: IBM
 
 Organization: Ultipro
 
-- Description: Ultipro uses the HTTP `Warning` header field as described in Section 5.5 of {{!RFC9111}} with code `299`
+- Description: Ultipro uses the HTTP `Warning` header field as described in Section 5.5 of RFC 9111 with code `299`
 - Reference:  https://connect.ultipro.com/api-deprecation
 
 Organization: Clearbit
