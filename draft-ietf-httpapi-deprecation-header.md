@@ -54,7 +54,7 @@ The Deprecation HTTP response header field is used to signal to consumers of a r
 
 Deprecation of an HTTP resource ({{Section 3.1 of HTTP}}) communicates information about the lifecycle of a resource. It encourages applications to migrate away from the resource, discourages applications from forming new dependencies on the resource, and informs applications about the risk of continued dependence upon the resource.
 
-The act of deprecation does not change any behavior of the resource. It informs client applications of the fact that a resource will be or is deprecated. The Deprecation HTTP response header field can be used to convey this at runtime to client applications and carries information indicating when the deprecation will be in effect.
+The act of deprecation does not change any behavior of the resource. It informs client applications of the fact that a resource will be or is deprecated. The Deprecation HTTP response header field can be used to convey this information at runtime indicating when the deprecation will be in effect.
 
 In addition to the Deprecation header field, the resource provider can use other header fields such as Link ([LINK]) to convey additional information related to deprecation. This can be information such as where to find documentation related to the deprecation, what can be used as a replacement, and when a deprecated resource becomes non-operational.
 
@@ -73,19 +73,14 @@ The `Deprecation` HTTP response header field allows a server to communicate to a
 
 ## Syntax
 
-The `Deprecation` response header field describes the deprecation of the resource identified with the response it occurred within (see {{Section 6.4.2 of HTTP}}). It conveys the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date). `Deprecation` is an Item Structured Header {{!RFC8941}}. Refer to Section 3.3.7 of [STRUCTURED-FIELDS] for `sf-date`:
+The `Deprecation` response header field describes the deprecation of the resource identified with the response it occurred within (see {{Section 6.4.2 of HTTP}}). It conveys the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date). `Deprecation` is an Item Structured Header, refer to Section 3.3.7 of [STRUCTURED-FIELDS] for `sf-date`. 
 
     "Deprecation = sf-date"
-
-
-
-The date is the date when the resource was or will be deprecated. It is in the form of an Structured Field Date as defined in Section 3.3.7 of [STRUCTURED-FIELDS].
 
 The following example shows that the resource context has been deprecated on Friday, June 30, 2023 at 23:59:59 UTC:
 
     Deprecation: @1688169599
 
-The deprecation date can be in the future. This means that the resource will be deprecated at the indicated date in the future.
 
 
 ## Scope
@@ -191,8 +186,6 @@ According to RFC 7942, "this will allow reviewers and working groups to assign d
 
 This is a list of implementations that implement the deprecation header field:
 
-The Deprecation link relation is returned in the Registration Data Access Protocol (RDAP) notices to indicate deprecation of jCard in favor of JSContact. RDAP is specified in the IETF Internet Draft for Using JSContact in Registration Data Access Protocol (RDAP) JSON Responses https://datatracker.ietf.org/doc/draft-ietf-regext-rdap-jscontact/.  
-
 Organization: Apollo
 
 - Description: Deprecation header field is returned when deprecated functionality (as declared in the GraphQL schema) is accessed
@@ -222,6 +215,9 @@ Organization: MediaWiki
 
 * Description: Core REST API of MediaWiki would use Deprecation header field for endpoints that have been deprecated because a new endpoint provides the same or better functionality.
 * Reference: https://phabricator.wikimedia.org/T232485
+
+In addition to the above list, the Deprecation link relation is returned in the Registration Data Access Protocol (RDAP) notices to indicate deprecation of jCard in favor of JSContact. RDAP is specified in the Internet Draft for Using JSContact in Registration Data Access Protocol (RDAP) JSON Responses https://datatracker.ietf.org/doc/draft-ietf-regext-rdap-jscontact/.
+
 
 ## Implementing the Concept
 
