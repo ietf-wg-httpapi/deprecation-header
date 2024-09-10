@@ -43,7 +43,7 @@ informative:
 
 --- abstract
 
-The Deprecation HTTP response header field is used to signal to consumers of a resource (in the sense of URI) that the resource will be or has been deprecated. Additionally, the deprecation link relation can be used to link to a resource that provides additional information about planned or existing deprecation, and possibly ways in which clients can best manage deprecation.
+The Deprecation HTTP response header field is used to signal to consumers of a resource (in the sense of URI) that the resource will be or has been deprecated. Additionally, the deprecation link relation can be used to link to a resource that provides additional information about planned or existing deprecation, and possibly ways in which client applications can best manage deprecation.
 
 
 --- middle
@@ -54,7 +54,7 @@ The Deprecation HTTP response header field is used to signal to consumers of a r
 
 Deprecation of an HTTP resource ({{Section 3.1 of HTTP}}) communicates information about the lifecycle of a resource. It encourages applications to migrate away from the resource, discourages applications from forming new dependencies on the resource, and informs applications about the risk of continued dependence upon the resource.
 
-The act of deprecation does not change any behavior of the resource. It informs clients of the fact that a resource will be or is deprecated. The Deprecation HTTP response header field can be used to convey this at runtime to clients and carries information indicating when the deprecation will be in effect.
+The act of deprecation does not change any behavior of the resource. It informs client applications of the fact that a resource will be or is deprecated. The Deprecation HTTP response header field can be used to convey this at runtime to client applications and carries information indicating when the deprecation will be in effect.
 
 In addition to the Deprecation header field, the resource provider can use other header fields such as Link ([LINK]) to convey additional information related to deprecation. This can be information such as where to find documentation related to the deprecation, what can be used as a replacement, and when a deprecated resource becomes non-operational.
 
@@ -69,7 +69,7 @@ The term "resource" is to be interpreted as defined in {{Section 3.1 of HTTP}}.
 
 # The Deprecation HTTP Response Header Field
 
-The `Deprecation` HTTP response header field allows a server to communicate to a client that the resource in context of the message is or will be deprecated.
+The `Deprecation` HTTP response header field allows a server to communicate to a client application that the resource in context of the message is or will be deprecated.
 
 ## Syntax
 
@@ -94,21 +94,21 @@ The Deprecation header field applies to the resource identified with the respons
 
 Resources are free to define such an increased scope, and usually this scope will be documented by the resource so that consumers of the resource know about the increased scope and can behave accordingly. When doing so, it is important to take into account that such increased scoping is invisible for consumers who are unaware of the increased scoping rules. This means that these consumers will not be aware of the increased scope, and they will not interpret deprecation information different from its standard meaning (i.e., it applies to the resource only).
 
-Using such an increased scope still may make sense, as deprecation information is only a hint anyway. It is optional information that cannot be depended on, and clients should always be implemented in ways that allow them to function without Deprecation information. Increased scope information may help clients to glean additional hints from related resources and, thus, might allow them to implement behavior that allows them to make educated guesses about resources becoming deprecated.
+Using such an increased scope still may make sense, as deprecation information is only a hint anyway. It is optional information that cannot be depended on, and client applications should always be implemented in ways that allow them to function without Deprecation information. Increased scope information may help client applications to glean additional hints from related resources and, thus, might allow them to implement behavior that allows them to make educated guesses about resources becoming deprecated.
 
-For example, an API might not use Deprecation header fields on all of its resources, but only on designated resources such as the API's home document. This means that deprecation information is available, but in order to get it, clients have to periodically inspect the home document. In this example, the extended context of the Deprecation header field would be all resources provided by the API, while the visibility of the information would only be on the home document.
+For example, an API might not use Deprecation header fields on all of its resources, but only on designated resources such as the API's home document. This means that deprecation information is available, but in order to get it, client applications have to periodically inspect the home document. In this example, the extended context of the Deprecation header field would be all resources provided by the API, while the visibility of the information would only be on the home document.
 
 
 # The Deprecation Link Relation Type
 
-In addition to the Deprecation HTTP header field, the server can use links with the "deprecation" link relation type to communicate to the client where to find more information about deprecation of the context. This can happen before the actual deprecation, to make a deprecation policy discoverable, or after deprecation, when there may be documentation about the deprecation, and possibly documentation of how to manage it.
+In addition to the Deprecation HTTP header field, the server can use links with the "deprecation" link relation type to communicate to the client application where to find more information about deprecation of the context. This can happen before the actual deprecation, to make a deprecation policy discoverable, or after deprecation, when there may be documentation about the deprecation, and possibly documentation of how to manage it.
 
 This specification places no restrictions on the representation of the linked deprecation policy. In particular, the deprecation policy may be available as human-readable documentation or as machine-readable description.
 
 
 ## Documentation
 
-The purpose of the `Deprecation` header field is to provide a hint about deprecation to the resource consumer. Upon reception of the `Deprecation` header field, the client developer can look up the resource's documentation in order to find deprecation related information. The documentation MAY provide a guide and timeline to migrate away from the deprecated resource to a new resource(s) replacing the deprecated resource, if applicable. The resource provider can provide a link to the resource documentation using a `Link` header field with relation type `deprecation` as shown below:
+The purpose of the `Deprecation` header field is to provide a hint about deprecation to the resource consumer. Upon reception of the `Deprecation` header field, the client application developer can look up the resource's documentation in order to find deprecation related information. The documentation MAY provide a guide and timeline to migrate away from the deprecated resource to a new resource(s) replacing the deprecated resource, if applicable. The resource provider can provide a link to the resource documentation using a `Link` header field with relation type `deprecation` as shown below:
 
     Link: <https://developer.example.com/deprecation>;
           rel="deprecation"; type="text/html"
@@ -137,7 +137,7 @@ The following example shows that the resource in context has been deprecated sin
 
 # Resource Behavior
 
-The act of deprecation does not change any behavior of the resource. Deprecated resources SHOULD keep functioning as before, allowing consumers to still use the resources in the same way as they did before the resources were declared deprecated.
+The act of deprecation does not change any behavior of the resource. The presence of a Deprecation header field in response is not meant to signal a change in the meaning or function of a resource in the context, allowing consumers to still use the resource in the same way as they did before the resource was declared deprecated.
 
 # IANA Considerations
 
@@ -170,7 +170,7 @@ The `deprecation` link relation type should be added to the permanent registry o
 
 # Security Considerations
 
-The Deprecation header field should be treated as a hint, meaning that the resource is indicating (and not guaranteeing with certainty) that it will be or is deprecated. Deprecated resources MUST function (almost) as before, even though one might consider non-functional details such as making them progressively less efficient with longer response time for example.
+The Deprecation header field should be treated as a hint, meaning that the resource is indicating (and not guaranteeing with certainty) that it will be or is deprecated. Deprecated resources function as they would have without sending the deprecation header field, even though one might consider non-functional details such as making them progressively less efficient with longer response time for example.
 
 Resource documentation SHOULD provide additional information about the deprecation, such as including recommendation(s) for replacement. Applications consuming the resource SHOULD check the referred resource documentation to verify authenticity and accuracy. In cases where a `Link` header field is used to provide documentation, one should assume (unless served over HTTPS) that the content of the  `Link` header field may not be secure, private or integrity-guaranteed, and due caution should be exercised when using it. Also, in cases where the Deprecation header field value is a date in the future, it can lead to information that otherwise might not be available. Therefore, applications consuming the resource SHOULD, if possible, consult the resource developer to discuss potential impact due to deprecation and plan for possible transition to a recommended resource(s).
 
@@ -191,6 +191,8 @@ According to RFC 7942, "this will allow reviewers and working groups to assign d
 
 This is a list of implementations that implement the deprecation header field:
 
+The Deprecation link relation is returned in the Registration Data Access Protocol (RDAP) notices to indicate deprecation of jCard in favor of JSContact. RDAP is specified in the IETF Internet Draft for Using JSContact in Registration Data Access Protocol (RDAP) JSON Responses https://datatracker.ietf.org/doc/draft-ietf-regext-rdap-jscontact/.  
+
 Organization: Apollo
 
 - Description: Deprecation header field is returned when deprecated functionality (as declared in the GraphQL schema) is accessed
@@ -206,11 +208,6 @@ Organization: Palantir Technologies
 - Description: Deprecation header field is incorporated in code generated by conjure-java, a CLI to generate Java POJOs and interfaces from Conjure API definitions
 - Reference: https://github.com/palantir/conjure-java
 
-Organization: IETF Internet Draft, Registration Protocols Extensions
-
-- Description: Deprecation link relation is returned in Registration Data Access Protocol (RDAP) notices to indicate deprecation of jCard in favor of JSContact.
-- Reference: https://tools.ietf.org/html/draft-loffredo-regext-rdap-jcard-deprecation
-
 Organization:  E-Voyageurs Technologies
 
 * Description: Deprecation header field is incorporated in Hesperides, a configuration management tool providing universal text file templating and properties editing through a REST API or a webapp.
@@ -225,8 +222,6 @@ Organization: MediaWiki
 
 * Description: Core REST API of MediaWiki would use Deprecation header field for endpoints that have been deprecated because a new endpoint provides the same or better functionality.
 * Reference: https://phabricator.wikimedia.org/T232485
-
-
 
 ## Implementing the Concept
 
@@ -258,12 +253,12 @@ Organization: PayPal
 - Reference: https://github.com/paypal/api-standards/blob/master/api-style-guide.md#runtime
 
 
-# Changes from Draft-06 {#changes}
+# Changes from Draft-07 {#changes}
 
 This revision has made the following changes:
 
-* Fixed Header Field Template
-* Fixed Link Relation Template
+* Addresses Gen-ART's comments
+* Addresses ARTART's comments
 
 
 # Acknowledgments
