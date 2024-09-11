@@ -6,9 +6,9 @@ docname: draft-ietf-httpapi-deprecation-header-latest
 category: std
 
 ipr: trust200902
-area: Applications and Real-Time
+area: Web and Internet Transport
 workgroup: HTTPAPI
-keyword: Internet-Draft
+keyword: HTTP, deprecation
 
 stand_alone: yes
 pi: [toc, tocindent, sortrefs, symrefs, strict, compact, comments, inline]
