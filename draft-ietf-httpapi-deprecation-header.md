@@ -63,7 +63,7 @@ In addition to the Deprecation header field, the resource provider can use other
 
 {::boilerplate bcp14-tagged}
 
-This document uses the terminology from Section 3 of [STRUCTURED-FIELDS] to specify syntax and parsing of Date.
+This document uses "Structured Field Values for HTTP" ([STRUCTURED-FIELDS]) to specify syntax and parsing of date values.
 
 The term "resource" is to be interpreted as defined in {{Section 3.1 of HTTP}}.
 
@@ -73,9 +73,9 @@ The `Deprecation` HTTP response header field allows a server to communicate to a
 
 ## Syntax
 
-The `Deprecation` response header field describes the deprecation of the resource identified with the response it occurred within (see {{Section 6.4.2 of HTTP}}). It conveys the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date).
+The `Deprecation` response header field describes the deprecation of the resource identified with the response it occurred within (see {{Section 6.4.2 of HTTP}}). It conveys the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date). 
 
-`Deprecation` is an Item Structured header field [STRUCTURED-FIELDS]. Its value MUST be a Date (Section 3.3.7 of [STRUCTURED-FIELDS]).
+`Deprecation` is an Item Structured Header Field; its value MUST be a Date as per {{Section 3.3.7 of STRUCTURED-FIELDS}}.
 
 
 The following example shows that the resource context has been deprecated on Friday, June 30, 2023 at 23:59:59 UTC:
