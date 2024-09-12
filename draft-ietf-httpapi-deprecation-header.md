@@ -73,7 +73,7 @@ The `Deprecation` HTTP response header field allows a server to communicate to a
 
 ## Syntax
 
-The `Deprecation` response header field describes the deprecation of the resource identified with the response it occurred within (see {{Section 6.4.2 of HTTP}}). It conveys the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date). 
+The `Deprecation` response header field describes the deprecation of the resource identified with the response it occurred within (see {{Section 6.4.2 of HTTP}}). It conveys the deprecation date, which may be in the future (the resource context will be deprecated at that date) or in the past (the resource context has been deprecated at that date).
 
 `Deprecation` is an Item Structured Header Field; its value MUST be a Date as per {{Section 3.3.7 of STRUCTURED-FIELDS}}.
 
@@ -92,12 +92,12 @@ Resources are free to define such an increased scope, and usually this scope wil
 
 Using such an increased scope still may make sense, as deprecation information is only a hint anyway. It is optional information that cannot be depended on, and client applications should always be implemented in ways that allow them to function without Deprecation information. Increased scope information may help client applications to glean additional hints from related resources and, thus, might allow them to implement behavior that allows them to make educated guesses about resources becoming deprecated.
 
-For example, an API might not use Deprecation header fields on all of its resources, but only on designated resources such as the API's home document. This means that deprecation information is available, but in order to get it, client applications have to periodically inspect the home document. In this example, the extended context of the Deprecation header field would be all resources provided by the API, while the visibility of the information would only be on the home document.
+For example, an API might not use Deprecation header fields on all of its resources, but only on designated resources such as the API's home document. This means that deprecation information is available, but in order to get it, client application developers have to periodically inspect the home document. In this example, the extended context of the Deprecation header field would be all resources provided by the API, while the visibility of the information would only be on the home document.
 
 
 # The Deprecation Link Relation Type
 
-In addition to the Deprecation HTTP header field, the server can use links with the "deprecation" link relation type to communicate to the client application where to find more information about deprecation of the context. This can happen before the actual deprecation, to make a deprecation policy discoverable, or after deprecation, when there may be documentation about the deprecation, and possibly documentation of how to manage it.
+In addition to the Deprecation HTTP header field, the server can use links with the "deprecation" link relation type to communicate to the client application developer where to find more information about deprecation of the context. This can happen before the actual deprecation, to make a deprecation policy discoverable, or after deprecation, when there may be documentation about the deprecation, and possibly documentation of how to manage it.
 
 This specification places no restrictions on the representation of the linked deprecation policy. In particular, the deprecation policy may be available as human-readable documentation or as machine-readable description.
 
