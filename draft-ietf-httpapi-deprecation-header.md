@@ -178,7 +178,7 @@ Resource documentation should provide additional information about the deprecati
 
 Note to RFC Editor: Please remove this section before publication.
 
-This section records the status of known implementations of the protocol defined by this specification at the time of posting of this Internet-Draft.  The description of implementations in this section is intended to assist the IETF in its decision processes in progressing drafts to RFCs.  Please note that the listing of any individual implementation here does not imply endorsement by the IETF. Furthermore, no effort has been spent to verify the information presented here that was supplied by IETF contributors.  This is not intended as, and must not be construed to be, a catalog of available implementations or their features.  Readers are advised to note that
+This section records the status of known implementations of the protocol defined by this specification at the time of posting of this Internet-Draft. The description of implementations in this section is intended to assist the IETF in its decision processes in progressing drafts to RFCs. Please note that the listing of any individual implementation here does not imply endorsement by the IETF. Furthermore, no effort has been spent to verify the information presented here that was supplied by IETF contributors. This is not intended as, and must not be construed to be, a catalog of available implementations or their features. Readers are advised to note that
 other implementations may exist.
 
 According to RFC 7942, "this will allow reviewers and working groups to assign due consideration to documents that have the benefit of running code, which may serve as evidence of valuable experimentation and feedback that have made the implemented protocols more mature. It is up to the individual working groups to use this information as they see fit".
@@ -250,12 +250,11 @@ Organization: PayPal
 - Reference: https://github.com/paypal/api-standards/blob/master/api-style-guide.md#runtime
 
 
-# Changes from Draft-07 {#changes}
+# Changes from Draft-08 {#changes}
 
 This revision has made the following changes:
 
-* Addresses Gen-ART's comments
-* Addresses ARTART's comments
+* Addresses comments from Gen-ART, ARTART, SECDIR
 
 
 # Acknowledgments
